@@ -1,0 +1,3 @@
+/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles/2D_SuperDino.dir

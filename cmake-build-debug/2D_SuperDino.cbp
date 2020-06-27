@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="2D_SuperDino"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\lib64\;CMake Files\..\..\..\..\..\usr\lib64\cmake\;CMake Files\..\..\..\..\..\usr\lib64\cmake\SDL2\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="2D_SuperDino">
+				<Option output="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/2D_SuperDino" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 2D_SuperDino"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="2D_SuperDino/fast">
+				<Option output="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/2D_SuperDino" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 2D_SuperDino/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/daniel/dev/C++\ projects/2D_SuperDino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/AssetManager.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/AssetManager.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/Animation.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ColliderComponent.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/Components.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ECS.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ECS.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/KeyboardController.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/SpriteComponent.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/TileComponent.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/TransformComponent.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Game.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Game.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/main.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/../../../../../usr/lib64/cmake/SDL2/SDL2Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\SDL2\"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/../../../../../usr/lib64/cmake/SDL2/SDL2ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\SDL2\"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/../../../../../usr/lib64/cmake/SDL2/SDL2Targets-noconfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\SDL2\"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/../../../../../usr/lib64/cmake/SDL2/SDL2Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\SDL2\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,164 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/AssetManager.cpp
+AssetManager.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/AssetManager.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/AssetManager.h
+map
+-
+string
+-
+TextureManager.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h
+Vector2D.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.h
+ECS/ECS.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ECS.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.cpp
+Collision.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.h
+ECS/ColliderComponent.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ColliderComponent.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.h
+SDL2/SDL.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/SDL2/SDL.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/Animation.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ColliderComponent.h
+string
+-
+utility
+-
+SDL2/SDL.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/SDL2/SDL.h
+Components.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/Components.h
+../TextureManager.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/Components.h
+ECS.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ECS.h
+TransformComponent.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/TransformComponent.h
+SpriteComponent.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/SpriteComponent.h
+KeyboardController.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/KeyboardController.h
+ColliderComponent.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ColliderComponent.h
+TileComponent.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/TileComponent.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ECS.cpp
+ECS.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ECS.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ECS.h
+iostream
+-
+vector
+-
+memory
+-
+algorithm
+-
+bitset
+-
+array
+-
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/KeyboardController.h
+../Game.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Game.h
+ECS.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ECS.h
+Components.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/Components.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/SpriteComponent.h
+Components.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/Components.h
+SDL2/SDL.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/SDL2/SDL.h
+../TextureManager.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h
+Animation.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/Animation.h
+map
+-
+../AssetManager.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/AssetManager.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/TileComponent.h
+utility
+-
+ECS.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ECS.h
+../Vector2D.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.h
+../Game.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Game.h
+../TextureManager.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/TransformComponent.h
+Components.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/Components.h
+../Vector2D.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Game.cpp
+Game.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Game.h
+TextureManager.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h
+ECS/Components.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/Components.h
+Vector2D.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.h
+Collision.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.h
+AssetManager.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/AssetManager.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Game.h
+SDL2/SDL.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/SDL2/SDL.h
+SDL2/SDL_image.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/SDL2/SDL_image.h
+iostream
+-
+vector
+-
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.cpp
+TextureManager.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h
+Game.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Game.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.cpp
+Vector2D.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.h
+iostream
+-
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/main.cpp
+Game.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Game.h
+
