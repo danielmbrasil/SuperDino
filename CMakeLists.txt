@@ -8,24 +8,30 @@ include_directories(${SDL2_INCLUDE_DIRS})
 
 add_executable(2D_SuperDino
         src/main.cpp
-        src/AssetManager.cpp
-        src/AssetManager.h
-        src/Collision.cpp
-        src/Collision.h
         src/Game.cpp
         src/Game.h
         src/TextureManager.cpp
         src/TextureManager.h
         src/Vector2D.cpp
         src/Vector2D.h
-        src/ECS/ECS.h
-        src/ECS/ECS.cpp
-        src/ECS/Animation.h
-        src/ECS/ColliderComponent.h
-        src/ECS/Components.h
-        src/ECS/KeyboardController.h
-        src/ECS/SpriteComponent.h
-        src/ECS/TileComponent.h
-        src/ECS/TransformComponent.h)
+        src/RigidBody.h
+        src/Layer.h
+        src/GameMap.h
+        src/TileLayer.cpp
+        src/TileLayer.h
+        src/MapParser.cpp
+        src/MapParser.h
+        vendor/tinyxml/tinystr.h
+        vendor/tinyxml/tinystr.cpp
+        vendor/tinyxml/tinyxml.h
+        vendor/tinyxml/tinyxml.cpp
+        vendor/tinyxml/tinyxmlerror.cpp
+        vendor/tinyxml/tinyxmlparser.cpp
+        src/IObject.h
+        src/GameObject.h
+        src/Transform.h
+        src/Character.h
+        src/Dino.cpp
+        src/Dino.h)
 
 target_link_libraries(2D_SuperDino -lSDL2 -lSDL2_image)

@@ -82,43 +82,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/AssetManager.cpp">
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Character.h">
 			<Option target="2D_SuperDino"/>
 		</Unit>
-		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/AssetManager.h">
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.cpp">
 			<Option target="2D_SuperDino"/>
 		</Unit>
-		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.cpp">
-			<Option target="2D_SuperDino"/>
-		</Unit>
-		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.h">
-			<Option target="2D_SuperDino"/>
-		</Unit>
-		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/Animation.h">
-			<Option target="2D_SuperDino"/>
-		</Unit>
-		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ColliderComponent.h">
-			<Option target="2D_SuperDino"/>
-		</Unit>
-		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/Components.h">
-			<Option target="2D_SuperDino"/>
-		</Unit>
-		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ECS.cpp">
-			<Option target="2D_SuperDino"/>
-		</Unit>
-		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ECS.h">
-			<Option target="2D_SuperDino"/>
-		</Unit>
-		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/KeyboardController.h">
-			<Option target="2D_SuperDino"/>
-		</Unit>
-		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/SpriteComponent.h">
-			<Option target="2D_SuperDino"/>
-		</Unit>
-		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/TileComponent.h">
-			<Option target="2D_SuperDino"/>
-		</Unit>
-		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/TransformComponent.h">
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.h">
 			<Option target="2D_SuperDino"/>
 		</Unit>
 		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Game.cpp">
@@ -127,10 +97,40 @@
 		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Game.h">
 			<Option target="2D_SuperDino"/>
 		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/GameMap.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/GameObject.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/IObject.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Layer.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/MapParser.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/MapParser.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/RigidBody.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
 		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.cpp">
 			<Option target="2D_SuperDino"/>
 		</Unit>
 		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/TileLayer.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/TileLayer.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Transform.h">
 			<Option target="2D_SuperDino"/>
 		</Unit>
 		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.cpp">
@@ -140,6 +140,24 @@
 			<Option target="2D_SuperDino"/>
 		</Unit>
 		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/main.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinystr.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinystr.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinyxml.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinyxml.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinyxmlerror.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinyxmlparser.cpp">
 			<Option target="2D_SuperDino"/>
 		</Unit>
 		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/CMakeLists.txt">

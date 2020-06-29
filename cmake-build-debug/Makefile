@@ -123,86 +123,32 @@ depend:
 	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/build
 .PHONY : 2D_SuperDino/fast
 
-src/AssetManager.o: src/AssetManager.cpp.o
+src/Dino.o: src/Dino.cpp.o
 
-.PHONY : src/AssetManager.o
-
-# target to build an object file
-src/AssetManager.cpp.o:
-	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.o
-.PHONY : src/AssetManager.cpp.o
-
-src/AssetManager.i: src/AssetManager.cpp.i
-
-.PHONY : src/AssetManager.i
-
-# target to preprocess a source file
-src/AssetManager.cpp.i:
-	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.i
-.PHONY : src/AssetManager.cpp.i
-
-src/AssetManager.s: src/AssetManager.cpp.s
-
-.PHONY : src/AssetManager.s
-
-# target to generate assembly for a file
-src/AssetManager.cpp.s:
-	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.s
-.PHONY : src/AssetManager.cpp.s
-
-src/Collision.o: src/Collision.cpp.o
-
-.PHONY : src/Collision.o
+.PHONY : src/Dino.o
 
 # target to build an object file
-src/Collision.cpp.o:
-	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o
-.PHONY : src/Collision.cpp.o
+src/Dino.cpp.o:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o
+.PHONY : src/Dino.cpp.o
 
-src/Collision.i: src/Collision.cpp.i
+src/Dino.i: src/Dino.cpp.i
 
-.PHONY : src/Collision.i
-
-# target to preprocess a source file
-src/Collision.cpp.i:
-	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.i
-.PHONY : src/Collision.cpp.i
-
-src/Collision.s: src/Collision.cpp.s
-
-.PHONY : src/Collision.s
-
-# target to generate assembly for a file
-src/Collision.cpp.s:
-	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.s
-.PHONY : src/Collision.cpp.s
-
-src/ECS/ECS.o: src/ECS/ECS.cpp.o
-
-.PHONY : src/ECS/ECS.o
-
-# target to build an object file
-src/ECS/ECS.cpp.o:
-	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.o
-.PHONY : src/ECS/ECS.cpp.o
-
-src/ECS/ECS.i: src/ECS/ECS.cpp.i
-
-.PHONY : src/ECS/ECS.i
+.PHONY : src/Dino.i
 
 # target to preprocess a source file
-src/ECS/ECS.cpp.i:
-	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.i
-.PHONY : src/ECS/ECS.cpp.i
+src/Dino.cpp.i:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.i
+.PHONY : src/Dino.cpp.i
 
-src/ECS/ECS.s: src/ECS/ECS.cpp.s
+src/Dino.s: src/Dino.cpp.s
 
-.PHONY : src/ECS/ECS.s
+.PHONY : src/Dino.s
 
 # target to generate assembly for a file
-src/ECS/ECS.cpp.s:
-	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.s
-.PHONY : src/ECS/ECS.cpp.s
+src/Dino.cpp.s:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.s
+.PHONY : src/Dino.cpp.s
 
 src/Game.o: src/Game.cpp.o
 
@@ -231,6 +177,33 @@ src/Game.cpp.s:
 	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Game.cpp.s
 .PHONY : src/Game.cpp.s
 
+src/MapParser.o: src/MapParser.cpp.o
+
+.PHONY : src/MapParser.o
+
+# target to build an object file
+src/MapParser.cpp.o:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.o
+.PHONY : src/MapParser.cpp.o
+
+src/MapParser.i: src/MapParser.cpp.i
+
+.PHONY : src/MapParser.i
+
+# target to preprocess a source file
+src/MapParser.cpp.i:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.i
+.PHONY : src/MapParser.cpp.i
+
+src/MapParser.s: src/MapParser.cpp.s
+
+.PHONY : src/MapParser.s
+
+# target to generate assembly for a file
+src/MapParser.cpp.s:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.s
+.PHONY : src/MapParser.cpp.s
+
 src/TextureManager.o: src/TextureManager.cpp.o
 
 .PHONY : src/TextureManager.o
@@ -257,6 +230,33 @@ src/TextureManager.s: src/TextureManager.cpp.s
 src/TextureManager.cpp.s:
 	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/TextureManager.cpp.s
 .PHONY : src/TextureManager.cpp.s
+
+src/TileLayer.o: src/TileLayer.cpp.o
+
+.PHONY : src/TileLayer.o
+
+# target to build an object file
+src/TileLayer.cpp.o:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.o
+.PHONY : src/TileLayer.cpp.o
+
+src/TileLayer.i: src/TileLayer.cpp.i
+
+.PHONY : src/TileLayer.i
+
+# target to preprocess a source file
+src/TileLayer.cpp.i:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.i
+.PHONY : src/TileLayer.cpp.i
+
+src/TileLayer.s: src/TileLayer.cpp.s
+
+.PHONY : src/TileLayer.s
+
+# target to generate assembly for a file
+src/TileLayer.cpp.s:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.s
+.PHONY : src/TileLayer.cpp.s
 
 src/Vector2D.o: src/Vector2D.cpp.o
 
@@ -312,6 +312,114 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+vendor/tinyxml/tinystr.o: vendor/tinyxml/tinystr.cpp.o
+
+.PHONY : vendor/tinyxml/tinystr.o
+
+# target to build an object file
+vendor/tinyxml/tinystr.cpp.o:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.o
+.PHONY : vendor/tinyxml/tinystr.cpp.o
+
+vendor/tinyxml/tinystr.i: vendor/tinyxml/tinystr.cpp.i
+
+.PHONY : vendor/tinyxml/tinystr.i
+
+# target to preprocess a source file
+vendor/tinyxml/tinystr.cpp.i:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.i
+.PHONY : vendor/tinyxml/tinystr.cpp.i
+
+vendor/tinyxml/tinystr.s: vendor/tinyxml/tinystr.cpp.s
+
+.PHONY : vendor/tinyxml/tinystr.s
+
+# target to generate assembly for a file
+vendor/tinyxml/tinystr.cpp.s:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.s
+.PHONY : vendor/tinyxml/tinystr.cpp.s
+
+vendor/tinyxml/tinyxml.o: vendor/tinyxml/tinyxml.cpp.o
+
+.PHONY : vendor/tinyxml/tinyxml.o
+
+# target to build an object file
+vendor/tinyxml/tinyxml.cpp.o:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.o
+.PHONY : vendor/tinyxml/tinyxml.cpp.o
+
+vendor/tinyxml/tinyxml.i: vendor/tinyxml/tinyxml.cpp.i
+
+.PHONY : vendor/tinyxml/tinyxml.i
+
+# target to preprocess a source file
+vendor/tinyxml/tinyxml.cpp.i:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.i
+.PHONY : vendor/tinyxml/tinyxml.cpp.i
+
+vendor/tinyxml/tinyxml.s: vendor/tinyxml/tinyxml.cpp.s
+
+.PHONY : vendor/tinyxml/tinyxml.s
+
+# target to generate assembly for a file
+vendor/tinyxml/tinyxml.cpp.s:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.s
+.PHONY : vendor/tinyxml/tinyxml.cpp.s
+
+vendor/tinyxml/tinyxmlerror.o: vendor/tinyxml/tinyxmlerror.cpp.o
+
+.PHONY : vendor/tinyxml/tinyxmlerror.o
+
+# target to build an object file
+vendor/tinyxml/tinyxmlerror.cpp.o:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.o
+.PHONY : vendor/tinyxml/tinyxmlerror.cpp.o
+
+vendor/tinyxml/tinyxmlerror.i: vendor/tinyxml/tinyxmlerror.cpp.i
+
+.PHONY : vendor/tinyxml/tinyxmlerror.i
+
+# target to preprocess a source file
+vendor/tinyxml/tinyxmlerror.cpp.i:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.i
+.PHONY : vendor/tinyxml/tinyxmlerror.cpp.i
+
+vendor/tinyxml/tinyxmlerror.s: vendor/tinyxml/tinyxmlerror.cpp.s
+
+.PHONY : vendor/tinyxml/tinyxmlerror.s
+
+# target to generate assembly for a file
+vendor/tinyxml/tinyxmlerror.cpp.s:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.s
+.PHONY : vendor/tinyxml/tinyxmlerror.cpp.s
+
+vendor/tinyxml/tinyxmlparser.o: vendor/tinyxml/tinyxmlparser.cpp.o
+
+.PHONY : vendor/tinyxml/tinyxmlparser.o
+
+# target to build an object file
+vendor/tinyxml/tinyxmlparser.cpp.o:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.o
+.PHONY : vendor/tinyxml/tinyxmlparser.cpp.o
+
+vendor/tinyxml/tinyxmlparser.i: vendor/tinyxml/tinyxmlparser.cpp.i
+
+.PHONY : vendor/tinyxml/tinyxmlparser.i
+
+# target to preprocess a source file
+vendor/tinyxml/tinyxmlparser.cpp.i:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.i
+.PHONY : vendor/tinyxml/tinyxmlparser.cpp.i
+
+vendor/tinyxml/tinyxmlparser.s: vendor/tinyxml/tinyxmlparser.cpp.s
+
+.PHONY : vendor/tinyxml/tinyxmlparser.s
+
+# target to generate assembly for a file
+vendor/tinyxml/tinyxmlparser.cpp.s:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.s
+.PHONY : vendor/tinyxml/tinyxmlparser.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -321,27 +429,39 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... 2D_SuperDino"
-	@echo "... src/AssetManager.o"
-	@echo "... src/AssetManager.i"
-	@echo "... src/AssetManager.s"
-	@echo "... src/Collision.o"
-	@echo "... src/Collision.i"
-	@echo "... src/Collision.s"
-	@echo "... src/ECS/ECS.o"
-	@echo "... src/ECS/ECS.i"
-	@echo "... src/ECS/ECS.s"
+	@echo "... src/Dino.o"
+	@echo "... src/Dino.i"
+	@echo "... src/Dino.s"
 	@echo "... src/Game.o"
 	@echo "... src/Game.i"
 	@echo "... src/Game.s"
+	@echo "... src/MapParser.o"
+	@echo "... src/MapParser.i"
+	@echo "... src/MapParser.s"
 	@echo "... src/TextureManager.o"
 	@echo "... src/TextureManager.i"
 	@echo "... src/TextureManager.s"
+	@echo "... src/TileLayer.o"
+	@echo "... src/TileLayer.i"
+	@echo "... src/TileLayer.s"
 	@echo "... src/Vector2D.o"
 	@echo "... src/Vector2D.i"
 	@echo "... src/Vector2D.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... vendor/tinyxml/tinystr.o"
+	@echo "... vendor/tinyxml/tinystr.i"
+	@echo "... vendor/tinyxml/tinystr.s"
+	@echo "... vendor/tinyxml/tinyxml.o"
+	@echo "... vendor/tinyxml/tinyxml.i"
+	@echo "... vendor/tinyxml/tinyxml.s"
+	@echo "... vendor/tinyxml/tinyxmlerror.o"
+	@echo "... vendor/tinyxml/tinyxmlerror.i"
+	@echo "... vendor/tinyxml/tinyxmlerror.s"
+	@echo "... vendor/tinyxml/tinyxmlparser.o"
+	@echo "... vendor/tinyxml/tinyxmlparser.i"
+	@echo "... vendor/tinyxml/tinyxmlparser.s"
 .PHONY : help
 
 

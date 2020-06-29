@@ -70,35 +70,9 @@ CMakeFiles/2D_SuperDino.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/src/main.cpp" -o CMakeFiles/2D_SuperDino.dir/src/main.cpp.s
 
-CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
-CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.o: ../src/AssetManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/src/AssetManager.cpp"
-
-CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/dev/C++ projects/2D_SuperDino/src/AssetManager.cpp" > CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.i
-
-CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/src/AssetManager.cpp" -o CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.s
-
-CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
-CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o: ../src/Collision.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.cpp"
-
-CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.cpp" > CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.i
-
-CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.cpp" -o CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.s
-
 CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
 CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o: ../src/Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/src/Game.cpp"
 
 CMakeFiles/2D_SuperDino.dir/src/Game.cpp.i: cmake_force
@@ -111,7 +85,7 @@ CMakeFiles/2D_SuperDino.dir/src/Game.cpp.s: cmake_force
 
 CMakeFiles/2D_SuperDino.dir/src/TextureManager.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
 CMakeFiles/2D_SuperDino.dir/src/TextureManager.cpp.o: ../src/TextureManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/TextureManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/TextureManager.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/src/TextureManager.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.cpp"
 
 CMakeFiles/2D_SuperDino.dir/src/TextureManager.cpp.i: cmake_force
@@ -124,7 +98,7 @@ CMakeFiles/2D_SuperDino.dir/src/TextureManager.cpp.s: cmake_force
 
 CMakeFiles/2D_SuperDino.dir/src/Vector2D.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
 CMakeFiles/2D_SuperDino.dir/src/Vector2D.cpp.o: ../src/Vector2D.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/Vector2D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/Vector2D.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/src/Vector2D.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.cpp"
 
 CMakeFiles/2D_SuperDino.dir/src/Vector2D.cpp.i: cmake_force
@@ -135,42 +109,128 @@ CMakeFiles/2D_SuperDino.dir/src/Vector2D.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/src/Vector2D.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.cpp" -o CMakeFiles/2D_SuperDino.dir/src/Vector2D.cpp.s
 
-CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
-CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.o: ../src/ECS/ECS.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ECS.cpp"
+CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
+CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.o: ../src/TileLayer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/src/TileLayer.cpp"
 
-CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ECS.cpp" > CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.i
+CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/dev/C++ projects/2D_SuperDino/src/TileLayer.cpp" > CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.i
 
-CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/src/ECS/ECS.cpp" -o CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.s
+CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/src/TileLayer.cpp" -o CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.s
+
+CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
+CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.o: ../src/MapParser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/src/MapParser.cpp"
+
+CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/dev/C++ projects/2D_SuperDino/src/MapParser.cpp" > CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.i
+
+CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/src/MapParser.cpp" -o CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.s
+
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.o: ../vendor/tinyxml/tinystr.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinystr.cpp"
+
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinystr.cpp" > CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.i
+
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinystr.cpp" -o CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.s
+
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.o: ../vendor/tinyxml/tinyxml.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinyxml.cpp"
+
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinyxml.cpp" > CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.i
+
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinyxml.cpp" -o CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.s
+
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.o: ../vendor/tinyxml/tinyxmlerror.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinyxmlerror.cpp"
+
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinyxmlerror.cpp" > CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.i
+
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinyxmlerror.cpp" -o CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.s
+
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.o: ../vendor/tinyxml/tinyxmlparser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinyxmlparser.cpp"
+
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinyxmlparser.cpp" > CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.i
+
+CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/vendor/tinyxml/tinyxmlparser.cpp" -o CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.s
+
+CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
+CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/Dino.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.cpp"
+
+CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.cpp" > CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.i
+
+CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.cpp" -o CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.s
 
 # Object files for target 2D_SuperDino
 2D_SuperDino_OBJECTS = \
 "CMakeFiles/2D_SuperDino.dir/src/main.cpp.o" \
-"CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.o" \
-"CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o" \
 "CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o" \
 "CMakeFiles/2D_SuperDino.dir/src/TextureManager.cpp.o" \
 "CMakeFiles/2D_SuperDino.dir/src/Vector2D.cpp.o" \
-"CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.o"
+"CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.o" \
+"CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.o" \
+"CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.o" \
+"CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.o" \
+"CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.o" \
+"CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.o" \
+"CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o"
 
 # External object files for target 2D_SuperDino
 2D_SuperDino_EXTERNAL_OBJECTS =
 
 2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/main.cpp.o
-2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/AssetManager.cpp.o
-2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o
 2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o
 2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/TextureManager.cpp.o
 2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/Vector2D.cpp.o
-2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/ECS/ECS.cpp.o
+2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.o
+2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.o
+2D_SuperDino: CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinystr.cpp.o
+2D_SuperDino: CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.o
+2D_SuperDino: CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.o
+2D_SuperDino: CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.o
+2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o
 2D_SuperDino: CMakeFiles/2D_SuperDino.dir/build.make
 2D_SuperDino: CMakeFiles/2D_SuperDino.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable 2D_SuperDino"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable 2D_SuperDino"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/2D_SuperDino.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

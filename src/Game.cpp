@@ -1,95 +1,67 @@
 #include "Game.h"
 #include "TextureManager.h"
-#include "ECS/Components.h"
-#include "Vector2D.h"
-#include "Collision.h"
-#include "AssetManager.h"
+#include "Dino.h"
 
-Manager manager;
+Game* Game::s_Instance = nullptr;
 
-SDL_Renderer *Game::renderer = nullptr;
-SDL_Event Game::event;
+Dino *dino = nullptr;
 
-SDL_Rect Game::camera = {0, 0, 900, 900};
+bool Game::init() {
+    if (SDL_Init(SDL_INIT_EVERYTHING)) {
+        SDL_Log("Failed to initialize SDL: %s\n", SDL_GetError());
+        return false;
+    }
 
-AssetManager *Game::assets = new AssetManager(&manager);
+    window = SDL_CreateWindow("Yay it's running", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
 
-bool Game::isRunning = false;
+    if (!window) {
+        SDL_Log("Failed to create window: %s\n", SDL_GetError());
+        return false;
+    }
 
-auto &player(manager.addEntity());
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-Game::Game() = default;
+    if (!renderer) {
+        SDL_Log("Failed to create renderer: %s\n", SDL_GetError());
+        return false;
+    }
 
-Game::~Game() = default;
+    TextureManager::getInstance()->loadTexture("dino", "../assets/images/dino_anim.png");
 
-void Game::init(const char *title, int width, int height, bool fullscreen) {
-    int flags = 0;
-
-    if (fullscreen)
-        flags = SDL_WINDOW_FULLSCREEN;
-    if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
-        window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, flags);
-        if (!window)
-            SDL_Log("Failed to create window %s\n", SDL_GetError());
-        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-        if (renderer)
-            SDL_SetRenderDrawColor(renderer, 135, 206, 235, 1);
-        else
-            SDL_Log("Failed to crete renderer %s\n", SDL_GetError());
-
-        isRunning = true;
-    } else
-        SDL_Log("Failed to initialize %s\n", SDL_GetError());
-
-    assets->AddTexture("player", "../assets/images/dino.png");
-
-
-    //ECS implementation
-    player.addComponent<TransformComponent>(100.0f, 500.0f, 32, 32, 1);
-    player.addComponent<SpriteComponent>("player");
-    player.addComponent<KeyboardController>();
-    player.addGroup(groupPlayer);
+    dino = new Dino(new Properties("dino", 100.0f, 200.0f, 24, 24));
+    return m_isRunning = true;
 }
 
-auto &players(manager.getGroup(Game::groupPlayer));
-
 void Game::handleEvents() {
-
     SDL_PollEvent(&event);
-
     switch (event.type) {
-        case SDL_QUIT :
-            isRunning = false;
-            break;
-        default:
+        case SDL_QUIT:
+            quit();
             break;
     }
 }
 
 void Game::update() {
-    manager.refresh();
-    manager.update();
-
-    camera.x = static_cast<int>(player.getComponent<TransformComponent>().position.x - 400);
-    camera.y = static_cast<int>(player.getComponent<TransformComponent>().position.y - 320);
-
-    if (camera.x < 0)
-        camera.x = 0;
-    if (camera.y < 0)
-        camera.y = 0;
+    dino->update(0.0f);
 }
 
 void Game::render() {
+    SDL_SetRenderDrawColor(renderer, 124, 210, 254, 255);
     SDL_RenderClear(renderer);
 
-    for (auto &p : players)
-        p->draw();
-
+    dino->draw();
     SDL_RenderPresent(renderer);
 }
 
 void Game::clean() {
-    SDL_DestroyWindow(window);
+    TextureManager::getInstance()->clean();
     SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    IMG_Quit();
     SDL_Quit();
 }
+
+void Game::quit() {
+    m_isRunning = false;
+}
+

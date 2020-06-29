@@ -2,12 +2,31 @@
 #define TEXTUREMANAGER_H
 
 #include "Game.h"
+#include <string>
+#include <map>
 
 class TextureManager {
 public:
-    static SDL_Texture *LoadTexture(const char *fileName);
+    static TextureManager* getInstance() {
+        return s_Instance = (s_Instance != nullptr) ? s_Instance : new TextureManager();
+    }
 
-    static void Draw(SDL_Texture *tex, SDL_Rect src, SDL_Rect dest, SDL_RendererFlip flip);
+    bool loadTexture(const std::string& id, const std::string& filename);
+    void drop(const std::string& id);
+    void clean();
+
+    void draw(const std::string& id, int x, int y, int width, int height, SDL_RendererFlip flip = SDL_FLIP_NONE);
+    void drawFrame(const std::string &id, int x, int y, int width, int height, int row, int frame, SDL_RendererFlip flip = SDL_FLIP_NONE);
+
+private:
+    TextureManager() = default;
+    static TextureManager *s_Instance;
+
+    SDL_Surface *surface{};
+    SDL_Texture *texture{};
+    SDL_Rect srcRect{}, destRect{};
+    std::map<std::string, SDL_Texture *> texturesMap;
+
 };
 
 #endif

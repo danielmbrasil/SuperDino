@@ -1,20 +1,54 @@
 #include "TextureManager.h"
 
-SDL_Texture *TextureManager::LoadTexture(const char *texture) {
-    SDL_Surface *tempSurface = IMG_Load(texture);
+TextureManager* TextureManager::s_Instance = nullptr;
 
-    if (!tempSurface)
-        SDL_Log("Failed to load texture %s\n", IMG_GetError());
+bool TextureManager::loadTexture(const std::string& id, const std::string& filename) {
+    surface = IMG_Load(filename.c_str());
 
-    SDL_Texture *tex = SDL_CreateTextureFromSurface(Game::renderer, tempSurface);
+    if (!surface) {
+        SDL_Log("Failed to load surface: %s\n", SDL_GetError());
+        return false;
+    }
 
-    if (!tex)
-        SDL_Log("Failed to create texture %s\n", SDL_GetError());
-    SDL_FreeSurface(tempSurface);
+    texture = SDL_CreateTextureFromSurface(Game::getInstance()->getRenderer(), surface);
 
-    return tex;
+    if (!texture) {
+        SDL_Log("Failed to load texture: %s\n", SDL_GetError());
+        return false;
+    }
+
+    texturesMap[id] = texture;
+
+    return true;
 }
 
-void TextureManager::Draw(SDL_Texture *tex, SDL_Rect src, SDL_Rect dest, SDL_RendererFlip flip) {
-    SDL_RenderCopyEx(Game::renderer, tex, &src, &dest, 0, nullptr, flip);
+void TextureManager::draw(const std::string& id, int x, int y, int width, int height, SDL_RendererFlip flip) {
+    srcRect = { 0, 0, width, height };
+    destRect = { x, y, width, height };
+
+    SDL_RenderCopyEx(Game::getInstance()->getRenderer(), texturesMap[id], &srcRect, &destRect, 0, nullptr, flip);
 }
+
+void TextureManager::drawFrame(const std::string &id, int x, int y, int width, int height, int row, int frame,
+                               SDL_RendererFlip flip) {
+    srcRect = {width * frame, height * row, width, height };
+    destRect = {x, y, width, height };
+    SDL_RenderCopyEx(Game::getInstance()->getRenderer(), texturesMap[id], &srcRect, &destRect, 0, nullptr, flip);
+}
+
+void TextureManager::drop(const std::string& id) {
+    SDL_DestroyTexture(texturesMap[id]);
+    texturesMap.erase(id);
+}
+
+void TextureManager::clean() {
+    std::map<std::string, SDL_Texture *>::iterator iterator;
+
+    for (iterator = texturesMap.begin(); iterator != texturesMap.end(); iterator++)
+        SDL_DestroyTexture(iterator->second);
+
+    texturesMap.clear();
+
+    SDL_Log("Texture map cleaned.");
+}
+

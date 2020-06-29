@@ -1,46 +1,37 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "SDL2/SDL.h"
-#include "SDL2/SDL_image.h"
-#include <iostream>
-#include <vector>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include "GameMap.h"
 
-class AssetManager;
-
-class ColliderComponent;
+#define SCREEN_WIDTH 900
+#define SCREEN_HEIGHT 500
 
 class Game {
-private:
-    SDL_Window *window{};
-
 public:
-    Game();
+    static Game* getInstance() {
+        return s_Instance = (s_Instance != nullptr) ? s_Instance : new Game();
+    }
 
-    ~Game();
+    bool init();
 
-    void init(const char *title, int width, int height, bool fullscreen);
-
-    static void handleEvents();
-
-    static void update();
-
-    static bool running() { return isRunning; }
-
-    static void render();
-
+    void update();
+    void handleEvents();
+    void render();
+    void quit();
     void clean();
 
-    static SDL_Renderer *renderer;
-    static SDL_Event event;
-    static bool isRunning;
-    static SDL_Rect camera;
-    static AssetManager *assets;
-    enum groupLabels : std::size_t {
-        groupMap,
-        groupPlayer,
-        groupColliders
-    };
+    inline bool isRunning() const { return m_isRunning; }
+    inline SDL_Renderer* getRenderer() { return renderer; }
+
+private:
+    Game() = default;
+    static Game* s_Instance;
+    bool m_isRunning;
+    SDL_Window *window;
+    SDL_Renderer *renderer;
+    SDL_Event event;
 };
 
 #endif //GAME_H
