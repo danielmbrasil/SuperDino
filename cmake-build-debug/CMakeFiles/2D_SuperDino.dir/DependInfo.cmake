@@ -4,8 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/daniel/dev/C++ projects/2D_SuperDino/src/Animation.cpp" "/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.o"
+  "/home/daniel/dev/C++ projects/2D_SuperDino/src/Camera.cpp" "/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.o"
+  "/home/daniel/dev/C++ projects/2D_SuperDino/src/Clock.cpp" "/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.o"
   "/home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.cpp" "/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o"
   "/home/daniel/dev/C++ projects/2D_SuperDino/src/Game.cpp" "/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o"
+  "/home/daniel/dev/C++ projects/2D_SuperDino/src/KeyboardController.cpp" "/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.o"
   "/home/daniel/dev/C++ projects/2D_SuperDino/src/MapParser.cpp" "/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.o"
   "/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.cpp" "/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles/2D_SuperDino.dir/src/TextureManager.cpp.o"
   "/home/daniel/dev/C++ projects/2D_SuperDino/src/TileLayer.cpp" "/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.o"

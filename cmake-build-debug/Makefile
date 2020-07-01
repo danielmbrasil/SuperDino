@@ -123,6 +123,87 @@ depend:
 	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/build
 .PHONY : 2D_SuperDino/fast
 
+src/Animation.o: src/Animation.cpp.o
+
+.PHONY : src/Animation.o
+
+# target to build an object file
+src/Animation.cpp.o:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.o
+.PHONY : src/Animation.cpp.o
+
+src/Animation.i: src/Animation.cpp.i
+
+.PHONY : src/Animation.i
+
+# target to preprocess a source file
+src/Animation.cpp.i:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.i
+.PHONY : src/Animation.cpp.i
+
+src/Animation.s: src/Animation.cpp.s
+
+.PHONY : src/Animation.s
+
+# target to generate assembly for a file
+src/Animation.cpp.s:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.s
+.PHONY : src/Animation.cpp.s
+
+src/Camera.o: src/Camera.cpp.o
+
+.PHONY : src/Camera.o
+
+# target to build an object file
+src/Camera.cpp.o:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.o
+.PHONY : src/Camera.cpp.o
+
+src/Camera.i: src/Camera.cpp.i
+
+.PHONY : src/Camera.i
+
+# target to preprocess a source file
+src/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.i
+.PHONY : src/Camera.cpp.i
+
+src/Camera.s: src/Camera.cpp.s
+
+.PHONY : src/Camera.s
+
+# target to generate assembly for a file
+src/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.s
+.PHONY : src/Camera.cpp.s
+
+src/Clock.o: src/Clock.cpp.o
+
+.PHONY : src/Clock.o
+
+# target to build an object file
+src/Clock.cpp.o:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.o
+.PHONY : src/Clock.cpp.o
+
+src/Clock.i: src/Clock.cpp.i
+
+.PHONY : src/Clock.i
+
+# target to preprocess a source file
+src/Clock.cpp.i:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.i
+.PHONY : src/Clock.cpp.i
+
+src/Clock.s: src/Clock.cpp.s
+
+.PHONY : src/Clock.s
+
+# target to generate assembly for a file
+src/Clock.cpp.s:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.s
+.PHONY : src/Clock.cpp.s
+
 src/Dino.o: src/Dino.cpp.o
 
 .PHONY : src/Dino.o
@@ -176,6 +257,33 @@ src/Game.s: src/Game.cpp.s
 src/Game.cpp.s:
 	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Game.cpp.s
 .PHONY : src/Game.cpp.s
+
+src/KeyboardController.o: src/KeyboardController.cpp.o
+
+.PHONY : src/KeyboardController.o
+
+# target to build an object file
+src/KeyboardController.cpp.o:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.o
+.PHONY : src/KeyboardController.cpp.o
+
+src/KeyboardController.i: src/KeyboardController.cpp.i
+
+.PHONY : src/KeyboardController.i
+
+# target to preprocess a source file
+src/KeyboardController.cpp.i:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.i
+.PHONY : src/KeyboardController.cpp.i
+
+src/KeyboardController.s: src/KeyboardController.cpp.s
+
+.PHONY : src/KeyboardController.s
+
+# target to generate assembly for a file
+src/KeyboardController.cpp.s:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.s
+.PHONY : src/KeyboardController.cpp.s
 
 src/MapParser.o: src/MapParser.cpp.o
 
@@ -429,12 +537,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... 2D_SuperDino"
+	@echo "... src/Animation.o"
+	@echo "... src/Animation.i"
+	@echo "... src/Animation.s"
+	@echo "... src/Camera.o"
+	@echo "... src/Camera.i"
+	@echo "... src/Camera.s"
+	@echo "... src/Clock.o"
+	@echo "... src/Clock.i"
+	@echo "... src/Clock.s"
 	@echo "... src/Dino.o"
 	@echo "... src/Dino.i"
 	@echo "... src/Dino.s"
 	@echo "... src/Game.o"
 	@echo "... src/Game.i"
 	@echo "... src/Game.s"
+	@echo "... src/KeyboardController.o"
+	@echo "... src/KeyboardController.i"
+	@echo "... src/KeyboardController.s"
 	@echo "... src/MapParser.o"
 	@echo "... src/MapParser.i"
 	@echo "... src/MapParser.s"

@@ -22,9 +22,10 @@ using TileMap = std::vector<std::vector<int> >;
 
 class TileLayer : public Layer {
 public:
-    TileLayer(int ts, int rowc, int colc, TileMap& tilemap, TilesetList& tilesets);
-    virtual void render();
-    virtual void update();
+    TileLayer(int ts, int rowc, int colc, TileMap tilemap, TilesetList tilesets);
+
+    void render() override;
+    void update() override;
 
     inline TileMap getTileMap() { return m_TileMap; }
 

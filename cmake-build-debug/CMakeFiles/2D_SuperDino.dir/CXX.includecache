@@ -6,13 +6,47 @@
 
 #IncludeRegexTransform: 
 
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Animation.cpp
+Animation.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Animation.h
+utility
+-
+TextureManager.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Animation.h
+string
+-
+SDL2/SDL.h
+-
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Camera.h
+Vector2D.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.h
+Game.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Game.h
+
 /home/daniel/dev/C++ projects/2D_SuperDino/src/Character.h
 GameObject.h
 /home/daniel/dev/C++ projects/2D_SuperDino/src/GameObject.h
 
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Clock.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.cpp
+Dino.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.h
+TextureManager.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h
+KeyboardController.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/KeyboardController.h
+
 /home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.h
 Character.h
 /home/daniel/dev/C++ projects/2D_SuperDino/src/Character.h
+Animation.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Animation.h
+RigidBody.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/RigidBody.h
 
 /home/daniel/dev/C++ projects/2D_SuperDino/src/Game.cpp
 Game.h
@@ -21,6 +55,14 @@ TextureManager.h
 /home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h
 Dino.h
 /home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.h
+KeyboardController.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/KeyboardController.h
+Clock.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Clock.h
+MapParser.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/MapParser.h
+Camera.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Camera.h
 
 /home/daniel/dev/C++ projects/2D_SuperDino/src/Game.h
 SDL2/SDL.h
@@ -48,7 +90,27 @@ utility
 
 /home/daniel/dev/C++ projects/2D_SuperDino/src/IObject.h
 
+/home/daniel/dev/C++ projects/2D_SuperDino/src/KeyboardController.h
+SDL2/SDL.h
+-
+
 /home/daniel/dev/C++ projects/2D_SuperDino/src/Layer.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/MapParser.h
+map
+-
+string
+-
+GameMap.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/GameMap.h
+TileLayer.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/TileLayer.h
+tinyxml.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/tinyxml.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/RigidBody.h
+Vector2D.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.h
 
 /home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h
 Game.h
@@ -57,6 +119,18 @@ string
 -
 map
 -
+Camera.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Camera.h
+
+/home/daniel/dev/C++ projects/2D_SuperDino/src/TileLayer.h
+Layer.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/Layer.h
+string
+-
+vector
+-
+TextureManager.h
+/home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h
 
 /home/daniel/dev/C++ projects/2D_SuperDino/src/Transform.h
 Vector2D.h

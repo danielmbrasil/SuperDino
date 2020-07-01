@@ -4,6 +4,7 @@
 #include "Game.h"
 #include <string>
 #include <map>
+#include "Camera.h"
 
 class TextureManager {
 public:
@@ -17,6 +18,7 @@ public:
 
     void draw(const std::string& id, int x, int y, int width, int height, SDL_RendererFlip flip = SDL_FLIP_NONE);
     void drawFrame(const std::string &id, int x, int y, int width, int height, int row, int frame, SDL_RendererFlip flip = SDL_FLIP_NONE);
+    void drawTile(const std::string &tilesetID, int tileSize, int x, int y, int row, int frame, SDL_RendererFlip flip = SDL_FLIP_NONE);
 
 private:
     TextureManager() = default;
@@ -27,6 +29,7 @@ private:
     SDL_Rect srcRect{}, destRect{};
     std::map<std::string, SDL_Texture *> texturesMap;
 
+    Vector2D camera;
 };
 
 #endif

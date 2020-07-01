@@ -4,15 +4,16 @@
 
 #include "Dino.h"
 #include "TextureManager.h"
+#include "KeyboardController.h"
 
 Dino::Dino(Properties *properties) : Character(properties) {
-    m_Row = 0;
-    m_FrameCount = 3;
-    animSpeed = 100;
+    animation = new Animation();
+    rigidBody = new RigidBody();
+    animation->setProperties(textureID, 0, 3, 100);
 }
 
 void Dino::draw() {
-    TextureManager::getInstance()->drawFrame(textureID, (int)transform->x, (int)transform->y, width, height, m_Row, m_Frame);
+    animation->draw(transform->x, transform->y, width, height);
 }
 
 void Dino::clean() {
@@ -20,5 +21,23 @@ void Dino::clean() {
 }
 
 void Dino::update(float delta) {
-    m_Frame = ((int)SDL_GetTicks() / animSpeed) % m_FrameCount;
+    animation->setProperties("dino", 0, 3, 100);
+    rigidBody->zeroForce();
+
+    if (KeyboardController::getInstance()->getKeyDown((SDL_SCANCODE_D))) {
+        rigidBody->applyForceX(5.0f);
+        animation->setProperties("dino_running", 0, 6, 100);
+    }
+    if (KeyboardController::getInstance()->getKeyDown((SDL_SCANCODE_A))) {
+        rigidBody->applyForceX(-5.0f);
+        animation->setProperties("dino_running", 0, 6, 10, SDL_FLIP_HORIZONTAL);
+    }
+
+    rigidBody->update(delta);
+    transform->moveX(rigidBody->getPosition().x);
+
+    origin->x = transform->x + width/2;
+    origin->y = transform->y + height/2;
+
+    animation->update();
 }

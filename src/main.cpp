@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Clock.h"
 
 int main(int argc, char *argv[]) {
 
@@ -8,6 +9,7 @@ int main(int argc, char *argv[]) {
         Game::getInstance()->handleEvents();
         Game::getInstance()->update();
         Game::getInstance()->render();
+        Clock::getInstance()->tick();
     }
 
     Game::getInstance()->clean();

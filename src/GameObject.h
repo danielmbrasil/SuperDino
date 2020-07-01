@@ -33,17 +33,22 @@ public:
     explicit GameObject(Properties *properties) : textureID(properties->TextureID),
     width(properties->Width), height(properties->Height), flip(properties->Flip) {
         transform = new Transform(properties->X, properties->Y);
+        origin = new Vector2D((properties->X + (float)properties->Width/2), (properties->Y + (float)properties->Height/2));
     }
+
+    inline Vector2D* getOrigin() { return origin; }
 
     void draw() override = 0;
     void update(float delta) override = 0;
     void clean() override = 0;
 
 protected:
+    std::string textureID;
     Transform *transform;
     int width, height;
-    std::string textureID;
     SDL_RendererFlip flip;
+
+    Vector2D *origin;
 };
 
 

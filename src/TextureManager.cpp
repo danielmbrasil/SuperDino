@@ -24,7 +24,8 @@ bool TextureManager::loadTexture(const std::string& id, const std::string& filen
 
 void TextureManager::draw(const std::string& id, int x, int y, int width, int height, SDL_RendererFlip flip) {
     srcRect = { 0, 0, width, height };
-    destRect = { x, y, width, height };
+    camera = Camera::getInstance()->getPosition();
+    destRect = { static_cast<int>((float)x - camera.x), static_cast<int>((float)y - camera.y), width, height };
 
     SDL_RenderCopyEx(Game::getInstance()->getRenderer(), texturesMap[id], &srcRect, &destRect, 0, nullptr, flip);
 }
@@ -32,8 +33,17 @@ void TextureManager::draw(const std::string& id, int x, int y, int width, int he
 void TextureManager::drawFrame(const std::string &id, int x, int y, int width, int height, int row, int frame,
                                SDL_RendererFlip flip) {
     srcRect = {width * frame, height * row, width, height };
-    destRect = {x, y, width, height };
+    camera = Camera::getInstance()->getPosition();
+    destRect = {static_cast<int>((float)x - camera.x), static_cast<int>((float)y - camera.y), width, height };
     SDL_RenderCopyEx(Game::getInstance()->getRenderer(), texturesMap[id], &srcRect, &destRect, 0, nullptr, flip);
+}
+
+void TextureManager::drawTile(const std::string &tilesetID, int tileSize, int x, int y, int row, int frame,
+                              SDL_RendererFlip flip) {
+    camera = Camera::getInstance()->getPosition();
+    destRect = { static_cast<int>(x - camera.x), static_cast<int>(y - camera.y), tileSize, tileSize };
+    srcRect = { tileSize*frame, tileSize*row, tileSize, tileSize };
+    SDL_RenderCopyEx(Game::getInstance()->getRenderer(), texturesMap[tilesetID], &srcRect, &destRect, 0, nullptr, flip);
 }
 
 void TextureManager::drop(const std::string& id) {
@@ -51,4 +61,3 @@ void TextureManager::clean() {
 
     SDL_Log("Texture map cleaned.");
 }
-

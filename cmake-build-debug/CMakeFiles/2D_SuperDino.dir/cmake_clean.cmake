@@ -1,8 +1,12 @@
 file(REMOVE_RECURSE
   "2D_SuperDino"
   "2D_SuperDino.pdb"
+  "CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.o"
+  "CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.o"
+  "CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.o"
   "CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o"
   "CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o"
+  "CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.o"
   "CMakeFiles/2D_SuperDino.dir/src/MapParser.cpp.o"
   "CMakeFiles/2D_SuperDino.dir/src/TextureManager.cpp.o"
   "CMakeFiles/2D_SuperDino.dir/src/TileLayer.cpp.o"

@@ -9,7 +9,7 @@
 #include <string>
 #include "GameMap.h"
 #include "TileLayer.h"
-#include "../vendor/tinyxml/tinyxml.h"
+#include "tinyxml.h"
 
 class MapParser {
 public:
@@ -20,7 +20,7 @@ public:
     bool load();
     void clean();
 
-    inline GameMap* getMaps(const std::string& id);
+    inline GameMap* getMaps(std::string id) {return m_Maps[id]; }
 
 private:
     MapParser() = default;

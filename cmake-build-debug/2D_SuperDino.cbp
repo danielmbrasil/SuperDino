@@ -82,7 +82,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Animation.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Animation.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Camera.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Camera.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
 		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Character.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Clock.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Clock.h">
 			<Option target="2D_SuperDino"/>
 		</Unit>
 		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.cpp">
@@ -104,6 +122,12 @@
 			<Option target="2D_SuperDino"/>
 		</Unit>
 		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/IObject.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/KeyboardController.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/KeyboardController.h">
 			<Option target="2D_SuperDino"/>
 		</Unit>
 		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Layer.h">

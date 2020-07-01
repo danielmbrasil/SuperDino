@@ -37,14 +37,6 @@ public:
         m_Gravity = g;
     }
 
-    inline void setVelocityX(float x) {
-        m_Velocity.x = x;
-    }
-
-    inline void setVelocityY(float y) {
-        m_Velocity.y = y;
-    }
-
     inline void applyForce(Vector2D& F) {
         m_Force = F;
     }

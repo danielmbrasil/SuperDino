@@ -4,6 +4,8 @@
 
 #include "MapParser.h"
 
+#include <utility>
+
 MapParser *MapParser::s_Instance = nullptr;
 
 bool MapParser::load() {
@@ -15,10 +17,6 @@ void MapParser::clean() {
     for (iterator = m_Maps.begin(); iterator != m_Maps.end(); iterator++)
         iterator->second = nullptr;
     m_Maps.clear();
-}
-
-GameMap* MapParser::getMaps(const std::string& id) {
-    return m_Maps[id];
 }
 
 bool MapParser::parse(const std::string& id, const std::string& source) {
@@ -73,6 +71,7 @@ Tileset MapParser::parseTileset(TiXmlElement *xmlTileset) {
 
     TiXmlElement *image = xmlTileset->FirstChildElement();
     tileset.source = image->Attribute("source");
+
     return tileset;
 }
 
@@ -104,5 +103,5 @@ MapParser::parseTileLayer(TiXmlElement *xmlLayer, TilesetList tilesets, int tile
         }
     }
 
-    return (new TileLayer(tileSize, rowCount, colCount, tileMap, tilesets));
+    return (new TileLayer(tileSize, rowCount, colCount, tileMap, std::move(tilesets)));
 }

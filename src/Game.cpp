@@ -1,18 +1,22 @@
 #include "Game.h"
 #include "TextureManager.h"
 #include "Dino.h"
+#include "KeyboardController.h"
+#include "Clock.h"
+#include "MapParser.h"
+#include "Camera.h"
 
 Game* Game::s_Instance = nullptr;
 
 Dino *dino = nullptr;
 
 bool Game::init() {
-    if (SDL_Init(SDL_INIT_EVERYTHING)) {
+    if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         SDL_Log("Failed to initialize SDL: %s\n", SDL_GetError());
         return false;
     }
 
-    window = SDL_CreateWindow("Yay it's running", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
+    window = SDL_CreateWindow("Yay it's running", (int)SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
 
     if (!window) {
         SDL_Log("Failed to create window: %s\n", SDL_GetError());
@@ -26,28 +30,38 @@ bool Game::init() {
         return false;
     }
 
-    TextureManager::getInstance()->loadTexture("dino", "../assets/images/dino_anim.png");
+    if (!MapParser::getInstance()->load()) {
+        SDL_Log("Failed to load map.");
+        Game::getInstance()->quit();
+    }
 
-    dino = new Dino(new Properties("dino", 100.0f, 200.0f, 24, 24));
+    levelMap = MapParser::getInstance()->getMaps("MAP");
+
+    TextureManager::getInstance()->loadTexture("dino", "../assets/images/dino_anim1.png");
+    TextureManager::getInstance()->loadTexture("dino_running", "../assets/images/dino_anim2.png");
+    dino = new Dino(new Properties("dino", 100.0f, 335.0f, 24, 24));
+
+    Camera::getInstance()->setTarget(dino->getOrigin());
+
     return m_isRunning = true;
 }
 
 void Game::handleEvents() {
-    SDL_PollEvent(&event);
-    switch (event.type) {
-        case SDL_QUIT:
-            quit();
-            break;
-    }
+    KeyboardController::getInstance()->listen();
 }
 
 void Game::update() {
-    dino->update(0.0f);
+    float delta = Clock::getInstance()->getDeltaTime();
+    levelMap->update();
+    dino->update(delta);
+    Camera::getInstance()->update();
 }
 
 void Game::render() {
-    SDL_SetRenderDrawColor(renderer, 124, 210, 254, 255);
+    SDL_SetRenderDrawColor(renderer, 91, 110, 225, 255);
     SDL_RenderClear(renderer);
+
+    levelMap->render();
 
     dino->draw();
     SDL_RenderPresent(renderer);

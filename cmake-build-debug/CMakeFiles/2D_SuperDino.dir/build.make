@@ -200,6 +200,58 @@ CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.cpp" -o CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.s
 
+CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
+CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.o: ../src/Animation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/src/Animation.cpp"
+
+CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/dev/C++ projects/2D_SuperDino/src/Animation.cpp" > CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.i
+
+CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/src/Animation.cpp" -o CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.s
+
+CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
+CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.o: ../src/KeyboardController.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/src/KeyboardController.cpp"
+
+CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/dev/C++ projects/2D_SuperDino/src/KeyboardController.cpp" > CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.i
+
+CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/src/KeyboardController.cpp" -o CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.s
+
+CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
+CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.o: ../src/Clock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/src/Clock.cpp"
+
+CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/dev/C++ projects/2D_SuperDino/src/Clock.cpp" > CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.i
+
+CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/src/Clock.cpp" -o CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.s
+
+CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.o: CMakeFiles/2D_SuperDino.dir/flags.make
+CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.o: ../src/Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.o -c "/home/daniel/dev/C++ projects/2D_SuperDino/src/Camera.cpp"
+
+CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/dev/C++ projects/2D_SuperDino/src/Camera.cpp" > CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.i
+
+CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/dev/C++ projects/2D_SuperDino/src/Camera.cpp" -o CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.s
+
 # Object files for target 2D_SuperDino
 2D_SuperDino_OBJECTS = \
 "CMakeFiles/2D_SuperDino.dir/src/main.cpp.o" \
@@ -212,7 +264,11 @@ CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.s: cmake_force
 "CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxml.cpp.o" \
 "CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.o" \
 "CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.o" \
-"CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o"
+"CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o" \
+"CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.o" \
+"CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.o" \
+"CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.o" \
+"CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.o"
 
 # External object files for target 2D_SuperDino
 2D_SuperDino_EXTERNAL_OBJECTS =
@@ -228,9 +284,13 @@ CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.s: cmake_force
 2D_SuperDino: CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlerror.cpp.o
 2D_SuperDino: CMakeFiles/2D_SuperDino.dir/vendor/tinyxml/tinyxmlparser.cpp.o
 2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o
+2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.o
+2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.o
+2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.o
+2D_SuperDino: CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.o
 2D_SuperDino: CMakeFiles/2D_SuperDino.dir/build.make
 2D_SuperDino: CMakeFiles/2D_SuperDino.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable 2D_SuperDino"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/daniel/dev/C++ projects/2D_SuperDino/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable 2D_SuperDino"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/2D_SuperDino.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -17,7 +17,7 @@ public:
     bool init();
 
     void update();
-    void handleEvents();
+    static void handleEvents();
     void render();
     void quit();
     void clean();
@@ -32,6 +32,7 @@ private:
     SDL_Window *window;
     SDL_Renderer *renderer;
     SDL_Event event;
+    GameMap *levelMap;
 };
 
 #endif //GAME_H

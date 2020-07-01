@@ -6,6 +6,8 @@
 #define Dino_H
 
 #include "Character.h"
+#include "Animation.h"
+#include "RigidBody.h"
 
 class Dino : public Character {
 public:
@@ -16,8 +18,8 @@ public:
     void update(float delta) override;
 
 private:
-    int m_Row, m_Frame{}, m_FrameCount;
-    int animSpeed;
+    Animation *animation;
+    RigidBody *rigidBody;
 };
 
 
