@@ -204,6 +204,33 @@ src/Clock.cpp.s:
 	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.s
 .PHONY : src/Clock.cpp.s
 
+src/Collision.o: src/Collision.cpp.o
+
+.PHONY : src/Collision.o
+
+# target to build an object file
+src/Collision.cpp.o:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o
+.PHONY : src/Collision.cpp.o
+
+src/Collision.i: src/Collision.cpp.i
+
+.PHONY : src/Collision.i
+
+# target to preprocess a source file
+src/Collision.cpp.i:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.i
+.PHONY : src/Collision.cpp.i
+
+src/Collision.s: src/Collision.cpp.s
+
+.PHONY : src/Collision.s
+
+# target to generate assembly for a file
+src/Collision.cpp.s:
+	$(MAKE) -f CMakeFiles/2D_SuperDino.dir/build.make CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.s
+.PHONY : src/Collision.cpp.s
+
 src/Dino.o: src/Dino.cpp.o
 
 .PHONY : src/Dino.o
@@ -546,6 +573,9 @@ help:
 	@echo "... src/Clock.o"
 	@echo "... src/Clock.i"
 	@echo "... src/Clock.s"
+	@echo "... src/Collision.o"
+	@echo "... src/Collision.i"
+	@echo "... src/Collision.s"
 	@echo "... src/Dino.o"
 	@echo "... src/Dino.i"
 	@echo "... src/Dino.s"

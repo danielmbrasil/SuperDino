@@ -20,10 +20,22 @@ CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.o
 CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.o
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Clock.cpp
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Clock.h
+CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o
+ /home/daniel/dev/C++ projects/2D_SuperDino/src/Camera.h
+ /home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.cpp
+ /home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.h
+ /home/daniel/dev/C++ projects/2D_SuperDino/src/Game.h
+ /home/daniel/dev/C++ projects/2D_SuperDino/src/GameMap.h
+ /home/daniel/dev/C++ projects/2D_SuperDino/src/Layer.h
+ /home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h
+ /home/daniel/dev/C++ projects/2D_SuperDino/src/TileLayer.h
+ /home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.h
 CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Animation.h
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Camera.h
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Character.h
+ /home/daniel/dev/C++ projects/2D_SuperDino/src/Collider.h
+ /home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.h
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.cpp
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.h
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Game.h
@@ -34,6 +46,7 @@ CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Layer.h
  /home/daniel/dev/C++ projects/2D_SuperDino/src/RigidBody.h
  /home/daniel/dev/C++ projects/2D_SuperDino/src/TextureManager.h
+ /home/daniel/dev/C++ projects/2D_SuperDino/src/TileLayer.h
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Transform.h
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Vector2D.h
 CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o
@@ -41,6 +54,7 @@ CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Camera.h
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Character.h
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Clock.h
+ /home/daniel/dev/C++ projects/2D_SuperDino/src/Collider.h
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.h
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Game.cpp
  /home/daniel/dev/C++ projects/2D_SuperDino/src/Game.h

@@ -20,9 +20,21 @@ CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.o: ../src/Vector2D.h
 CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.o: ../src/Clock.cpp
 CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.o: ../src/Clock.h
 
+CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o: ../src/Camera.h
+CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o: ../src/Collision.cpp
+CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o: ../src/Collision.h
+CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o: ../src/Game.h
+CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o: ../src/GameMap.h
+CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o: ../src/Layer.h
+CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o: ../src/TextureManager.h
+CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o: ../src/TileLayer.h
+CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o: ../src/Vector2D.h
+
 CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/Animation.h
 CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/Camera.h
 CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/Character.h
+CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/Collider.h
+CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/Collision.h
 CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/Dino.cpp
 CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/Dino.h
 CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/Game.h
@@ -33,6 +45,7 @@ CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/KeyboardController.h
 CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/Layer.h
 CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/RigidBody.h
 CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/TextureManager.h
+CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/TileLayer.h
 CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/Transform.h
 CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o: ../src/Vector2D.h
 
@@ -40,6 +53,7 @@ CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o: ../src/Animation.h
 CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o: ../src/Camera.h
 CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o: ../src/Character.h
 CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o: ../src/Clock.h
+CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o: ../src/Collider.h
 CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o: ../src/Dino.h
 CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o: ../src/Game.cpp
 CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o: ../src/Game.h

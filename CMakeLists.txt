@@ -32,6 +32,17 @@ add_executable(2D_SuperDino
         src/Transform.h
         src/Character.h
         src/Dino.cpp
-        src/Dino.h src/Animation.cpp src/Animation.h src/KeyboardController.cpp src/KeyboardController.h src/Clock.cpp src/Clock.h src/Camera.cpp src/Camera.h)
+        src/Dino.h
+        src/Animation.cpp
+        src/Animation.h
+        src/KeyboardController.cpp
+        src/KeyboardController.h
+        src/Clock.cpp
+        src/Clock.h
+        src/Camera.cpp
+        src/Camera.h
+        src/Collision.cpp
+        src/Collision.h
+        src/Collider.h)
 
 target_link_libraries(2D_SuperDino -lSDL2 -lSDL2_image)

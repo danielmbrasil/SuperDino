@@ -16,7 +16,7 @@ bool Game::init() {
         return false;
     }
 
-    window = SDL_CreateWindow("Yay it's running", (int)SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
+    window = SDL_CreateWindow("Yay it's running", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
 
     if (!window) {
         SDL_Log("Failed to create window: %s\n", SDL_GetError());
@@ -39,7 +39,8 @@ bool Game::init() {
 
     TextureManager::getInstance()->loadTexture("dino", "../assets/images/dino_anim1.png");
     TextureManager::getInstance()->loadTexture("dino_running", "../assets/images/dino_anim2.png");
-    dino = new Dino(new Properties("dino", 100.0f, 335.0f, 24, 24));
+
+    dino = new Dino(new Properties("dino", 100.0f, 320.0f, 24, 24));
 
     Camera::getInstance()->setTarget(dino->getOrigin());
 
@@ -62,8 +63,8 @@ void Game::render() {
     SDL_RenderClear(renderer);
 
     levelMap->render();
-
     dino->draw();
+
     SDL_RenderPresent(renderer);
 }
 

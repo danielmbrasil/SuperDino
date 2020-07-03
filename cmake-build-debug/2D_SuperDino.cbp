@@ -103,6 +103,15 @@
 		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Clock.h">
 			<Option target="2D_SuperDino"/>
 		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Collider.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.cpp">
+			<Option target="2D_SuperDino"/>
+		</Unit>
+		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Collision.h">
+			<Option target="2D_SuperDino"/>
+		</Unit>
 		<Unit filename="/home/daniel/dev/C++ projects/2D_SuperDino/src/Dino.cpp">
 			<Option target="2D_SuperDino"/>
 		</Unit>

@@ -41,7 +41,7 @@ void TextureManager::drawFrame(const std::string &id, int x, int y, int width, i
 void TextureManager::drawTile(const std::string &tilesetID, int tileSize, int x, int y, int row, int frame,
                               SDL_RendererFlip flip) {
     camera = Camera::getInstance()->getPosition();
-    destRect = { static_cast<int>(x - camera.x), static_cast<int>(y - camera.y), tileSize, tileSize };
+    destRect = { static_cast<int>((float)x - camera.x), static_cast<int>((float)y - camera.y), tileSize, tileSize };
     srcRect = { tileSize*frame, tileSize*row, tileSize, tileSize };
     SDL_RenderCopyEx(Game::getInstance()->getRenderer(), texturesMap[tilesetID], &srcRect, &destRect, 0, nullptr, flip);
 }

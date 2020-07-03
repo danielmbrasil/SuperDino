@@ -6,7 +6,7 @@
 #include "GameMap.h"
 
 #define SCREEN_WIDTH 900
-#define SCREEN_HEIGHT 500
+#define SCREEN_HEIGHT 480
 
 class Game {
 public:
@@ -24,6 +24,7 @@ public:
 
     inline bool isRunning() const { return m_isRunning; }
     inline SDL_Renderer* getRenderer() { return renderer; }
+    inline GameMap* getMap() { return levelMap; }
 
 private:
     Game() = default;

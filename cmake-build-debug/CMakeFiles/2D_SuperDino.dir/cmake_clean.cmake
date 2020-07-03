@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/2D_SuperDino.dir/src/Animation.cpp.o"
   "CMakeFiles/2D_SuperDino.dir/src/Camera.cpp.o"
   "CMakeFiles/2D_SuperDino.dir/src/Clock.cpp.o"
+  "CMakeFiles/2D_SuperDino.dir/src/Collision.cpp.o"
   "CMakeFiles/2D_SuperDino.dir/src/Dino.cpp.o"
   "CMakeFiles/2D_SuperDino.dir/src/Game.cpp.o"
   "CMakeFiles/2D_SuperDino.dir/src/KeyboardController.cpp.o"

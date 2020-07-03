@@ -8,6 +8,8 @@
 #include "Vector2D.h"
 #include "Game.h"
 
+#define MAP_WIDTH 6400
+
 class Camera {
 public:
     static Camera* getInstance() {

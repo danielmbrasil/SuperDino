@@ -8,6 +8,10 @@
 #include "Character.h"
 #include "Animation.h"
 #include "RigidBody.h"
+#include "Collider.h"
+
+#define JUMP_TIME 20.0f
+#define JUMP_FORCE 10.0f
 
 class Dino : public Character {
 public:
@@ -20,6 +24,15 @@ public:
 private:
     Animation *animation;
     RigidBody *rigidBody;
+
+    bool isJumping{};
+    bool isOnGround{};
+
+    float jumpTime;
+    float jumpForce;
+
+    Collider *collider;
+    Vector2D lastPosition;
 };
 
 
