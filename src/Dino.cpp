@@ -12,24 +12,24 @@ Dino::Dino(Properties *properties) : Character(properties) {
     jumpForce = JUMP_FORCE;
 
     collider = new Collider();
-    collider->setBuffer(0, 0, 2 ,2);
+    collider->setBuffer(0, 0, -12 ,-16);
 
     rigidBody = new RigidBody();
-    rigidBody->setGravity(3.0f);
+    rigidBody->setGravity(4.0f);
 
     animation = new Animation();
     animation->setProperties(textureID, 0, 3, 100);
 }
 
 void Dino::draw() {
-    animation->draw(transform->x, transform->y, width, height);
+    animation->draw(transform->x, transform->y, width, height, 2);
 
-    Vector2D cam = Camera::getInstance()->getPosition();
+   /* Vector2D cam = Camera::getInstance()->getPosition();
     SDL_Rect box = collider->getBox();
     box.x -= (int)cam.x;
     box.y -= (int)cam.y;
 
-    SDL_RenderDrawRect(Game::getInstance()->getRenderer(), &box);
+    SDL_RenderDrawRect(Game::getInstance()->getRenderer(), &box); */
 }
 
 void Dino::update(float delta) {

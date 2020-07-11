@@ -43,6 +43,9 @@ add_executable(2D_SuperDino
         src/Camera.h
         src/Collision.cpp
         src/Collision.h
-        src/Collider.h)
+        src/Collider.h
+        src/FontManager.cpp
+        src/FontManager.h
+        src/UILabel.h src/UILabel.cpp)
 
-target_link_libraries(2D_SuperDino -lSDL2 -lSDL2_image)
+target_link_libraries(2D_SuperDino -lSDL2 -lSDL2_image -lSDL2_ttf)

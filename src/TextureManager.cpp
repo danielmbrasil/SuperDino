@@ -30,11 +30,11 @@ void TextureManager::draw(const std::string& id, int x, int y, int width, int he
     SDL_RenderCopyEx(Game::getInstance()->getRenderer(), texturesMap[id], &srcRect, &destRect, 0, nullptr, flip);
 }
 
-void TextureManager::drawFrame(const std::string &id, int x, int y, int width, int height, int row, int frame,
+void TextureManager::drawFrame(const std::string &id, int x, int y, int width, int height, int row, int frame, int scale,
                                SDL_RendererFlip flip) {
     srcRect = {width * frame, height * row, width, height };
     camera = Camera::getInstance()->getPosition();
-    destRect = {static_cast<int>((float)x - camera.x), static_cast<int>((float)y - camera.y), width, height };
+    destRect = {static_cast<int>((float)x - camera.x), static_cast<int>((float)y - camera.y), width*scale, height*scale };
     SDL_RenderCopyEx(Game::getInstance()->getRenderer(), texturesMap[id], &srcRect, &destRect, 0, nullptr, flip);
 }
 

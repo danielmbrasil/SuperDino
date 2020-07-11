@@ -5,9 +5,11 @@
 #include "Clock.h"
 #include "MapParser.h"
 #include "Camera.h"
+#include "UILabel.h"
+#include <sstream>
 
 Game* Game::s_Instance = nullptr;
-
+UILabel *label;
 Dino *dino = nullptr;
 
 bool Game::init() {
@@ -35,12 +37,21 @@ bool Game::init() {
         Game::getInstance()->quit();
     }
 
+    if (TTF_Init() == -1) {
+        SDL_Log("Failed to initialize TTF %s\n", SDL_GetError());
+        Game::getInstance()->quit();
+    }
+
     levelMap = MapParser::getInstance()->getMaps("MAP");
 
     TextureManager::getInstance()->loadTexture("dino", "../assets/images/dino_anim1.png");
     TextureManager::getInstance()->loadTexture("dino_running", "../assets/images/dino_anim2.png");
 
-    dino = new Dino(new Properties("dino", 100.0f, 320.0f, 24, 24));
+    dino = new Dino(new Properties("dino", 100.0f, 300.0f, 24, 24));
+
+    FontManager::getInstance()->addFont("minecraft", "../assets/fonts/Minecraft.ttf", 16);
+    SDL_Color yellow = { 255, 211, 0 };
+    label = new UILabel(10, 10, "Test String", "minecraft", yellow);
 
     Camera::getInstance()->setTarget(dino->getOrigin());
 
@@ -53,6 +64,11 @@ void Game::handleEvents() {
 
 void Game::update() {
     float delta = Clock::getInstance()->getDeltaTime();
+
+    std::stringstream ss;
+    ss << "Delta time: " << delta;
+    label->setLabelText(ss.str(), "minecraft");
+
     levelMap->update();
     dino->update(delta);
     Camera::getInstance()->update();
@@ -65,6 +81,7 @@ void Game::render() {
     levelMap->render();
     dino->draw();
 
+    label->draw();
     SDL_RenderPresent(renderer);
 }
 
