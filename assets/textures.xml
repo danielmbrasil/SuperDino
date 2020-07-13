@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<textures>
+    <texture id="dino" source="../assets/images/dino_anim1.png"/>
+    <texture id="dino_running" source="../assets/images/dino_anim2.png"/>
+    <texture id="dino_crying" source="../assets/images/dino_crying.png"/>
+</textures>

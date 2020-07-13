@@ -46,6 +46,9 @@ add_executable(2D_SuperDino
         src/Collider.h
         src/FontManager.cpp
         src/FontManager.h
-        src/UILabel.h src/UILabel.cpp)
+        src/UILabel.h
+        src/UILabel.cpp
+        src/HPBar.cpp
+        src/HPBar.h)
 
 target_link_libraries(2D_SuperDino -lSDL2 -lSDL2_image -lSDL2_ttf)

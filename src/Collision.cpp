@@ -7,8 +7,11 @@
 Collision* Collision::s_Instance = nullptr;
 
 Collision::Collision() {
-    collision_layer = (TileLayer*) Game::getInstance()->getMap()->getMapLayers().front();
+    collision_layer = (TileLayer *) Game::getInstance()->getMap()->getMapLayers().front();
     m_CollisionTileMap = collision_layer->getTileMap();
+
+    cactus_layer = (TileLayer *) Game::getInstance()->getMap()->getMapLayers().back();
+    m_CactusCollision = cactus_layer->getTileMap();
 }
 
 bool Collision::checkCollision(SDL_Rect rectA, SDL_Rect rectB) {
@@ -35,9 +38,34 @@ bool Collision::mapCollision(SDL_Rect rectA) {
     if (top_tile < 0 ) top_tile = 0;
     if (bottom_tile > rows) bottom_tile = rows;
 
-    for (int i = left_tile; i <= right_tile; i++)
-        for (int j = top_tile; j <= bottom_tile; j++)
-            if (m_CollisionTileMap[j][i] > 0)
+    for (int y = left_tile; y <= right_tile; y++)
+        for (int x = top_tile; x <= bottom_tile; x++)
+            if (m_CollisionTileMap[x][y] > 0)
+                return true;
+
+    return false;
+}
+
+bool Collision::cactusCollision(SDL_Rect rectA) {
+    int tileSize = 32;
+    int rows = 15;
+    int columns = 200;
+
+    int left_tile = rectA.x / tileSize;
+    int right_tile = (rectA.x + rectA.w) / tileSize;
+
+    int top_tile = rectA.y / tileSize;
+    int bottom_tile = (rectA.y + rectA.h) / tileSize;
+
+    if (left_tile < 0) left_tile = 0;
+    if (right_tile > columns) right_tile = columns;
+
+    if (top_tile < 0 ) top_tile = 0;
+    if (bottom_tile > rows) bottom_tile = rows;
+
+    for (int y = left_tile; y <= right_tile; y++)
+        for (int x = top_tile; x <= bottom_tile; x++)
+            if (m_CactusCollision[x][y] > 0)
                 return true;
 
     return false;

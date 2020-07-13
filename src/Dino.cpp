@@ -8,6 +8,8 @@
 #include "Collision.h"
 
 Dino::Dino(Properties *properties) : Character(properties) {
+    initLife();
+
     jumpTime = JUMP_TIME;
     jumpForce = JUMP_FORCE;
 
@@ -57,8 +59,7 @@ void Dino::update(float delta) {
     if (KeyboardController::getInstance()->getKeyDown((SDL_SCANCODE_W)) && isJumping && jumpTime > 0) {
         jumpTime -= delta;
         rigidBody->applyForceY(jumpForce * (-1));
-    }
-    else {
+    } else {
         isJumping = false;
         jumpTime = JUMP_TIME;
     }
@@ -68,9 +69,18 @@ void Dino::update(float delta) {
     // move on X axis
     lastPosition.x = transform->x;
     transform->moveX(rigidBody->getPosition().x);
-    collider->setBox((int)transform->x, (int)transform->y, 24, 24);
+    collider->setBox((int) transform->x, (int) transform->y, 24, 24);
 
     if (Collision::getInstance()->mapCollision(collider->getBox()))
+        transform->x = lastPosition.x;
+
+    if (Collision::getInstance()->cactusCollision(collider->getBox())) {
+        animation->setProperties("dino_crying", 0, 2, 500);
+        loseLife();
+        transform->x = lastPosition.x;
+    }
+
+    if(transform->x < 0 || transform->x > MAP_WIDTH)
         transform->x = lastPosition.x;
 
     // move on Y axis

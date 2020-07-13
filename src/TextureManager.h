@@ -14,6 +14,7 @@ public:
 
     bool loadTexture(const std::string& id, const std::string& filename);
     void drop(const std::string& id);
+    void parseTexture(const std::string& src);
     void clean();
 
     void draw(const std::string& id, int x, int y, int width, int height, SDL_RendererFlip flip = SDL_FLIP_NONE);

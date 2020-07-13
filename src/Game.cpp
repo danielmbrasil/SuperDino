@@ -7,6 +7,7 @@
 #include "Camera.h"
 #include "UILabel.h"
 #include <sstream>
+#include "HPBar.h"
 
 Game* Game::s_Instance = nullptr;
 UILabel *label;
@@ -18,7 +19,8 @@ bool Game::init() {
         return false;
     }
 
-    window = SDL_CreateWindow("Yay it's running", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
+    window = SDL_CreateWindow("Yay it's running", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+            SCREEN_WIDTH, SCREEN_HEIGHT, 0);
 
     if (!window) {
         SDL_Log("Failed to create window: %s\n", SDL_GetError());
@@ -44,14 +46,14 @@ bool Game::init() {
 
     levelMap = MapParser::getInstance()->getMaps("MAP");
 
-    TextureManager::getInstance()->loadTexture("dino", "../assets/images/dino_anim1.png");
-    TextureManager::getInstance()->loadTexture("dino_running", "../assets/images/dino_anim2.png");
+    TextureManager::getInstance()->parseTexture("../assets/textures.xml");
 
     dino = new Dino(new Properties("dino", 100.0f, 300.0f, 24, 24));
 
     FontManager::getInstance()->addFont("minecraft", "../assets/fonts/Minecraft.ttf", 16);
-    SDL_Color yellow = { 255, 211, 0 };
-    label = new UILabel(10, 10, "Test String", "minecraft", yellow);
+
+    SDL_Color yellow = { 248, 160, 0 };
+    label = new UILabel(10, 10, "Life Status", "minecraft", yellow);
 
     Camera::getInstance()->setTarget(dino->getOrigin());
 
@@ -63,11 +65,14 @@ void Game::handleEvents() {
 }
 
 void Game::update() {
+
     float delta = Clock::getInstance()->getDeltaTime();
 
-    std::stringstream ss;
-    ss << "Delta time: " << delta;
-    label->setLabelText(ss.str(), "minecraft");
+  /*  std::stringstream ss;
+    ss << "Dino's life: " << (int) dino->getLife().top() / 10;
+    label->setLabelText(ss.str(), "minecraft"); */
+
+    HPBar::update(dino->getLife().top());
 
     levelMap->update();
     dino->update(delta);
@@ -80,7 +85,8 @@ void Game::render() {
 
     levelMap->render();
     dino->draw();
-
+    HPBar::RenderHPBar(10, 30, 100, 10, HPBar::color(11, 102, 35, 255),
+            HPBar::color(202, 52, 51, 255));
     label->draw();
     SDL_RenderPresent(renderer);
 }
@@ -96,4 +102,3 @@ void Game::clean() {
 void Game::quit() {
     m_isRunning = false;
 }
-

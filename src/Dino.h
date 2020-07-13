@@ -9,6 +9,7 @@
 #include "Animation.h"
 #include "RigidBody.h"
 #include "Collider.h"
+#include <stack>
 
 #define JUMP_TIME 20.0f
 #define JUMP_FORCE 11.0f
@@ -20,6 +21,18 @@ public:
     void draw() override;
     void clean() override;
     void update(float delta) override;
+
+    void initLife() {
+        for (int i = 0; i <= 30; i++)
+            dinoLife.push((float) i);
+    }
+
+    void loseLife() {
+        if(!dinoLife.empty() && dinoLife.top() != 0.f)
+            dinoLife.pop();
+    }
+
+    std::stack<float> getLife() { return dinoLife; }
 
 private:
     Animation *animation;
@@ -33,6 +46,8 @@ private:
 
     Collider *collider;
     Vector2D lastPosition;
+
+    std::stack<float> dinoLife;
 };
 
 

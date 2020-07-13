@@ -1,4 +1,6 @@
 #include "TextureManager.h"
+#include "../vendor/tinyxml/tinyxml.h"
+#include <iostream>
 
 TextureManager* TextureManager::s_Instance = nullptr;
 
@@ -44,6 +46,25 @@ void TextureManager::drawTile(const std::string &tilesetID, int tileSize, int x,
     destRect = { static_cast<int>((float)x - camera.x), static_cast<int>((float)y - camera.y), tileSize, tileSize };
     srcRect = { tileSize*frame, tileSize*row, tileSize, tileSize };
     SDL_RenderCopyEx(Game::getInstance()->getRenderer(), texturesMap[tilesetID], &srcRect, &destRect, 0, nullptr, flip);
+}
+
+void TextureManager::parseTexture(const std::string &src) {
+    TiXmlDocument xml;
+    xml.LoadFile(src);
+
+    if(xml.Error()) {
+        std::cerr << "Failed to load file: " << src << std::endl;
+        return;
+    }
+
+    TiXmlElement *root = xml.RootElement();
+    for (TiXmlElement *e = root->FirstChildElement(); e != nullptr; e = e->NextSiblingElement()) {
+        if (e->Value() == std::string("texture")) {
+            std::string id = e->Attribute("id");
+            std::string source = e->Attribute("source");
+            loadTexture(id, source);
+        }
+    }
 }
 
 void TextureManager::drop(const std::string& id) {

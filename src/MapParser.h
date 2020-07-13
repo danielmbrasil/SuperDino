@@ -9,7 +9,7 @@
 #include <string>
 #include "GameMap.h"
 #include "TileLayer.h"
-#include "tinyxml.h"
+#include "../vendor/tinyxml/tinyxml.h"
 
 class MapParser {
 public:
