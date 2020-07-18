@@ -6,6 +6,7 @@
 #define Collider_H
 
 #include <SDL2/SDL.h>
+#include "Camera.h"
 
 class Collider {
 public:

@@ -11,8 +11,8 @@
 #include "Collider.h"
 #include <stack>
 
-#define JUMP_TIME 20.0f
-#define JUMP_FORCE 11.0f
+#define JUMP_TIME 16.4f
+#define JUMP_FORCE 19.f
 
 class Dino : public Character {
 public:

@@ -4,9 +4,11 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include "GameMap.h"
+#include "StateManager.h"
+#include "MenuState.h"
+#include "PlayState.h"
 
-#define SCREEN_WIDTH 900
-#define SCREEN_HEIGHT 480
+class PlayState;
 
 class Game {
 public:
@@ -24,16 +26,17 @@ public:
 
     inline bool isRunning() const { return m_isRunning; }
     inline SDL_Renderer* getRenderer() { return renderer; }
-    inline GameMap* getMap() { return levelMap; }
-
+    inline PlayState* getPlayState() { return playState; }
 private:
     Game() = default;
     static Game* s_Instance;
-    bool m_isRunning;
-    SDL_Window *window;
-    SDL_Renderer *renderer;
-    SDL_Event event;
-    GameMap *levelMap;
+    bool m_isRunning{};
+    SDL_Window *window{};
+    SDL_Renderer *renderer{};
+
+    StateManager manager;
+    MenuState *menu{};
+    PlayState *playState{};
 };
 
 #endif //GAME_H

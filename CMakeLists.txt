@@ -48,7 +48,16 @@ add_executable(2D_SuperDino
         src/FontManager.h
         src/UILabel.h
         src/UILabel.cpp
-        src/HPBar.cpp
-        src/HPBar.h)
+        src/ObjectManager.cpp
+        src/ObjectManager.h
+        src/StateManager.cpp
+        src/StateManager.h
+        src/GameState.h
+        src/GameState.cpp
+        src/MenuState.cpp
+        src/MenuState.h
+        src/PlayState.cpp
+        src/PlayState.h
+        src/Colors.h)
 
 target_link_libraries(2D_SuperDino -lSDL2 -lSDL2_image -lSDL2_ttf)

@@ -3,14 +3,15 @@
 //
 
 #include "Collision.h"
+#include "PlayState.h"
 
 Collision* Collision::s_Instance = nullptr;
 
 Collision::Collision() {
-    collision_layer = (TileLayer *) Game::getInstance()->getMap()->getMapLayers().front();
+    collision_layer = (TileLayer *) Game::getInstance()->getPlayState()->getMap()->getMapLayers().front();
     m_CollisionTileMap = collision_layer->getTileMap();
 
-    cactus_layer = (TileLayer *) Game::getInstance()->getMap()->getMapLayers().back();
+    cactus_layer = (TileLayer *) Game::getInstance()->getPlayState()->getMap()->getMapLayers().back();
     m_CactusCollision = cactus_layer->getTileMap();
 }
 

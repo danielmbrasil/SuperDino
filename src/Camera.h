@@ -8,6 +8,8 @@
 #include "Vector2D.h"
 #include "Game.h"
 
+#define SCREEN_WIDTH 900
+#define SCREEN_HEIGHT 480
 #define MAP_WIDTH 6400
 
 class Camera {
@@ -27,10 +29,10 @@ private:
     }
     static Camera *s_Instance;
 
-    Vector2D *target;
+    Vector2D *target{};
     Vector2D position;
 
-    SDL_Rect viewBox;
+    SDL_Rect viewBox{};
 };
 
 
