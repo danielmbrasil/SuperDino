@@ -12,14 +12,17 @@
 
 class FontManager {
 public:
-    static FontManager* getInstance() {
+    static FontManager *getInstance() {
         return s_Instance = (s_Instance != nullptr) ? s_Instance : new FontManager();
     }
-    void addFont(const std::string& id, const std::string& path, int fontSize);
-    TTF_Font* getFont(const std::string& id);
+
+    void addFont(const std::string &id, const std::string &path, int fontSize);
+
+    TTF_Font *getFont(const std::string &id);
 
 private:
     FontManager() = default;
+
     static FontManager *s_Instance;
     std::map<std::string, TTF_Font *> fontsMap;
 };

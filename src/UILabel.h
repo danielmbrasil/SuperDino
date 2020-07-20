@@ -16,11 +16,15 @@
 
 class UILabel {
 public:
-    UILabel(int x, int y, std::string  text, std::string  font, SDL_Color& color);
+    UILabel(int x, int y, std::string text, std::string font, SDL_Color &color);
 
-    void setLabelText(const std::string& text, const std::string& font);
+    void setLabelText(const std::string &text, const std::string &font);
 
     void draw();
+
+    void clean();
+
+    SDL_Rect getPosition();
 
 private:
     SDL_Rect position{};

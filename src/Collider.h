@@ -11,8 +11,9 @@
 class Collider {
 public:
     inline SDL_Rect getBox() { return m_Box; }
+
     inline void setBuffer(int x, int y, int w, int h) {
-        m_Buffer = { x, y, w, h };
+        m_Buffer = {x, y, w, h};
     }
 
     void setBox(int x, int y, int w, int h) {

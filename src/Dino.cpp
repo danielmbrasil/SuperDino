@@ -101,6 +101,7 @@ void Dino::update(float delta) {
     transform->moveY(rigidBody->getPosition().y);
     collider->setBox((int) transform->x, (int) transform->y, 24, 24);
 
+
     if (Collision::getInstance()->mapCollision(collider->getBox())) {
         isOnGround = true;
         transform->y = lastPosition.y;

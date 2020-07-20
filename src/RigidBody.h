@@ -17,15 +17,15 @@ public:
         m_Gravity = GRAVITY;
     }
 
-    inline Vector2D& getPosition() {
+    inline Vector2D &getPosition() {
         return m_Position;
     }
 
-    inline Vector2D& getVelocity() {
+    inline Vector2D &getVelocity() {
         return m_Velocity;
     }
 
-    inline Vector2D& getAcceleration() {
+    inline Vector2D &getAcceleration() {
         return m_Acceleration;
     }
 
@@ -37,7 +37,7 @@ public:
         m_Gravity = g;
     }
 
-    inline void applyForce(Vector2D& F) {
+    inline void applyForce(Vector2D &F) {
         m_Force = F;
     }
 
@@ -53,7 +53,7 @@ public:
         m_Force.Zero();
     }
 
-    inline void applyFriction(Vector2D& Fx) {
+    inline void applyFriction(Vector2D &Fx) {
         m_Friction = Fx;
     }
 
@@ -63,7 +63,7 @@ public:
 
     void update(float delta) {
         m_Acceleration.x = (m_Force.x + m_Friction.x) / m_Mass;
-        m_Acceleration.y = m_Gravity + m_Force.y/m_Mass;
+        m_Acceleration.y = m_Gravity + m_Force.y / m_Mass;
         m_Velocity = m_Acceleration * delta;
         m_Position = m_Velocity * delta;
     }

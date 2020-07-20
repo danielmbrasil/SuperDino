@@ -13,19 +13,20 @@ class StateManager;
 class GameState {
 public:
     GameState();
+
     ~GameState() = default;
 
-    virtual void update(float dt);
-    virtual void render();
+    virtual void update(float dt) = 0;
 
-    StateManager* getManager();
+    virtual void render() = 0;
+
     void setManager(StateManager *m);
 
 private:
     StateManager *manager;
 
 protected:
-    SDL_Renderer *m_Context;
+    SDL_Renderer *m_Context{};
 };
 
 

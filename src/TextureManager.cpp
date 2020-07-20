@@ -2,9 +2,9 @@
 #include "../vendor/tinyxml/tinyxml.h"
 #include <iostream>
 
-TextureManager* TextureManager::s_Instance = nullptr;
+TextureManager *TextureManager::s_Instance = nullptr;
 
-bool TextureManager::loadTexture(const std::string& id, const std::string& filename) {
+bool TextureManager::loadTexture(const std::string &id, const std::string &filename) {
     surface = IMG_Load(filename.c_str());
 
     if (!surface) {
@@ -24,27 +24,29 @@ bool TextureManager::loadTexture(const std::string& id, const std::string& filen
     return true;
 }
 
-void TextureManager::draw(const std::string& id, int x, int y, int width, int height, SDL_RendererFlip flip) {
-    srcRect = { 0, 0, width, height };
+void TextureManager::draw(const std::string &id, int x, int y, int width, int height, SDL_RendererFlip flip) {
+    srcRect = {0, 0, width, height};
     camera = Camera::getInstance()->getPosition();
-    destRect = { static_cast<int>((float)x - camera.x), static_cast<int>((float)y - camera.y), width, height };
+    destRect = {static_cast<int>((float) x - camera.x), static_cast<int>((float) y - camera.y), width, height};
 
     SDL_RenderCopyEx(Game::getInstance()->getRenderer(), texturesMap[id], &srcRect, &destRect, 0, nullptr, flip);
 }
 
-void TextureManager::drawFrame(const std::string &id, int x, int y, int width, int height, int row, int frame, int scale,
-                               SDL_RendererFlip flip) {
-    srcRect = {width * frame, height * row, width, height };
+void
+TextureManager::drawFrame(const std::string &id, int x, int y, int width, int height, int row, int frame, int scale,
+                          SDL_RendererFlip flip) {
+    srcRect = {width * frame, height * row, width, height};
     camera = Camera::getInstance()->getPosition();
-    destRect = {static_cast<int>((float)x - camera.x), static_cast<int>((float)y - camera.y), width*scale, height*scale };
+    destRect = {static_cast<int>((float) x - camera.x), static_cast<int>((float) y - camera.y), width * scale,
+                height * scale};
     SDL_RenderCopyEx(Game::getInstance()->getRenderer(), texturesMap[id], &srcRect, &destRect, 0, nullptr, flip);
 }
 
 void TextureManager::drawTile(const std::string &tilesetID, int tileSize, int x, int y, int row, int frame,
                               SDL_RendererFlip flip) {
     camera = Camera::getInstance()->getPosition();
-    destRect = { static_cast<int>((float)x - camera.x), static_cast<int>((float)y - camera.y), tileSize, tileSize };
-    srcRect = { tileSize*frame, tileSize*row, tileSize, tileSize };
+    destRect = {static_cast<int>((float) x - camera.x), static_cast<int>((float) y - camera.y), tileSize, tileSize};
+    srcRect = {tileSize * frame, tileSize * row, tileSize, tileSize};
     SDL_RenderCopyEx(Game::getInstance()->getRenderer(), texturesMap[tilesetID], &srcRect, &destRect, 0, nullptr, flip);
 }
 
@@ -52,7 +54,7 @@ void TextureManager::parseTexture(const std::string &src) {
     TiXmlDocument xml;
     xml.LoadFile(src);
 
-    if(xml.Error()) {
+    if (xml.Error()) {
         std::cerr << "Failed to load file: " << src << std::endl;
         return;
     }
@@ -67,7 +69,7 @@ void TextureManager::parseTexture(const std::string &src) {
     }
 }
 
-void TextureManager::drop(const std::string& id) {
+void TextureManager::drop(const std::string &id) {
     SDL_DestroyTexture(texturesMap[id]);
     texturesMap.erase(id);
 }

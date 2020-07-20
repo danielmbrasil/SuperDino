@@ -8,7 +8,7 @@
 
 ObjectManager *ObjectManager::s_Instance = nullptr;
 
-GameObject *ObjectManager::createObject(const std::string& type, Properties *properties) {
+GameObject *ObjectManager::createObject(const std::string &type, Properties *properties) {
     GameObject *object = nullptr;
     auto it = m_TypeRegistry.find(type);
 

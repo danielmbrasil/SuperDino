@@ -16,9 +16,9 @@ public:
         return s_Instance = (s_Instance != nullptr) ? s_Instance : new ObjectManager();
     }
 
-    GameObject *createObject(const std::string& type, Properties *properties);
+    GameObject *createObject(const std::string &type, Properties *properties);
 
-    void registerType(const std::string& className, std::function<GameObject* (Properties *properties)> type);
+    void registerType(const std::string &className, std::function<GameObject *(Properties *properties)> type);
 
 private:
     ObjectManager() = default;
@@ -30,7 +30,7 @@ private:
 template<typename T>
 class Register {
 public:
-    explicit Register(const std::string& className) {
+    explicit Register(const std::string &className) {
         ObjectManager::getInstance()->registerType(className, [](Properties *properties) -> GameObject * {
             return new T(properties);
         });

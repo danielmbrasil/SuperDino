@@ -58,6 +58,6 @@ add_executable(2D_SuperDino
         src/MenuState.h
         src/PlayState.cpp
         src/PlayState.h
-        src/Colors.h)
+        src/PauseState.cpp src/PauseState.h)
 
 target_link_libraries(2D_SuperDino -lSDL2 -lSDL2_image -lSDL2_ttf)

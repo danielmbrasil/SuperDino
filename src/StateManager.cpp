@@ -10,7 +10,9 @@ void StateManager::addState(GameState *state) {
 }
 
 void StateManager::popState() {
-    m_States.pop();
+    if (!m_States.empty()) {
+        m_States.pop();
+    }
 }
 
 void StateManager::update(float dt) {
@@ -21,7 +23,7 @@ void StateManager::update(float dt) {
 
 void StateManager::render() {
     if (!m_States.empty())
-        if(m_States.top() != nullptr)
+        if (m_States.top() != nullptr)
             m_States.top()->render();
 }
 

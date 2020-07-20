@@ -13,13 +13,20 @@ class GameState;
 class StateManager {
 public:
     StateManager() = default;
+
     ~StateManager() = default;
 
     void addState(GameState *state);
+
     void popState();
+
     void update(float dt);
+
     void render();
+
     bool isEmpty();
+
+    GameState *getTopState() { return m_States.top(); }
 
 private:
     std::stack<GameState *> m_States;

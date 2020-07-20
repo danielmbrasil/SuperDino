@@ -5,7 +5,6 @@
 #include "PlayState.h"
 #include "MapParser.h"
 #include "ObjectManager.h"
-#include "Colors.h"
 
 PlayState::PlayState() {
     // get renderer context
@@ -21,6 +20,7 @@ PlayState::PlayState() {
 
     // load fonts and create lifeLabel
     FontManager::getInstance()->addFont("minecraft", "../assets/fonts/Minecraft.ttf", 16);
+    SDL_Color yellow = {248, 160, 0};
     lifeLabel = new UILabel(10, 10, "Dino", "minecraft", yellow);
 
     // create camera
@@ -52,6 +52,7 @@ void PlayState::update(float dt) {
 void PlayState::clear() {
     dino->clean();
     levelMap_1->clean();
-    TextureManager::getInstance()->clean();
+    lifeLabel->clean();
+    //TextureManager::getInstance()->clean();
     SDL_DestroyRenderer(m_Context);
 }

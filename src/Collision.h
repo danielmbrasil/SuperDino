@@ -12,16 +12,19 @@
 
 class Collision {
 public:
-    static Collision* getInstance() {
-        return s_Instance = (s_Instance != nullptr) ? s_Instance :  new Collision();
+    static Collision *getInstance() {
+        return s_Instance = (s_Instance != nullptr) ? s_Instance : new Collision();
     }
 
     bool checkCollision(SDL_Rect rectA, SDL_Rect rectB);
+
     bool mapCollision(SDL_Rect rectA);
+
     bool cactusCollision(SDL_Rect rectA);
 
 private:
     Collision();
+
     static Collision *s_Instance;
     TileMap m_CollisionTileMap;
     TileLayer *collision_layer;

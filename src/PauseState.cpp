@@ -1,34 +1,37 @@
 //
-// Created by daniel on 17/07/2020.
+// Created by daniel on 7/19/20.
 //
 
-#include "MenuState.h"
+#include "PauseState.h"
 #include "Game.h"
 #include "KeyboardController.h"
 
-MenuState::MenuState() {
+PauseState::PauseState() {
     // get context
     m_Context = Game::getInstance()->getRenderer();
-
-    // add minecraft font but bigger
-    FontManager::getInstance()->addFont("minecraftBigger", "../assets/fonts/Minecraft.ttf", 32);
 
     // set labels position
     position[0].x = 100;
     position[0].y = 220;
     position[1].x = 100;
     position[1].y = 280;
+    position[2].x = 100;
+    position[2].y = 340;
 
     // create new labels
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 3; i++)
         labels[i] = new UILabel(position[i].x, position[i].y, options[i], "minecraftBigger", white);
 }
 
-void MenuState::events() {
+void PauseState::update(float dt) {
+
+}
+
+void PauseState::events() {
     int x = KeyboardController::getInstance()->getX();
     int y = KeyboardController::getInstance()->getY();
 
-    for (int i = 0; i < 2; ++i) {
+    for (int i = 0; i < 3; ++i) {
         if (x >= labels[i]->getPosition().x &&
             x <= labels[i]->getPosition().x + labels[i]->getPosition().w &&
             y >= labels[i]->getPosition().y &&
@@ -37,14 +40,12 @@ void MenuState::events() {
             labels[i] = new UILabel(position[i].x, position[i].y, options[i], "minecraftBigger", green);
 
             if (KeyboardController::getInstance()->getMouseButtonDown() && i == 0) {
-                //Game::getInstance()->getManager()->popState();
-                Game::getInstance()->startGame();
-                Game::getInstance()->getManager()->addState(Game::getInstance()->getPlayState());
-                Game::getInstance()->unsetMenu();
+                Game::getInstance()->getManager()->popState();
+                Game::getInstance()->unsetPause();
                 for (auto &label : labels)
                     label->clean();
                 SDL_Delay(300);
-            } else if (KeyboardController::getInstance()->getMouseButtonDown() && i == 1) {
+            } else if (KeyboardController::getInstance()->getMouseButtonDown() && i == 2) {
                 for (auto &label : labels)
                     label->clean();
                 Game::getInstance()->quit();
@@ -56,11 +57,7 @@ void MenuState::events() {
     }
 }
 
-void MenuState::update(float dt) {
-    //GameState::update(dt);
-}
-
-void MenuState::render() {
+void PauseState::render() {
     SDL_SetRenderDrawColor(m_Context, 0, 0, 0, 0);
     SDL_RenderClear(m_Context);
 

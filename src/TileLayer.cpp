@@ -7,9 +7,13 @@
 #include <utility>
 
 TileLayer::TileLayer(int ts, int rowc, int colc, TileMap tilemap, TilesetList tilesets) : m_tileSize(ts),
-    m_RowCount(rowc), m_ColCount(colc), m_TileMap(std::move(tilemap)), m_Tilesets(std::move(tilesets)) {
+                                                                                          m_RowCount(rowc),
+                                                                                          m_ColCount(colc),
+                                                                                          m_TileMap(std::move(tilemap)),
+                                                                                          m_Tilesets(
+                                                                                                  std::move(tilesets)) {
 
-    for (auto & tst : m_Tilesets) {
+    for (auto &tst : m_Tilesets) {
         TextureManager::getInstance()->loadTexture(tst.name, "../assets/maps/" + tst.source);
     }
 }
@@ -28,7 +32,7 @@ void TileLayer::render() {
                     for (unsigned int k = 1; k < m_Tilesets.size(); k++) {
                         if (tileID > m_Tilesets[k].firstID && tileID < m_Tilesets[k].lastID) {
                             tileID = tileID + m_Tilesets[k].tileCount - m_Tilesets[k].lastID;
-                            ts_index = (int)k;
+                            ts_index = (int) k;
                             break;
                         }
                     }
@@ -46,7 +50,8 @@ void TileLayer::render() {
                 }
 
                 // draw
-                TextureManager::getInstance()->drawTile(ts.name, ts.tileSize, j*ts.tileSize, i*ts.tileSize, tileRow, tileCol);
+                TextureManager::getInstance()->drawTile(ts.name, ts.tileSize, j * ts.tileSize, i * ts.tileSize, tileRow,
+                                                        tileCol);
             }
         }
     }

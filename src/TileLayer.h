@@ -25,6 +25,7 @@ public:
     TileLayer(int ts, int rowc, int colc, TileMap tilemap, TilesetList tilesets);
 
     void render() override;
+
     void update() override;
 
     inline TileMap getTileMap() { return m_TileMap; }

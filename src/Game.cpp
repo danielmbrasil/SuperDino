@@ -6,6 +6,10 @@
 
 Game *Game::s_Instance = nullptr;
 
+void Game::startGame() {
+    playState = new PlayState();
+}
+
 bool Game::init() {
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         SDL_Log("Failed to initialize SDL: %s\n", SDL_GetError());
@@ -38,29 +42,38 @@ bool Game::init() {
     }
 
     // create play State
-    playState = new PlayState();
+    playState = nullptr;
+    menu = new MenuState();
+    pauseState = nullptr;
 
     // add state to the stack
-    manager.addState(playState);
+    manager.addState(menu);
 
     return m_isRunning = true;
 }
 
 void Game::handleEvents() {
-    if (KeyboardController::getInstance()->getKeyDown(SDL_SCANCODE_ESCAPE)) {
-        Game::getInstance()->menu = new MenuState();
-        Game::getInstance()->manager.addState(Game::getInstance()->menu);
-        SDL_Delay(200);
-    }
     KeyboardController::getInstance()->listen();
+
+    if (KeyboardController::getInstance()->getKeyDown(SDL_SCANCODE_ESCAPE)) {
+        Game::getInstance()->pauseState = new PauseState();
+        Game::getInstance()->manager.addState(Game::getInstance()->pauseState);
+        SDL_Delay(300);
+    }
 }
 
 void Game::update() {
 
     float deltaTime = Clock::getInstance()->getDeltaTime();
 
+    if (Game::getInstance()->menu)
+        Game::getInstance()->menu->events();
+
+    if (Game::getInstance()->pauseState)
+        Game::getInstance()->pauseState->events();
+
     if (!manager.isEmpty())
-       Game::getInstance()->manager.update(deltaTime);
+        Game::getInstance()->manager.update(deltaTime);
 }
 
 void Game::render() {

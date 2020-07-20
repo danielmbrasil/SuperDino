@@ -19,7 +19,7 @@ void MapParser::clean() {
     m_Maps.clear();
 }
 
-bool MapParser::parse(const std::string& id, const std::string& source) {
+bool MapParser::parse(const std::string &id, const std::string &source) {
     TiXmlDocument xml;
     xml.LoadFile(source);
     if (xml.Error()) {
@@ -45,7 +45,7 @@ bool MapParser::parse(const std::string& id, const std::string& source) {
     }
 
     // parse layers
-    auto* gameMap = new GameMap();
+    auto *gameMap = new GameMap();
     for (TiXmlElement *e = root->FirstChildElement(); e != nullptr; e = e->NextSiblingElement()) {
         if (e->Value() == std::string("layer")) {
             TileLayer *tileLayer = parseTileLayer(e, tilesets, tilesize, height, width);

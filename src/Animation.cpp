@@ -8,11 +8,12 @@
 #include "TextureManager.h"
 
 void Animation::update() {
-    m_SpriteFrame = ((int)SDL_GetTicks() / m_AnimSpeed) % m_FrameCount;
+    m_SpriteFrame = ((int) SDL_GetTicks() / m_AnimSpeed) % m_FrameCount;
 }
 
 void Animation::draw(float x, float y, int spriteWidth, int spriteHeight, int sc) {
-    TextureManager::getInstance()->drawFrame(m_TextureID, (int)x, (int)y, spriteWidth, spriteHeight, m_SpriteRow, m_SpriteFrame, sc, m_Flip);
+    TextureManager::getInstance()->drawFrame(m_TextureID, (int) x, (int) y, spriteWidth, spriteHeight, m_SpriteRow,
+                                             m_SpriteFrame, sc, m_Flip);
 }
 
 void

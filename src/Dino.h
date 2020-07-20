@@ -19,7 +19,9 @@ public:
     explicit Dino(Properties *properties);
 
     void draw() override;
+
     void clean() override;
+
     void update(float delta) override;
 
     void initLife() {
@@ -28,7 +30,7 @@ public:
     }
 
     void loseLife() {
-        if(!dinoLife.empty() && dinoLife.top() != 0.f)
+        if (!dinoLife.empty() && dinoLife.top() != 0.f)
             dinoLife.pop();
     }
 

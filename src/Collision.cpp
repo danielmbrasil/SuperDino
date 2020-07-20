@@ -5,7 +5,7 @@
 #include "Collision.h"
 #include "PlayState.h"
 
-Collision* Collision::s_Instance = nullptr;
+Collision *Collision::s_Instance = nullptr;
 
 Collision::Collision() {
     collision_layer = (TileLayer *) Game::getInstance()->getPlayState()->getMap()->getMapLayers().front();
@@ -36,7 +36,7 @@ bool Collision::mapCollision(SDL_Rect rectA) {
     if (left_tile < 0) left_tile = 0;
     if (right_tile > columns) right_tile = columns;
 
-    if (top_tile < 0 ) top_tile = 0;
+    if (top_tile < 0) top_tile = 0;
     if (bottom_tile > rows) bottom_tile = rows;
 
     for (int y = left_tile; y <= right_tile; y++)
@@ -61,7 +61,7 @@ bool Collision::cactusCollision(SDL_Rect rectA) {
     if (left_tile < 0) left_tile = 0;
     if (right_tile > columns) right_tile = columns;
 
-    if (top_tile < 0 ) top_tile = 0;
+    if (top_tile < 0) top_tile = 0;
     if (bottom_tile > rows) bottom_tile = rows;
 
     for (int y = left_tile; y <= right_tile; y++)

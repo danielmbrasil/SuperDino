@@ -12,7 +12,9 @@ public:
     explicit Character(Properties *properties) : GameObject(properties) {}
 
     void draw() override = 0;
+
     void clean() override = 0;
+
     void update(float delta) override = 0;
 
 protected:

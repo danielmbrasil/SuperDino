@@ -14,19 +14,23 @@
 
 class Camera {
 public:
-    static Camera* getInstance() {
+    static Camera *getInstance() {
         return s_Instance = (s_Instance != nullptr) ? s_Instance : new Camera();
     }
 
     inline SDL_Rect getViewBox() { return viewBox; }
+
     inline Vector2D getPosition() { return position; }
+
     inline void setTarget(Vector2D *tg) { target = tg; }
+
     void update();
 
 private:
     Camera() {
         viewBox = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
     }
+
     static Camera *s_Instance;
 
     Vector2D *target{};
