@@ -8,6 +8,7 @@
 #include "IObject.h"
 #include "Transform.h"
 #include <SDL2/SDL.h>
+#include <stack>
 
 #include <utility>
 
@@ -45,6 +46,12 @@ public:
     void update(float delta) override = 0;
 
     void clean() override = 0;
+
+    virtual void initLife() = 0;
+
+    virtual void loseLife() = 0;
+
+    virtual std::stack<int> getLife() = 0;
 
 protected:
     std::string textureID;

@@ -37,21 +37,31 @@ void PauseState::events() {
             y >= labels[i]->getPosition().y &&
             y <= labels[i]->getPosition().y + labels[i]->getPosition().h) {
             labels[i]->clean();
+            delete labels[i];
             labels[i] = new UILabel(position[i].x, position[i].y, options[i], "minecraftBigger", green);
 
             if (KeyboardController::getInstance()->getMouseButtonDown() && i == 0) {
-                Game::getInstance()->getManager()->popState();
-                Game::getInstance()->unsetPause();
                 for (auto &label : labels)
                     label->clean();
+                Game::getInstance()->getManager()->popState();
+                Game::getInstance()->unsetPause();
+                SDL_Delay(300);
+            } else if (KeyboardController::getInstance()->getMouseButtonDown() && i == 1) {
+                for (auto &label : labels)
+                    label->clean();
+                Game::getInstance()->getManager()->popState();
+                Game::getInstance()->unsetPause();
+                Game::getInstance()->getManager()->popState();
+                Game::getInstance()->newMenu();
                 SDL_Delay(300);
             } else if (KeyboardController::getInstance()->getMouseButtonDown() && i == 2) {
-                for (auto &label : labels)
+                for (auto &label : labels) 
                     label->clean();
                 Game::getInstance()->quit();
             }
         } else {
             labels[i]->clean();
+            delete labels[i];
             labels[i] = new UILabel(position[i].x, position[i].y, options[i], "minecraftBigger", white);
         }
     }

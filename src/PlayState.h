@@ -15,15 +15,15 @@ class UILabel;
 
 class PlayState : public GameState {
 public:
-    PlayState();
+    PlayState(float x, float y);
 
     void render() override;
 
     void update(float dt) override;
 
-    void clear();
-
     inline GameMap *getMap() { return levelMap_1; }
+
+    inline int getDinoLife() { return (int) dino->getLife().top(); }
 
 private:
     UILabel *lifeLabel;

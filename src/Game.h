@@ -8,12 +8,15 @@
 #include "MenuState.h"
 #include "PlayState.h"
 #include "PauseState.h"
+#include "VoidState.h"
 
 class PlayState;
 
 class MenuState;
 
 class PauseState;
+
+class VoidState;
 
 class Game {
 public:
@@ -41,11 +44,21 @@ public:
 
     inline StateManager *getManager() { return &manager; }
 
+    inline PauseState *getPauseState() { return pauseState; }
+
+    inline VoidState *getVoidState() { return voidState; }
+
     inline void unsetMenu() { menu = nullptr; }
 
     inline void unsetPause() { pauseState = nullptr; }
 
+    inline void unsetVoidState() { voidState = nullptr; }
+
     void startGame();
+
+    void newMenu();
+
+    void newVoidState();
 
 private:
     Game() = default;
@@ -59,6 +72,9 @@ private:
     MenuState *menu{};
     PlayState *playState{};
     PauseState *pauseState{};
+    VoidState *voidState{};
+
+    int curretLife{};
 };
 
 #endif //GAME_H

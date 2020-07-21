@@ -21,10 +21,6 @@ public:
             m_MapLayer->update();
     }
 
-    void clean() {
-        m_MapLayers.clear();
-    }
-
     std::vector<Layer *> getMapLayers() { return m_MapLayers; }
 
 private:

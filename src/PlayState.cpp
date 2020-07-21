@@ -5,8 +5,9 @@
 #include "PlayState.h"
 #include "MapParser.h"
 #include "ObjectManager.h"
+#include <sstream>
 
-PlayState::PlayState() {
+PlayState::PlayState(float x, float y) {
     // get renderer context
     m_Context = Game::getInstance()->getRenderer();
 
@@ -15,8 +16,10 @@ PlayState::PlayState() {
     TextureManager::getInstance()->parseTexture("../assets/textures.xml");
 
     // create Dino
-    auto *dinoProperties = new Properties("dino", 100.0f, 300.0f, 24, 24);
+    auto *dinoProperties = new Properties("dino", x, y, 24, 24);
     dino = ObjectManager::getInstance()->createObject("DINO", dinoProperties);
+
+    dino->initLife();
 
     // load fonts and create lifeLabel
     FontManager::getInstance()->addFont("minecraft", "../assets/fonts/Minecraft.ttf", 16);
@@ -39,20 +42,15 @@ void PlayState::render() {
 
     SDL_RenderCopy(m_Context, nullptr, &camera, nullptr);
     SDL_RenderPresent(m_Context);
-
 }
 
 void PlayState::update(float dt) {
+    std::stringstream ss;
+    ss << "Dino x" << dino->getLife().top();
+    lifeLabel->setLabelText(ss.str(), "minecraft");
+
     levelMap_1->update();
     dino->update(dt);
 
     Camera::getInstance()->update();
-}
-
-void PlayState::clear() {
-    dino->clean();
-    levelMap_1->clean();
-    lifeLabel->clean();
-    //TextureManager::getInstance()->clean();
-    SDL_DestroyRenderer(m_Context);
 }

@@ -5,6 +5,7 @@
 #ifndef Character_H
 #define Character_H
 
+#include <stack>
 #include "GameObject.h"
 
 class Character : public GameObject {
@@ -16,6 +17,7 @@ public:
     void clean() override = 0;
 
     void update(float delta) override = 0;
+
 
 protected:
     std::string name;

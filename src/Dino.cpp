@@ -11,7 +11,6 @@
 static Register<Dino> aRegister("DINO");
 
 Dino::Dino(Properties *properties) : Character(properties) {
-    initLife();
 
     jumpTime = JUMP_TIME;
     jumpForce = JUMP_FORCE;
@@ -90,17 +89,26 @@ void Dino::update(float delta) {
         else
             animation->setProperties("dino_crying", 0, 2, 500);
         loseLife();
-        transform->x = lastPosition.x;
+        transform->x = 100.f;
+        SDL_Delay(500);
+        Game::getInstance()->newVoidState();
     }
 
     if (transform->x < 0 || transform->x > MAP_WIDTH)
         transform->x = lastPosition.x;
 
     // move on Y axis
+    if (transform->y > 430.f) {
+        loseLife();
+        transform->x = 100.f;
+        transform->y = 300.f;
+        SDL_Delay(500);
+        Game::getInstance()->newVoidState();
+    }
+
     lastPosition.y = transform->y;
     transform->moveY(rigidBody->getPosition().y);
     collider->setBox((int) transform->x, (int) transform->y, 24, 24);
-
 
     if (Collision::getInstance()->mapCollision(collider->getBox())) {
         isOnGround = true;
@@ -113,7 +121,9 @@ void Dino::update(float delta) {
         else
             animation->setProperties("dino_crying", 0, 2, 500);
         loseLife();
-        transform->x = lastPosition.x;
+        transform->x = 100.f;
+        SDL_Delay(500);
+        Game::getInstance()->newVoidState();
     }
 
     origin->x = transform->x + (float) width / 2;

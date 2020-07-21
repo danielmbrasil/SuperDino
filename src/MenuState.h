@@ -16,6 +16,8 @@ class MenuState : public GameState {
 public:
     MenuState();
 
+    ~MenuState() = default;
+
     void update(float dt) override;
 
     void render() override;

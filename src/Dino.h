@@ -9,9 +9,8 @@
 #include "Animation.h"
 #include "RigidBody.h"
 #include "Collider.h"
-#include <stack>
 
-#define JUMP_TIME 16.4f
+#define JUMP_TIME 16.6f
 #define JUMP_FORCE 19.f
 
 class Dino : public Character {
@@ -24,17 +23,19 @@ public:
 
     void update(float delta) override;
 
-    void initLife() {
-        for (int i = 0; i <= 30; i++)
-            dinoLife.push((float) i);
+    void initLife() override {
+        for (int i = 0; i <= 3; i++)
+            life.push(i);
     }
 
-    void loseLife() {
-        if (!dinoLife.empty() && dinoLife.top() != 0.f)
-            dinoLife.pop();
+    void loseLife() override {
+        if (!life.empty() && life.top() != 0)
+            life.pop();
     }
 
-    std::stack<float> getLife() { return dinoLife; }
+    std::stack<int> getLife() override {
+        return life;
+    }
 
 private:
     Animation *animation;
@@ -49,7 +50,7 @@ private:
     Collider *collider;
     Vector2D lastPosition;
 
-    std::stack<float> dinoLife;
+    std::stack<int> life;
 };
 
 

@@ -7,7 +7,18 @@
 Game *Game::s_Instance = nullptr;
 
 void Game::startGame() {
-    playState = new PlayState();
+    playState = new PlayState(100.0f, 300.0f);
+    manager.addState(playState);
+}
+
+void Game::newMenu() {
+    menu = new MenuState();
+    manager.addState(menu);
+}
+
+void Game::newVoidState() {
+    voidState = new VoidState(Game::getInstance()->getPlayState()->getDinoLife());
+    manager.addState(voidState);
 }
 
 bool Game::init() {
@@ -41,13 +52,12 @@ bool Game::init() {
         Game::getInstance()->quit();
     }
 
-    // create play State
     playState = nullptr;
-    menu = new MenuState();
     pauseState = nullptr;
+    voidState = nullptr;
 
-    // add state to the stack
-    manager.addState(menu);
+    // create main menu
+    newMenu();
 
     return m_isRunning = true;
 }

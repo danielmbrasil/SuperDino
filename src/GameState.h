@@ -14,7 +14,7 @@ class GameState {
 public:
     GameState();
 
-    ~GameState() = default;
+    virtual ~GameState() = default;
 
     virtual void update(float dt) = 0;
 

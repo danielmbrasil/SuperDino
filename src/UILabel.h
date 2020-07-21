@@ -18,6 +18,8 @@ class UILabel {
 public:
     UILabel(int x, int y, std::string text, std::string font, SDL_Color &color);
 
+    ~UILabel() = default;
+
     void setLabelText(const std::string &text, const std::string &font);
 
     void draw();

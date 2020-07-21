@@ -13,6 +13,8 @@ class PauseState : public GameState {
 public:
     PauseState();
 
+    ~PauseState() = default;
+
     void update(float dt) override;
 
     void render() override;
@@ -21,7 +23,7 @@ public:
 
 private:
     UILabel *labels[3]{};
-    std::string options[3] = {"Resume Game", "Start New Game", "Exit"};
+    std::string options[3] = {"Resume Game", "Return to Main Menu", "Exit"};
 
     SDL_Rect position[3]{};
     SDL_Color white = {255, 255, 255, 255};

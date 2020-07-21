@@ -34,15 +34,15 @@ void MenuState::events() {
             y >= labels[i]->getPosition().y &&
             y <= labels[i]->getPosition().y + labels[i]->getPosition().h) {
             labels[i]->clean();
+            delete labels[i];
             labels[i] = new UILabel(position[i].x, position[i].y, options[i], "minecraftBigger", green);
 
             if (KeyboardController::getInstance()->getMouseButtonDown() && i == 0) {
-                //Game::getInstance()->getManager()->popState();
-                Game::getInstance()->startGame();
-                Game::getInstance()->getManager()->addState(Game::getInstance()->getPlayState());
-                Game::getInstance()->unsetMenu();
                 for (auto &label : labels)
                     label->clean();
+                //Game::getInstance()->getManager()->popState();
+                Game::getInstance()->startGame();
+                Game::getInstance()->unsetMenu();
                 SDL_Delay(300);
             } else if (KeyboardController::getInstance()->getMouseButtonDown() && i == 1) {
                 for (auto &label : labels)
@@ -51,6 +51,7 @@ void MenuState::events() {
             }
         } else {
             labels[i]->clean();
+            delete labels[i];
             labels[i] = new UILabel(position[i].x, position[i].y, options[i], "minecraftBigger", white);
         }
     }
