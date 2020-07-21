@@ -21,9 +21,11 @@ public:
 
     void update(float dt) override;
 
+    void clear();
+
     inline GameMap *getMap() { return levelMap_1; }
 
-    inline int getDinoLife() { return (int) dino->getLife().top(); }
+    inline int getDinoLife() { return dino->getLife().top(); }
 
 private:
     UILabel *lifeLabel;

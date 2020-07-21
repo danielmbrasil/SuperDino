@@ -8,7 +8,7 @@
 #include "Vector2D.h"
 
 #define UNI_MASS 1.0f
-#define GRAVITY 9.81f
+#define GRAVITY 8.f
 
 class RigidBody {
 public:
@@ -64,8 +64,8 @@ public:
     void update(float delta) {
         m_Acceleration.x = (m_Force.x + m_Friction.x) / m_Mass;
         m_Acceleration.y = m_Gravity + m_Force.y / m_Mass;
-        m_Velocity = m_Acceleration * delta;
-        m_Position = m_Velocity * delta;
+        m_Velocity = m_Acceleration * (int)delta;
+        m_Position = m_Velocity * (int)delta;
     }
 
 private:

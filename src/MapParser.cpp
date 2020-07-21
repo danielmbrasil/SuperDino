@@ -15,7 +15,8 @@ bool MapParser::load() {
 void MapParser::clean() {
     std::map<std::string, GameMap *>::iterator iterator;
     for (iterator = m_Maps.begin(); iterator != m_Maps.end(); iterator++)
-        iterator->second = nullptr;
+        //iterator->second = nullptr;
+        delete iterator->second;
     m_Maps.clear();
 }
 

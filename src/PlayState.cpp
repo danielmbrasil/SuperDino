@@ -47,10 +47,17 @@ void PlayState::render() {
 void PlayState::update(float dt) {
     std::stringstream ss;
     ss << "Dino x" << dino->getLife().top();
+    lifeLabel->clean();
     lifeLabel->setLabelText(ss.str(), "minecraft");
 
     levelMap_1->update();
     dino->update(dt);
 
     Camera::getInstance()->update();
+}
+
+void PlayState::clear() {
+    dino->clean();
+    lifeLabel->clean();
+    delete lifeLabel;
 }

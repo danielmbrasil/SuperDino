@@ -21,7 +21,7 @@ public:
 
     void clean();
 
-    inline GameMap *getMaps(std::string id) { return m_Maps[id]; }
+    inline GameMap *getMaps(const std::string& id) { return m_Maps[id]; }
 
 private:
     MapParser() = default;

@@ -42,13 +42,13 @@ bool Game::init() {
         return false;
     }
 
-    if (!MapParser::getInstance()->load()) {
-        SDL_Log("Failed to load map.");
+    if (TTF_Init() == -1) {
+        SDL_Log("Failed to initialize TTF %s\n", SDL_GetError());
         Game::getInstance()->quit();
     }
 
-    if (TTF_Init() == -1) {
-        SDL_Log("Failed to initialize TTF %s\n", SDL_GetError());
+    if (!MapParser::getInstance()->load()) {
+        SDL_Log("Failed to load map.");
         Game::getInstance()->quit();
     }
 

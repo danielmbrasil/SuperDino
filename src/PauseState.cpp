@@ -52,6 +52,8 @@ void PauseState::events() {
                 Game::getInstance()->getManager()->popState();
                 Game::getInstance()->unsetPause();
                 Game::getInstance()->getManager()->popState();
+                Game::getInstance()->getPlayState()->clear();
+                Game::getInstance()->unsetPlayState();
                 Game::getInstance()->newMenu();
                 SDL_Delay(300);
             } else if (KeyboardController::getInstance()->getMouseButtonDown() && i == 2) {

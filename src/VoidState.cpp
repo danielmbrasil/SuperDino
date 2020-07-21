@@ -11,6 +11,7 @@ VoidState::VoidState(int life) {
     currentLife = life;
 
     label = new UILabel(400, 200, "X" + std::to_string(currentLife), "minecraftBigger", white);
+
 }
 
 void VoidState::update(float dt) {

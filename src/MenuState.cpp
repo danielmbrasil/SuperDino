@@ -40,7 +40,7 @@ void MenuState::events() {
             if (KeyboardController::getInstance()->getMouseButtonDown() && i == 0) {
                 for (auto &label : labels)
                     label->clean();
-                //Game::getInstance()->getManager()->popState();
+                Game::getInstance()->getManager()->popState();
                 Game::getInstance()->startGame();
                 Game::getInstance()->unsetMenu();
                 SDL_Delay(300);

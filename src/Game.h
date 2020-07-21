@@ -48,11 +48,25 @@ public:
 
     inline VoidState *getVoidState() { return voidState; }
 
-    inline void unsetMenu() { menu = nullptr; }
+    inline void unsetPlayState() {
+        delete playState;
+        playState = nullptr;
+    }
 
-    inline void unsetPause() { pauseState = nullptr; }
+    inline void unsetMenu() {
+        delete menu;
+        menu = nullptr;
+    }
 
-    inline void unsetVoidState() { voidState = nullptr; }
+    inline void unsetPause() {
+        delete pauseState;
+        pauseState = nullptr;
+    }
+
+    inline void unsetVoidState() {
+        delete voidState;
+        voidState = nullptr;
+    }
 
     void startGame();
 
@@ -74,7 +88,6 @@ private:
     PauseState *pauseState{};
     VoidState *voidState{};
 
-    int curretLife{};
 };
 
 #endif //GAME_H
