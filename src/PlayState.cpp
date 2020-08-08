@@ -6,6 +6,7 @@
 #include "MapParser.h"
 #include "Collision.h"
 #include <sstream>
+#include <algorithm>
 
 PlayState::PlayState(float x, float y, int l) {
     // get renderer context
@@ -22,8 +23,9 @@ PlayState::PlayState(float x, float y, int l) {
     // create camera
     Camera::getInstance()->setTarget(dino->getOrigin());
 
-    // create dino enemy
-    enemy = new DinoEnemy(new Properties("dino_enemy", 1000.f, 290.f, 24, 24));
+    // create dino enemies
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1000.f, 290.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1350.f, 290.f, 24, 24)));
 
     //create lifeLabel
     SDL_Color yellow = {248, 160, 0};
@@ -37,7 +39,10 @@ void PlayState::render() {
     SDL_RenderClear(m_Context);
 
     levelMap_1->render();
-    enemy->draw();
+
+    for (auto &e : enemies)
+        e->draw();
+
     dino->draw();
     lifeLabel->draw();
 
@@ -57,18 +62,19 @@ void PlayState::update(float dt) {
 
     levelMap_1->update();
     dino->update(dt);
-    enemy->update(dt);
+    for (auto &e : enemies) {
+        e->update(dt);
 
-    SDL_Rect dinoRect, enemyRect;
+        SDL_Rect dinoRect, enemyRect;
 
-    dinoRect = dino->getCollider();
-    enemyRect = enemy->getCollider();
+        dinoRect = dino->getCollider();
+        enemyRect = e->getCollider();
 
-    if (Collision::getInstance()->checkCollision(dinoRect, enemyRect)) {
-        SDL_Log("yay a collision !!!\n");
-        dino->loseLife();
-        SDL_Delay(500);
-        Game::getInstance()->newVoidState(dino->getLife());
+        if (Collision::getInstance()->checkCollision(dinoRect, enemyRect) && !dino->getDinoHitFirst()) {
+            dino->loseLife();
+            SDL_Delay(500);
+            Game::getInstance()->newVoidState(dino->getLife());
+        }
     }
 }
 
@@ -78,10 +84,20 @@ int PlayState::getDinoLife() {
 
 void PlayState::clear() {
     dino->clean();
-    enemy->clean();
+    for (auto &e : enemies)
+        e->clean();
     lifeLabel->clean();
 
     delete lifeLabel;
     delete dino;
     delete enemy;
+}
+
+void PlayState::enemyDeath(int index) {
+    enemies.erase(enemies.begin() + index);
+}
+
+void PlayState::enemySuicide(DinoEnemy *e) {
+    auto it = std::find(enemies.begin(), enemies.end(), e);
+    enemies.erase(it);
 }

@@ -26,6 +26,10 @@ public:
 
     SDL_Rect getCollider();
 
+    SDL_Rect getHeadCollider();
+
+    void suicide();
+
 private:
     Animation *animation;
     RigidBody *rigidBody;
@@ -34,6 +38,7 @@ private:
     float initialPosition;
 
     Collider *collider;
+    Collider *head;
     Vector2D lastPosition;
 };
 

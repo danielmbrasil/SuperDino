@@ -12,6 +12,7 @@
 #include "GameMap.h"
 #include "DinoEnemy.h"
 #include "Dino.h"
+#include <vector>
 
 class Dino;
 
@@ -35,13 +36,20 @@ public:
 
     int getDinoLife();
 
-    inline DinoEnemy *getEnemy() { return enemy;}
+    //inline DinoEnemy *getEnemy() { return enemy;}
+
+    void enemyDeath(int index);
+
+    inline std::vector<DinoEnemy *> getEnemies() { return enemies; }
+
+    void enemySuicide(DinoEnemy *e);
 
 private:
     UILabel *lifeLabel;
     Dino *dino;
-    DinoEnemy *enemy;
+    DinoEnemy *enemy{};
     GameMap *levelMap_1;
+    std::vector<DinoEnemy *> enemies;
 };
 
 

@@ -42,6 +42,10 @@ public:
 
     SDL_Rect getCollider();
 
+    SDL_Rect  getFeetCollider();
+
+    inline bool getDinoHitFirst() { return dinoHitFirst; }
+
 private:
     Animation *animation;
     RigidBody *rigidBody;
@@ -53,9 +57,11 @@ private:
     float jumpForce;
 
     Collider *collider;
+    Collider *feet;
     Vector2D lastPosition;
 
     int life{};
+    bool dinoHitFirst;
 };
 
 

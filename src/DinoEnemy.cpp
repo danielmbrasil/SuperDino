@@ -10,8 +10,12 @@
 
 DinoEnemy::DinoEnemy(Properties *properties) : Character(properties) {
     collider = new Collider();
-    collider->setBuffer(0, 0, -12, -16);
+    collider->setBuffer(0, -8, -10, -6);
     collider->setBox((int) properties->X, (int) properties->Y, 24, 24);
+
+    head = new Collider();
+    head->setBuffer(-10, 0, 0, 10);
+    head->setBox((int) properties->X, (int) properties->Y, 24, 24);
 
     rigidBody = new RigidBody();
 
@@ -20,8 +24,6 @@ DinoEnemy::DinoEnemy(Properties *properties) : Character(properties) {
 
     isForward = true;
     initialPosition = properties->X;
-
-    std::cerr << "enemy created" << std::endl;
 }
 
 DinoEnemy::~DinoEnemy() {
@@ -33,25 +35,22 @@ DinoEnemy::~DinoEnemy() {
 void DinoEnemy::draw() {
     animation->draw(transform->x, transform->y, width, height, 2);
 
-  /* Vector2D cam = Camera::getInstance()->getPosition();
-   SDL_Rect box = colliderY->getBox();
-   box.x -= (int)cam.x;
-   box.y -= (int)cam.y;
-   SDL_RenderDrawRect(Game::getInstance()->getRenderer(), &box); */
+   /* Vector2D cam = Camera::getInstance()->getPosition();
+    SDL_Rect box = collider->getBox();
+    box.x -= (int) cam.x;
+    box.y -= (int) cam.y;
+    SDL_RenderDrawRect(Game::getInstance()->getRenderer(), &box);*/
 }
 
 void DinoEnemy::update(float delta) {
-    //std::cerr << transform->x << ", " << transform->y << std::endl;
-
     rigidBody->update(delta);
-    //std::cerr << rigidBody->getVelocity().x << std::endl;
 
     lastPosition.x = transform->x;
     transform->moveX(rigidBody->getPosition().x);
     collider->setBox((int) transform->x, (int) transform->y, 24, 24);
+    head->setBox((int) transform->x, (int) transform->y, 24, 24);
 
     if (Camera::getInstance()->getPosition().x > (initialPosition - 850.f)) {
-        std::cerr << "true" << std::endl;
         if (isForward) {
             rigidBody->applyForceX(3.f);
         }
@@ -69,14 +68,15 @@ void DinoEnemy::update(float delta) {
     }
 
     if (transform->y < 430.f) {
-       lastPosition.y = transform->y;
+        lastPosition.y = transform->y;
         transform->moveY(rigidBody->getPosition().y);
         collider->setBox((int) transform->x, (int) transform->y, 24, 24);
+        head->setBox((int) transform->x, (int) transform->y, 24, 24);
 
         if (Collision::getInstance()->mapCollision(collider->getBox()))
             transform->y = lastPosition.y;
     } else {
-        clean();
+        suicide();
     }
     origin->x = transform->x + (float) width / 2;
     origin->y = transform->y + (float) height / 2;
@@ -88,6 +88,15 @@ SDL_Rect DinoEnemy::getCollider() {
     return collider->getBox();
 }
 
+SDL_Rect DinoEnemy::getHeadCollider() {
+    return head->getBox();
+}
+
 void DinoEnemy::clean() {
     TextureManager::getInstance()->drop(textureID);
+}
+
+void DinoEnemy::suicide() {
+    Game::getInstance()->getPlayState()->enemySuicide(this);
+    //delete this;
 }
