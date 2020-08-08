@@ -8,7 +8,6 @@
 #include "IObject.h"
 #include "Transform.h"
 #include <SDL2/SDL.h>
-#include <stack>
 
 #include <utility>
 
@@ -39,6 +38,11 @@ public:
                               (properties->Y + (float) properties->Height / 2));
     }
 
+    virtual ~GameObject() {
+        delete transform;
+        delete origin;
+    }
+
     inline Vector2D *getOrigin() { return origin; }
 
     void draw() override = 0;
@@ -46,12 +50,6 @@ public:
     void update(float delta) override = 0;
 
     void clean() override = 0;
-
-    virtual void initLife() = 0;
-
-    virtual void loseLife() = 0;
-
-    virtual std::stack<int> getLife() = 0;
 
 protected:
     std::string textureID;

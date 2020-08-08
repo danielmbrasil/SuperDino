@@ -70,9 +70,11 @@ public:
 
     void startGame();
 
+    void restartGame(int life);
+
     void newMenu();
 
-    void newVoidState();
+    void newVoidState(int life);
 
 private:
     Game() = default;

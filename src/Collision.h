@@ -16,8 +16,8 @@ public:
         return s_Instance = (s_Instance != nullptr) ? s_Instance : new Collision();
     }
 
-    bool checkCollision(SDL_Rect rectA, SDL_Rect rectB);
-
+    bool checkCollision(SDL_Rect &rectA, SDL_Rect &rectB);
+    
     bool mapCollision(SDL_Rect rectA);
 
     bool cactusCollision(SDL_Rect rectA);

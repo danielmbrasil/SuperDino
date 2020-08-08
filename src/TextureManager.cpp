@@ -13,6 +13,7 @@ bool TextureManager::loadTexture(const std::string &id, const std::string &filen
     }
 
     texture = SDL_CreateTextureFromSurface(Game::getInstance()->getRenderer(), surface);
+    SDL_FreeSurface(surface);
 
     if (!texture) {
         SDL_Log("Failed to load texture: %s\n", SDL_GetError());

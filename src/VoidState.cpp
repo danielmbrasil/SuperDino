@@ -11,14 +11,20 @@ VoidState::VoidState(int life) {
     currentLife = life;
 
     label = new UILabel(400, 200, "X" + std::to_string(currentLife), "minecraftBigger", white);
-
 }
+
+VoidState::~VoidState() = default;
 
 void VoidState::update(float dt) {
     SDL_Delay(3000);
     label->clean();
     delete label;
     Game::getInstance()->getManager()->popState();
+    Game::getInstance()->unsetVoidState();
+    Game::getInstance()->getManager()->popState();
+    Game::getInstance()->getPlayState()->clear();
+    Game::getInstance()->unsetPlayState();
+    Game::getInstance()->restartGame(currentLife);
 }
 
 void VoidState::render() {

@@ -23,6 +23,8 @@ PauseState::PauseState() {
         labels[i] = new UILabel(position[i].x, position[i].y, options[i], "minecraftBigger", white);
 }
 
+PauseState::~PauseState() = default;
+
 void PauseState::update(float dt) {
 
 }
