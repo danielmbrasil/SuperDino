@@ -2,8 +2,8 @@
 // Created by daniel on 17/07/2020.
 //
 
-#ifndef INC_2D_SUPERDINO_GAMESTATE_H
-#define INC_2D_SUPERDINO_GAMESTATE_H
+#ifndef GAMESTATE_H
+#define GAMESTATE_H
 
 #include "StateManager.h"
 #include <SDL2/SDL.h>
@@ -14,7 +14,7 @@ class GameState {
 public:
     GameState();
 
-    virtual ~GameState() = default;
+    virtual ~GameState();
 
     virtual void update(float dt) = 0;
 
@@ -30,4 +30,4 @@ protected:
 };
 
 
-#endif //INC_2D_SUPERDINO_GAMESTATE_H
+#endif //GAMESTATE_H

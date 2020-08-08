@@ -8,6 +8,8 @@ GameState::GameState() {
     manager = nullptr;
 }
 
+GameState::~GameState() {}
+
 void GameState::setManager(StateManager *m) {
     manager = m;
 }

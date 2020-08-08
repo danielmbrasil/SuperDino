@@ -2,8 +2,8 @@
 // Created by daniel on 17/07/2020.
 //
 
-#ifndef INC_2D_SUPERDINO_MENUSTATE_H
-#define INC_2D_SUPERDINO_MENUSTATE_H
+#ifndef MENUSTATE_H
+#define MENUSTATE_H
 
 #include "GameState.h"
 #include <SDL2/SDL.h>
@@ -16,7 +16,7 @@ class MenuState : public GameState {
 public:
     MenuState();
 
-    ~MenuState() = default;
+    ~MenuState();
 
     void update(float dt) override;
 
@@ -35,4 +35,4 @@ private:
 };
 
 
-#endif //INC_2D_SUPERDINO_MENUSTATE_H
+#endif //MENUSTATE_H

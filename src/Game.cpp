@@ -7,7 +7,12 @@
 Game *Game::s_Instance = nullptr;
 
 void Game::startGame() {
-    playState = new PlayState(100.0f, 300.0f);
+    playState = new PlayState(100.0f, 300.0f, 3);
+    manager.addState(playState);
+}
+
+void Game::restartGame(int life) {
+    playState = new PlayState(100.f, 300.f, life);
     manager.addState(playState);
 }
 
@@ -16,8 +21,8 @@ void Game::newMenu() {
     manager.addState(menu);
 }
 
-void Game::newVoidState() {
-    voidState = new VoidState(Game::getInstance()->getPlayState()->getDinoLife());
+void Game::newVoidState(int life) {
+    voidState = new VoidState(life);
     manager.addState(voidState);
 }
 
@@ -51,6 +56,10 @@ bool Game::init() {
         SDL_Log("Failed to load map.");
         Game::getInstance()->quit();
     }
+
+    // add fonts
+    FontManager::getInstance()->addFont("minecraft", "../assets/fonts/Minecraft.ttf", 16);
+    FontManager::getInstance()->addFont("minecraftBigger", "../assets/fonts/Minecraft.ttf", 32);
 
     playState = nullptr;
     pauseState = nullptr;

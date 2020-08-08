@@ -10,9 +10,6 @@ MenuState::MenuState() {
     // get context
     m_Context = Game::getInstance()->getRenderer();
 
-    // add minecraft font but bigger
-    FontManager::getInstance()->addFont("minecraftBigger", "../assets/fonts/Minecraft.ttf", 32);
-
     // set labels position
     position[0].x = 100;
     position[0].y = 220;
@@ -23,6 +20,8 @@ MenuState::MenuState() {
     for (int i = 0; i < 2; i++)
         labels[i] = new UILabel(position[i].x, position[i].y, options[i], "minecraftBigger", white);
 }
+
+MenuState::~MenuState() noexcept = default;
 
 void MenuState::events() {
     int x = KeyboardController::getInstance()->getX();

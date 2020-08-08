@@ -48,8 +48,6 @@ add_executable(2D_SuperDino
         src/FontManager.h
         src/UILabel.h
         src/UILabel.cpp
-        src/ObjectManager.cpp
-        src/ObjectManager.h
         src/StateManager.cpp
         src/StateManager.h
         src/GameState.h
@@ -58,6 +56,11 @@ add_executable(2D_SuperDino
         src/MenuState.h
         src/PlayState.cpp
         src/PlayState.h
-        src/PauseState.cpp src/PauseState.h src/VoidState.cpp src/VoidState.h)
+        src/PauseState.cpp
+        src/PauseState.h
+        src/VoidState.cpp
+        src/VoidState.h
+        src/DinoEnemy.cpp
+        src/DinoEnemy.h)
 
 target_link_libraries(2D_SuperDino -lSDL2 -lSDL2_image -lSDL2_ttf)

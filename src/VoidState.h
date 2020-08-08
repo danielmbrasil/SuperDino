@@ -2,8 +2,8 @@
 // Created by daniel on 7/20/20.
 //
 
-#ifndef INC_2D_SUPERDINO_VOIDSTATE_H
-#define INC_2D_SUPERDINO_VOIDSTATE_H
+#ifndef VOIDSTATE_H
+#define VOIDSTATE_H
 
 #include "GameState.h"
 #include "UILabel.h"
@@ -12,7 +12,7 @@ class VoidState : public GameState {
 public:
     VoidState(int life);
 
-    ~VoidState() = default;
+    ~VoidState();
 
     void update(float dt) override;
 
@@ -25,4 +25,4 @@ private:
 };
 
 
-#endif //INC_2D_SUPERDINO_VOIDSTATE_H
+#endif //VOIDSTATE_H

@@ -2,8 +2,8 @@
 // Created by daniel on 7/19/20.
 //
 
-#ifndef INC_2D_SUPERDINO_PAUSESTATE_H
-#define INC_2D_SUPERDINO_PAUSESTATE_H
+#ifndef PAUSESTATE_H
+#define PAUSESTATE_H
 
 #include "GameState.h"
 #include <string>
@@ -13,7 +13,7 @@ class PauseState : public GameState {
 public:
     PauseState();
 
-    ~PauseState() = default;
+    ~PauseState();
 
     void update(float dt) override;
 
@@ -31,4 +31,4 @@ private:
 };
 
 
-#endif //INC_2D_SUPERDINO_PAUSESTATE_H
+#endif //PAUSESTATE_H

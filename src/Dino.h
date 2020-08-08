@@ -13,9 +13,13 @@
 #define JUMP_TIME 16.6f
 #define JUMP_FORCE 19.f
 
+class Collider;
+
 class Dino : public Character {
 public:
     explicit Dino(Properties *properties);
+
+    ~Dino() override;
 
     void draw() override;
 
@@ -23,19 +27,20 @@ public:
 
     void update(float delta) override;
 
-    void initLife() override {
-        for (int i = 0; i <= 3; i++)
-            life.push(i);
+    inline void setLife(int x) {
+        life = x;
     }
 
-    void loseLife() override {
-        if (!life.empty() && life.top() != 0)
-            life.pop();
+    inline void loseLife() {
+        if (life != 0)
+            life--;
     }
 
-    std::stack<int> getLife() override {
+    inline int getLife() {
         return life;
     }
+
+    SDL_Rect getCollider();
 
 private:
     Animation *animation;
@@ -50,7 +55,7 @@ private:
     Collider *collider;
     Vector2D lastPosition;
 
-    std::stack<int> life;
+    int life{};
 };
 
 

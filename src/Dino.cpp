@@ -6,9 +6,6 @@
 #include "TextureManager.h"
 #include "KeyboardController.h"
 #include "Collision.h"
-#include "ObjectManager.h"
-
-static Register<Dino> aRegister("DINO");
 
 Dino::Dino(Properties *properties) : Character(properties) {
 
@@ -17,6 +14,7 @@ Dino::Dino(Properties *properties) : Character(properties) {
 
     collider = new Collider();
     collider->setBuffer(0, 0, -12, -16);
+    collider->setBox((int) properties->X, (int) properties->Y, 24, 24);
 
     rigidBody = new RigidBody();
     //rigidBody->setGravity(5.0f);
@@ -25,8 +23,20 @@ Dino::Dino(Properties *properties) : Character(properties) {
     animation->setProperties(textureID, 0, 3, 100);
 }
 
+Dino::~Dino() {
+    delete collider;
+    delete rigidBody;
+    delete animation;
+}
+
 void Dino::draw() {
     animation->draw(transform->x, transform->y, width, height, 2);
+
+    /*Vector2D cam = Camera::getInstance()->getPosition();
+   SDL_Rect box = colliderY->getBox();
+   box.x -= (int)cam.x;
+   box.y -= (int)cam.y;
+   SDL_RenderDrawRect(Game::getInstance()->getRenderer(), &box); */
 }
 
 void Dino::update(float delta) {
@@ -91,7 +101,7 @@ void Dino::update(float delta) {
         loseLife();
         transform->x = 100.f;
         SDL_Delay(500);
-        Game::getInstance()->newVoidState();
+        Game::getInstance()->newVoidState(life);
     }
 
     if (transform->x < 0 || transform->x > MAP_WIDTH)
@@ -103,7 +113,7 @@ void Dino::update(float delta) {
         transform->x = 100.f;
         transform->y = 300.f;
         SDL_Delay(500);
-        Game::getInstance()->newVoidState();
+        Game::getInstance()->newVoidState(life);
     }
 
     lastPosition.y = transform->y;
@@ -123,13 +133,17 @@ void Dino::update(float delta) {
         loseLife();
         transform->x = 100.f;
         SDL_Delay(500);
-        Game::getInstance()->newVoidState();
+        Game::getInstance()->newVoidState(life);
     }
 
     origin->x = transform->x + (float) width / 2;
     origin->y = transform->y + (float) height / 2;
 
     animation->update();
+}
+
+SDL_Rect Dino::getCollider() {
+    return collider->getBox();
 }
 
 void Dino::clean() {
