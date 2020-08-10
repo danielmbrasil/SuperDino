@@ -10,7 +10,7 @@
 
 class VoidState : public GameState {
 public:
-    VoidState(int life);
+    VoidState(int life, int coins);
 
     ~VoidState();
 
@@ -20,7 +20,11 @@ public:
 
 private:
     int currentLife;
+    int collectedCoins;
+
     UILabel *label;
+    UILabel *coinsLabel;
+
     SDL_Color white = {255, 255, 255, 255};
 };
 

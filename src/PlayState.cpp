@@ -8,7 +8,7 @@
 #include <sstream>
 #include <algorithm>
 
-PlayState::PlayState(float x, float y, int l) {
+PlayState::PlayState(float x, float y, int l, int c) {
     // get renderer context
     m_Context = Game::getInstance()->getRenderer();
 
@@ -19,6 +19,7 @@ PlayState::PlayState(float x, float y, int l) {
     // create Dino
     dino = new Dino(new Properties("dino", x, y, 24, 24));
     dino->setLife(l);
+    dino->setCoins(c);
 
     // create camera
     Camera::getInstance()->setTarget(dino->getOrigin());
@@ -26,7 +27,6 @@ PlayState::PlayState(float x, float y, int l) {
     // create dino enemies
     enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1000.f, 290.f, 24, 24)));
     enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1350.f, 290.f, 24, 24)));
-
 
     // create coins
     coins.push_back(new Coins(new Properties("coins", 200.f, 250.f, 32, 32)));
@@ -37,7 +37,7 @@ PlayState::PlayState(float x, float y, int l) {
     SDL_Color yellow = {248, 160, 0};
     lifeLabel = new UILabel(10, 10, "Dino", "minecraft", yellow);
 
-    pointsLabel = new UILabel(200, 10, "X0", "minecraft", yellow);
+    pointsLabel = new UILabel(450, 10, "X0", "minecraft", yellow);
 }
 
 PlayState::~PlayState() = default;
@@ -47,7 +47,7 @@ void PlayState::render() {
     SDL_RenderClear(m_Context);
 
     levelMap_1->render();
-    TextureManager::getInstance()->draw("coins", (int) (175.f + Camera::getInstance()->getPosition().x), 5, 32, 32,
+    TextureManager::getInstance()->draw("coins", (int) (420.f + Camera::getInstance()->getPosition().x), 5, 32, 32,
                                         SDL_FLIP_NONE, 0.6f);
     for (auto &e : enemies)
         e->draw();
@@ -134,4 +134,8 @@ void PlayState::enemySuicide(DinoEnemy *e) {
 
 void PlayState::eraseCoin(int index) {
     coins.erase(coins.begin() + index);
+}
+
+int PlayState::getCollectedCoins() {
+    return dino->getCoinsCollected();
 }

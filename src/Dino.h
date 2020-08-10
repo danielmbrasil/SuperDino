@@ -44,7 +44,11 @@ public:
 
     inline bool getDinoHitFirst() { return dinoHitFirst; }
 
-    inline Uint32 getCoinsCollected() { return coinsCollected; }
+    inline Uint32 getCoinsCollected() { return collectedCoins; }
+
+    inline void setCoins(int x) {
+        collectedCoins = x;
+    }
 
 private:
     Animation *animation;
@@ -62,7 +66,7 @@ private:
     int life{};
     bool dinoHitFirst;
 
-    Uint32 coinsCollected;
+    int collectedCoins;
 };
 
 
