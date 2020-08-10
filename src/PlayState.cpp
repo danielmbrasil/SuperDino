@@ -27,9 +27,17 @@ PlayState::PlayState(float x, float y, int l) {
     enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1000.f, 290.f, 24, 24)));
     enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1350.f, 290.f, 24, 24)));
 
+
+    // create coins
+    coins.push_back(new Coins(new Properties("coins", 200.f, 250.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 232.f, 250.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 320.f, 250.f, 32, 32)));
+
     //create lifeLabel
     SDL_Color yellow = {248, 160, 0};
     lifeLabel = new UILabel(10, 10, "Dino", "minecraft", yellow);
+
+    pointsLabel = new UILabel(200, 10, "X0", "minecraft", yellow);
 }
 
 PlayState::~PlayState() = default;
@@ -39,12 +47,17 @@ void PlayState::render() {
     SDL_RenderClear(m_Context);
 
     levelMap_1->render();
-
+    TextureManager::getInstance()->draw("coins", (int) (175.f + Camera::getInstance()->getPosition().x), 5, 32, 32,
+                                        SDL_FLIP_NONE, 0.6f);
     for (auto &e : enemies)
         e->draw();
 
     dino->draw();
     lifeLabel->draw();
+    pointsLabel->draw();
+
+    for (auto &c : coins)
+        c->draw();
 
     SDL_Rect camera = Camera::getInstance()->getViewBox();
 
@@ -53,15 +66,23 @@ void PlayState::render() {
 }
 
 void PlayState::update(float dt) {
-    std::stringstream ss;
-    ss << "Dino x" << dino->getLife();
+    std::stringstream lifeStream;
+    lifeStream << "Dino x" << dino->getLife();
     lifeLabel->clean();
-    lifeLabel->setLabelText(ss.str(), "minecraft");
+    lifeLabel->setLabelText(lifeStream.str(), "minecraft");
 
+    std::stringstream pointsStream;
+    pointsStream << "X" << dino->getCoinsCollected();
+    pointsLabel->clean();
+    pointsLabel->setLabelText(pointsStream.str(), "minecraft");
     Camera::getInstance()->update();
 
     levelMap_1->update();
     dino->update(dt);
+
+    for (auto &c : coins)
+        c->update(dt);
+
     for (auto &e : enemies) {
         e->update(dt);
 
@@ -86,11 +107,20 @@ void PlayState::clear() {
     dino->clean();
     for (auto &e : enemies)
         e->clean();
+
     lifeLabel->clean();
+    pointsLabel->clean();
+
+    for (auto &c : coins)
+        c->clean();
 
     delete lifeLabel;
+    delete pointsLabel;
+
     delete dino;
-    delete enemy;
+
+    for (auto &c : coins)
+        delete c;
 }
 
 void PlayState::enemyDeath(int index) {
@@ -100,4 +130,8 @@ void PlayState::enemyDeath(int index) {
 void PlayState::enemySuicide(DinoEnemy *e) {
     auto it = std::find(enemies.begin(), enemies.end(), e);
     enemies.erase(it);
+}
+
+void PlayState::eraseCoin(int index) {
+    coins.erase(coins.begin() + index);
 }
