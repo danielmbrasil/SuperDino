@@ -70,7 +70,7 @@ public:
 
     void startGame();
 
-    void restartGame(int life);
+    void restartGame(int life, int coins);
 
     void newMenu();
 

@@ -7,12 +7,12 @@
 Game *Game::s_Instance = nullptr;
 
 void Game::startGame() {
-    playState = new PlayState(100.0f, 300.0f, 3);
+    playState = new PlayState(100.0f, 300.0f, 3, 0);
     manager.addState(playState);
 }
 
-void Game::restartGame(int life) {
-    playState = new PlayState(100.f, 300.f, life);
+void Game::restartGame(int life, int coins) {
+    playState = new PlayState(100.f, 300.f, life, coins);
     manager.addState(playState);
 }
 
@@ -22,7 +22,7 @@ void Game::newMenu() {
 }
 
 void Game::newVoidState(int life) {
-    voidState = new VoidState(life);
+    voidState = new VoidState(life, Game::getInstance()->getPlayState()->getCollectedCoins());
     manager.addState(voidState);
 }
 

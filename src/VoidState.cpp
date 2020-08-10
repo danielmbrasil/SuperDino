@@ -6,9 +6,10 @@
 #include "Game.h"
 #include <string>
 
-VoidState::VoidState(int life) {
+VoidState::VoidState(int life, int coins) {
     m_Context = Game::getInstance()->getRenderer();
     currentLife = life;
+    collectedCoins = coins;
 
     label = new UILabel(400, 200, "X" + std::to_string(currentLife), "minecraftBigger", white);
 }
@@ -24,7 +25,7 @@ void VoidState::update(float dt) {
     Game::getInstance()->getManager()->popState();
     Game::getInstance()->getPlayState()->clear();
     Game::getInstance()->unsetPlayState();
-    Game::getInstance()->restartGame(currentLife);
+    Game::getInstance()->restartGame(currentLife, collectedCoins);
 }
 
 void VoidState::render() {

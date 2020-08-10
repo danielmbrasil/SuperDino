@@ -25,7 +25,7 @@ class Coins;
 
 class PlayState : public GameState {
 public:
-    PlayState(float x, float y, int l);
+    PlayState(float x, float y, int l, int c);
 
     ~PlayState();
 
@@ -50,6 +50,8 @@ public:
     inline std::vector<Coins *> getCoins() { return coins; }
 
     void eraseCoin(int index);
+
+    int getCollectedCoins();
 
 private:
     UILabel *lifeLabel;

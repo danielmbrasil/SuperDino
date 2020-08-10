@@ -24,7 +24,7 @@ Dino::Dino(Properties *properties) : Character(properties) {
 
     dinoHitFirst = false;
 
-    coinsCollected = 0;
+    collectedCoins = 0;
 }
 
 Dino::~Dino() {
@@ -162,7 +162,7 @@ void Dino::update(float delta) {
         dinoRect = collider->getBox();
 
         if (Collision::getInstance()->checkCollision(coinRect, dinoRect)) {
-            coinsCollected++;
+            collectedCoins++;
             Game::getInstance()->getPlayState()->eraseCoin(i);
         }
     }
