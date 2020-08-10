@@ -37,7 +37,7 @@ PlayState::PlayState(float x, float y, int l, int c) {
     SDL_Color yellow = {248, 160, 0};
     lifeLabel = new UILabel(10, 10, "Dino", "minecraft", yellow);
 
-    pointsLabel = new UILabel(200, 10, "X0", "minecraft", yellow);
+    pointsLabel = new UILabel(450, 10, "X0", "minecraft", yellow);
 }
 
 PlayState::~PlayState() = default;
@@ -47,7 +47,7 @@ void PlayState::render() {
     SDL_RenderClear(m_Context);
 
     levelMap_1->render();
-    TextureManager::getInstance()->draw("coins", (int) (175.f + Camera::getInstance()->getPosition().x), 5, 32, 32,
+    TextureManager::getInstance()->draw("coins", (int) (420.f + Camera::getInstance()->getPosition().x), 5, 32, 32,
                                         SDL_FLIP_NONE, 0.6f);
     for (auto &e : enemies)
         e->draw();

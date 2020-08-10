@@ -21,7 +21,10 @@ public:
 private:
     int currentLife;
     int collectedCoins;
+
     UILabel *label;
+    UILabel *coinsLabel;
+
     SDL_Color white = {255, 255, 255, 255};
 };
 

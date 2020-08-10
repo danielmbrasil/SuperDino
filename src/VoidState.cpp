@@ -5,21 +5,29 @@
 #include "VoidState.h"
 #include "Game.h"
 #include <string>
+#include "TextureManager.h"
 
 VoidState::VoidState(int life, int coins) {
     m_Context = Game::getInstance()->getRenderer();
     currentLife = life;
     collectedCoins = coins;
 
-    label = new UILabel(400, 200, "X" + std::to_string(currentLife), "minecraftBigger", white);
+    label = new UILabel(450, 200, "X" + std::to_string(currentLife), "minecraftBigger", white);
+    coinsLabel = new UILabel(450, 10, "X" + std::to_string(collectedCoins), "minecraft", white);
 }
 
 VoidState::~VoidState() = default;
 
 void VoidState::update(float dt) {
     SDL_Delay(3000);
+
     label->clean();
+    coinsLabel->clean();
+
     delete label;
+    delete coinsLabel;
+
+    TextureManager::getInstance()->drop("dino_crying");
     Game::getInstance()->getManager()->popState();
     Game::getInstance()->unsetVoidState();
     Game::getInstance()->getManager()->popState();
@@ -32,7 +40,12 @@ void VoidState::render() {
     SDL_SetRenderDrawColor(m_Context, 0, 0, 0, 0);
     SDL_RenderClear(m_Context);
 
+    TextureManager::getInstance()->drawFrame("dino_crying", (int) (400.f + Camera::getInstance()->getPosition().x), 190,
+                                             24, 24, 0, 1, 2);
     label->draw();
+    coinsLabel->draw();
 
+    TextureManager::getInstance()->draw("coins", (int) (420.f + Camera::getInstance()->getPosition().x), 5, 32, 32,
+                                        SDL_FLIP_NONE, 0.6f);
     SDL_RenderPresent(m_Context);
 }
