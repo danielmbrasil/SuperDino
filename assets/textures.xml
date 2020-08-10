@@ -5,4 +5,5 @@
     <texture id="dino_walking" source="../assets/images/dino_walking.png"/>
     <texture id="dino_crying" source="../assets/images/dino_crying.png"/>
     <texture id="dino_enemy" source="../assets/images/dino_enemy.png"/>
+    <texture id="coins" source="../assets/images/coin32.png"/>
 </textures>

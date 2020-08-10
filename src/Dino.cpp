@@ -17,17 +17,14 @@ Dino::Dino(Properties *properties) : Character(properties) {
     collider->setBuffer(0, 0, -12, -16);
     collider->setBox((int) properties->X, (int) properties->Y, 24, 24);
 
-    feet = new Collider();
-    feet->setBuffer(-15, -20, -4, 12);
-    feet->setBox((int) properties->X, (int) properties->Y, 24, 24);
-
     rigidBody = new RigidBody();
-    //rigidBody->setGravity(5.0f);
 
     animation = new Animation();
     animation->setProperties(textureID, 0, 3, 100);
 
     dinoHitFirst = false;
+
+    coinsCollected = 0;
 }
 
 Dino::~Dino() {
@@ -97,7 +94,6 @@ void Dino::update(float delta) {
     lastPosition.x = transform->x;
     transform->moveX(rigidBody->getPosition().x);
     collider->setBox((int) transform->x, (int) transform->y, 24, 24);
-    feet->setBox((int) transform->x, (int) transform->y, 24, 24);
 
     if (Collision::getInstance()->mapCollision(collider->getBox()))
         transform->x = lastPosition.x;
@@ -128,7 +124,6 @@ void Dino::update(float delta) {
     lastPosition.y = transform->y;
     transform->moveY(rigidBody->getPosition().y);
     collider->setBox((int) transform->x, (int) transform->y, 24, 24);
-    feet->setBox((int) transform->x, (int) transform->y, 24, 24);
 
     if (Collision::getInstance()->mapCollision(collider->getBox())) {
         isOnGround = true;
@@ -158,6 +153,20 @@ void Dino::update(float delta) {
             Game::getInstance()->getPlayState()->enemyDeath(i);
         }
     }
+
+    std::vector<Coins *> coins = Game::getInstance()->getPlayState()->getCoins();
+
+    for (int i = 0; i < coins.size(); i++) {
+        SDL_Rect coinRect, dinoRect;
+        coinRect = coins[i]->getCollider();
+        dinoRect = collider->getBox();
+
+        if (Collision::getInstance()->checkCollision(coinRect, dinoRect)) {
+            coinsCollected++;
+            Game::getInstance()->getPlayState()->eraseCoin(i);
+        }
+    }
+
     origin->x = transform->x + (float) width / 2;
     origin->y = transform->y + (float) height / 2;
 
@@ -166,10 +175,6 @@ void Dino::update(float delta) {
 
 SDL_Rect Dino::getCollider() {
     return collider->getBox();
-}
-
-SDL_Rect Dino::getFeetCollider() {
-    return feet->getBox();
 }
 
 void Dino::clean() {

@@ -25,10 +25,12 @@ bool TextureManager::loadTexture(const std::string &id, const std::string &filen
     return true;
 }
 
-void TextureManager::draw(const std::string &id, int x, int y, int width, int height, SDL_RendererFlip flip) {
+void
+TextureManager::draw(const std::string &id, int x, int y, int width, int height, SDL_RendererFlip flip, float scale) {
     srcRect = {0, 0, width, height};
     camera = Camera::getInstance()->getPosition();
-    destRect = {static_cast<int>((float) x - camera.x), static_cast<int>((float) y - camera.y), width, height};
+    destRect = {static_cast<int>((float) x - camera.x), static_cast<int>((float) y - camera.y),
+                (int) ((float) width * scale), (int) ((float) height * scale)};
 
     SDL_RenderCopyEx(Game::getInstance()->getRenderer(), texturesMap[id], &srcRect, &destRect, 0, nullptr, flip);
 }

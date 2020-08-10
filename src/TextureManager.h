@@ -20,7 +20,7 @@ public:
 
     void clean();
 
-    void draw(const std::string &id, int x, int y, int width, int height, SDL_RendererFlip flip = SDL_FLIP_NONE);
+    void draw(const std::string &id, int x, int y, int width, int height, SDL_RendererFlip flip = SDL_FLIP_NONE, float scale = 1.f);
 
     void drawFrame(const std::string &id, int x, int y, int width, int height, int row, int frame, int scale = 1,
                    SDL_RendererFlip flip = SDL_FLIP_NONE);

@@ -42,9 +42,9 @@ public:
 
     SDL_Rect getCollider();
 
-    SDL_Rect  getFeetCollider();
-
     inline bool getDinoHitFirst() { return dinoHitFirst; }
+
+    inline Uint32 getCoinsCollected() { return coinsCollected; }
 
 private:
     Animation *animation;
@@ -57,11 +57,12 @@ private:
     float jumpForce;
 
     Collider *collider;
-    Collider *feet;
     Vector2D lastPosition;
 
     int life{};
     bool dinoHitFirst;
+
+    Uint32 coinsCollected;
 };
 
 

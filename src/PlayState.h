@@ -13,12 +13,15 @@
 #include "DinoEnemy.h"
 #include "Dino.h"
 #include <vector>
+#include "Coins.h"
 
 class Dino;
 
 class UILabel;
 
 class DinoEnemy;
+
+class Coins;
 
 class PlayState : public GameState {
 public:
@@ -44,12 +47,19 @@ public:
 
     void enemySuicide(DinoEnemy *e);
 
+    inline std::vector<Coins *> getCoins() { return coins; }
+
+    void eraseCoin(int index);
+
 private:
     UILabel *lifeLabel;
+    UILabel *pointsLabel;
+
     Dino *dino;
-    DinoEnemy *enemy{};
     GameMap *levelMap_1;
+
     std::vector<DinoEnemy *> enemies;
+    std::vector<Coins *> coins;
 };
 
 

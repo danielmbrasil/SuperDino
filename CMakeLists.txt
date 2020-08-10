@@ -61,6 +61,6 @@ add_executable(2D_SuperDino
         src/VoidState.cpp
         src/VoidState.h
         src/DinoEnemy.cpp
-        src/DinoEnemy.h)
+        src/DinoEnemy.h src/Coins.cpp src/Coins.h)
 
 target_link_libraries(2D_SuperDino -lSDL2 -lSDL2_image -lSDL2_ttf)
