@@ -25,8 +25,20 @@ PlayState::PlayState(float x, float y, int l, int c) {
     Camera::getInstance()->setTarget(dino->getOrigin());
 
     // create dino enemies
-    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1000.f, 290.f, 24, 24)));
-    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1350.f, 290.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 320.f, 240.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 352.f, 240.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1504.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1888.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1920.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1952.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 2688.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 3584.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 3616.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 3648.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 3680.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 3712.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 5568.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 5600.f, 340.f, 24, 24)));
 
     // create coins
     coins.push_back(new Coins(new Properties("coins", 200.f, 250.f, 32, 32)));

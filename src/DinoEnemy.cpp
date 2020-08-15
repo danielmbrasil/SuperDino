@@ -22,7 +22,7 @@ DinoEnemy::DinoEnemy(Properties *properties) : Character(properties) {
     animation = new Animation();
     animation->setProperties(textureID, 0, 8, 100);
 
-    isForward = true;
+    isForward = false;
     initialPosition = properties->X;
 }
 
@@ -51,8 +51,9 @@ void DinoEnemy::update(float delta) {
     head->setBox((int) transform->x, (int) transform->y, 24, 24);
 
     if (Camera::getInstance()->getPosition().x > (initialPosition - 850.f)) {
-        if (isForward) {
-            rigidBody->applyForceX(3.f);
+        if (!isForward) {
+            animation->setProperties("dino_enemy", 0, 8, 100, SDL_FLIP_HORIZONTAL);
+            rigidBody->applyForceX(-3.f);
         }
         if (Collision::getInstance()->mapCollision(collider->getBox())) {
             transform->x = lastPosition.x;
