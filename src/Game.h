@@ -48,25 +48,13 @@ public:
 
     inline VoidState *getVoidState() { return voidState; }
 
-    inline void unsetPlayState() {
-        delete playState;
-        playState = nullptr;
-    }
+    void unsetPlayState();
 
-    inline void unsetMenu() {
-        delete menu;
-        menu = nullptr;
-    }
+    void unsetMenu();
 
-    inline void unsetPause() {
-        delete pauseState;
-        pauseState = nullptr;
-    }
+    void unsetPause();
 
-    inline void unsetVoidState() {
-        delete voidState;
-        voidState = nullptr;
-    }
+    void unsetVoidState();
 
     void startGame();
 
