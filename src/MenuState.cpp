@@ -5,23 +5,26 @@
 #include "MenuState.h"
 #include "Game.h"
 #include "KeyboardController.h"
+#include "TextureManager.h"
 
 MenuState::MenuState() {
     // get context
     m_Context = Game::getInstance()->getRenderer();
 
     // set labels position
-    position[0].x = 100;
-    position[0].y = 220;
-    position[1].x = 100;
-    position[1].y = 280;
+    position[0].x = 50;
+    position[0].y = 260;
+    position[1].x = 50;
+    position[1].y = 310;
 
     // create new labels
     for (int i = 0; i < 2; i++)
         labels[i] = new UILabel(position[i].x, position[i].y, options[i], "minecraftBigger", white);
+
+    TextureManager::getInstance()->loadTexture("menu_background", "../assets/images/menu_background.png");
 }
 
-MenuState::~MenuState() noexcept = default;
+MenuState::~MenuState() = default;
 
 void MenuState::events() {
     int x = KeyboardController::getInstance()->getX();
@@ -63,6 +66,8 @@ void MenuState::update(float dt) {
 void MenuState::render() {
     SDL_SetRenderDrawColor(m_Context, 0, 0, 0, 0);
     SDL_RenderClear(m_Context);
+
+    TextureManager::getInstance()->draw("menu_background", 0, 0, 900, 480);
 
     for (auto &label : labels)
         label->draw();

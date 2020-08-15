@@ -12,7 +12,7 @@ bool Game::init() {
         return false;
     }
 
-    window = SDL_CreateWindow("Yay it's running", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+    window = SDL_CreateWindow("Super Dino", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                               SCREEN_WIDTH, SCREEN_HEIGHT, 0);
 
     if (!window) {
@@ -81,6 +81,10 @@ void Game::render() {
 }
 
 void Game::clean() {
+    delete playState;
+    delete menu;
+    delete pauseState;
+    
     TextureManager::getInstance()->clean();
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
@@ -126,5 +130,5 @@ void Game::unsetPause() {
 }
 
 void Game::unsetVoidState() {
-    voidState = nullptr;
+    delete voidState;
 }

@@ -18,7 +18,11 @@ VoidState::VoidState(int life, int coins, int sc) {
     scoreLabel = new UILabel(780, 10, "SCORE: " + std::to_string(score), "minecraft", white);
 }
 
-VoidState::~VoidState() = default;
+VoidState::~VoidState() {
+    delete label;
+    delete coinsLabel;
+    delete scoreLabel;
+}
 
 void VoidState::update(float dt) {
     SDL_Delay(3000);
@@ -27,17 +31,13 @@ void VoidState::update(float dt) {
     coinsLabel->clean();
     scoreLabel->clean();
 
-    delete label;
-    delete coinsLabel;
-    delete scoreLabel;
-
     TextureManager::getInstance()->drop("dino_crying");
     Game::getInstance()->getManager()->popState();
-    Game::getInstance()->unsetVoidState();
     Game::getInstance()->getManager()->popState();
     Game::getInstance()->getPlayState()->clear();
     Game::getInstance()->unsetPlayState();
     Game::getInstance()->restartGame(currentLife, collectedCoins, score);
+    Game::getInstance()->unsetVoidState();
 }
 
 void VoidState::render() {

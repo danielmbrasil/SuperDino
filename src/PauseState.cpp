@@ -5,17 +5,18 @@
 #include "PauseState.h"
 #include "Game.h"
 #include "KeyboardController.h"
+#include "TextureManager.h"
 
 PauseState::PauseState() {
     // get context
     m_Context = Game::getInstance()->getRenderer();
 
     // set labels position
-    position[0].x = 100;
+    position[0].x = 50;
     position[0].y = 220;
-    position[1].x = 100;
+    position[1].x = 50;
     position[1].y = 280;
-    position[2].x = 100;
+    position[2].x = 50;
     position[2].y = 340;
 
     // create new labels
@@ -74,6 +75,8 @@ void PauseState::events() {
 void PauseState::render() {
     SDL_SetRenderDrawColor(m_Context, 0, 0, 0, 0);
     SDL_RenderClear(m_Context);
+
+    TextureManager::getInstance()->draw("menu_background", 0, 0, 900, 480);
 
     for (auto &label : labels)
         label->draw();
