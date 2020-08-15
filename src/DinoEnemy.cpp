@@ -1,5 +1,5 @@
 //
-// Created by daniel on 7/26/20.
+// Created by Daniel M Brasil on 7/26/20.
 //
 
 #include "DinoEnemy.h"
@@ -52,21 +52,24 @@ void DinoEnemy::update(float delta) {
 
     if (Camera::getInstance()->getPosition().x > (initialPosition - 850.f)) {
         if (!isForward) {
-            animation->setProperties("dino_enemy", 0, 8, 100, SDL_FLIP_HORIZONTAL);
+            animation->setProperties(textureID, 0, 8, 100, SDL_FLIP_HORIZONTAL);
             rigidBody->applyForceX(-3.f);
         }
         if (Collision::getInstance()->mapCollision(collider->getBox())) {
             transform->x = lastPosition.x;
             isForward = !isForward;
             if (!isForward) {
-                animation->setProperties("dino_enemy", 0, 8, 100, SDL_FLIP_HORIZONTAL);
+                animation->setProperties(textureID, 0, 8, 100, SDL_FLIP_HORIZONTAL);
                 rigidBody->applyForceX(-3.f);
             } else {
-                animation->setProperties("dino_enemy", 0, 8, 100);
+                animation->setProperties(textureID, 0, 8, 100);
                 rigidBody->applyForceX(3.f);
             }
         } 
     }
+
+    if (transform->x < 0.f || transform->x > MAP_WIDTH)
+        suicide();
 
     if (transform->y < 430.f) {
         lastPosition.y = transform->y;
@@ -99,5 +102,4 @@ void DinoEnemy::clean() {
 
 void DinoEnemy::suicide() {
     Game::getInstance()->getPlayState()->enemySuicide(this);
-    //delete this;
 }

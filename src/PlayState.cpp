@@ -25,20 +25,20 @@ PlayState::PlayState(float x, float y, int l, int c) {
     Camera::getInstance()->setTarget(dino->getOrigin());
 
     // create dino enemies
-    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 320.f, 240.f, 24, 24)));
-    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 352.f, 240.f, 24, 24)));
-    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1504.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 608.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy_blue", 640.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy_blue", 1504.f, 340.f, 24, 24)));
     enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1888.f, 340.f, 24, 24)));
     enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1920.f, 340.f, 24, 24)));
-    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 1952.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy_blue", 2000.f, 340.f, 24, 24)));
     enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 2688.f, 340.f, 24, 24)));
-    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 3584.f, 340.f, 24, 24)));
-    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 3616.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy_blue", 3584.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy_blue", 3616.f, 340.f, 24, 24)));
     enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 3648.f, 340.f, 24, 24)));
     enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 3680.f, 340.f, 24, 24)));
-    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 3712.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy_blue", 3712.f, 340.f, 24, 24)));
     enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 5568.f, 340.f, 24, 24)));
-    enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 5600.f, 340.f, 24, 24)));
+    enemies.push_back(new DinoEnemy(new Properties("dino_enemy_blue", 5600.f, 340.f, 24, 24)));
 
     // create coins
     coins.push_back(new Coins(new Properties("coins", 320.f, 160.f, 32, 32)));
@@ -62,7 +62,17 @@ PlayState::PlayState(float x, float y, int l, int c) {
     pointsLabel = new UILabel(450, 10, "X0", "minecraft", yellow);
 }
 
-PlayState::~PlayState() = default;
+PlayState::~PlayState() {
+    for (auto &e : enemies)
+        delete e;
+
+    for (auto &c : coins)
+        delete c;
+
+    delete lifeLabel;
+    delete pointsLabel;
+    delete dino;
+}
 
 void PlayState::render() {
     //SDL_SetRenderDrawColor(m_Context, 91, 110, 225, 255);
@@ -135,11 +145,6 @@ void PlayState::clear() {
 
     for (auto &c : coins)
         c->clean();
-
-    delete lifeLabel;
-    delete pointsLabel;
-
-    delete dino;
 
     for (auto &c : coins)
         delete c;
