@@ -20,16 +20,12 @@ public:
     
     bool mapCollision(SDL_Rect rectA);
 
-    bool cactusCollision(SDL_Rect rectA);
-
 private:
     Collision();
 
     static Collision *s_Instance;
     TileMap m_CollisionTileMap;
     TileLayer *collision_layer;
-    TileMap m_CactusCollision;
-    TileLayer *cactus_layer;
 };
 
 

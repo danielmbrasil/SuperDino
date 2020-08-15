@@ -6,26 +6,6 @@
 
 Game *Game::s_Instance = nullptr;
 
-void Game::startGame() {
-    playState = new PlayState(100.0f, 300.0f, 3, 0);
-    manager.addState(playState);
-}
-
-void Game::restartGame(int life, int coins) {
-    playState = new PlayState(100.f, 300.f, life, coins);
-    manager.addState(playState);
-}
-
-void Game::newMenu() {
-    menu = new MenuState();
-    manager.addState(menu);
-}
-
-void Game::newVoidState(int life) {
-    voidState = new VoidState(life, Game::getInstance()->getPlayState()->getCollectedCoins());
-    manager.addState(voidState);
-}
-
 bool Game::init() {
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         SDL_Log("Failed to initialize SDL: %s\n", SDL_GetError());
@@ -110,4 +90,40 @@ void Game::clean() {
 
 void Game::quit() {
     m_isRunning = false;
+}
+
+void Game::startGame() {
+    playState = new PlayState(100.0f, 300.0f, 3, 0);
+    manager.addState(playState);
+}
+
+void Game::restartGame(int life, int coins) {
+    playState = new PlayState(100.f, 300.f, life, coins);
+    manager.addState(playState);
+}
+
+void Game::newMenu() {
+    menu = new MenuState();
+    manager.addState(menu);
+}
+
+void Game::newVoidState(int life) {
+    voidState = new VoidState(life, Game::getInstance()->getPlayState()->getCollectedCoins());
+    manager.addState(voidState);
+}
+
+void Game::unsetPlayState() {
+    playState = nullptr;
+}
+
+void Game::unsetMenu() {
+    menu = nullptr;
+}
+
+void Game::unsetPause() {
+    pauseState = nullptr;
+}
+
+void Game::unsetVoidState() {
+    voidState = nullptr;
 }

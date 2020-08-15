@@ -98,16 +98,6 @@ void Dino::update(float delta) {
     if (Collision::getInstance()->mapCollision(collider->getBox()))
         transform->x = lastPosition.x;
 
-    if (Collision::getInstance()->cactusCollision(collider->getBox())) {
-        if (rigidBody->getVelocity().x < 0.f)
-            animation->setProperties("dino_crying", 0, 2, 500, SDL_FLIP_HORIZONTAL);
-        else
-            animation->setProperties("dino_crying", 0, 2, 500);
-        loseLife();
-        transform->x = 100.f;
-        SDL_Delay(500);
-        Game::getInstance()->newVoidState(life);
-    }
 
     if (transform->x < 0 || transform->x > MAP_WIDTH)
         transform->x = lastPosition.x;
@@ -129,17 +119,6 @@ void Dino::update(float delta) {
         isOnGround = true;
         transform->y = lastPosition.y;
     } else isOnGround = false;
-
-    if (Collision::getInstance()->cactusCollision(collider->getBox())) {
-        if (rigidBody->getVelocity().x < 0.f)
-            animation->setProperties("dino_crying", 0, 2, 500, SDL_FLIP_HORIZONTAL);
-        else
-            animation->setProperties("dino_crying", 0, 2, 500);
-        loseLife();
-        transform->x = 100.f;
-        SDL_Delay(500);
-        Game::getInstance()->newVoidState(life);
-    }
 
     std::vector<DinoEnemy *> enemies = Game::getInstance()->getPlayState()->getEnemies();
 
