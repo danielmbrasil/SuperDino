@@ -7,13 +7,15 @@
 #include <string>
 #include "TextureManager.h"
 
-VoidState::VoidState(int life, int coins) {
+VoidState::VoidState(int life, int coins, int sc) {
     m_Context = Game::getInstance()->getRenderer();
     currentLife = life;
     collectedCoins = coins;
+    score = sc;
 
     label = new UILabel(450, 200, "X" + std::to_string(currentLife), "minecraftBigger", white);
     coinsLabel = new UILabel(450, 10, "X" + std::to_string(collectedCoins), "minecraft", white);
+    scoreLabel = new UILabel(780, 10, "SCORE: " + std::to_string(score), "minecraft", white);
 }
 
 VoidState::~VoidState() = default;
@@ -23,9 +25,11 @@ void VoidState::update(float dt) {
 
     label->clean();
     coinsLabel->clean();
+    scoreLabel->clean();
 
     delete label;
     delete coinsLabel;
+    delete scoreLabel;
 
     TextureManager::getInstance()->drop("dino_crying");
     Game::getInstance()->getManager()->popState();
@@ -33,7 +37,7 @@ void VoidState::update(float dt) {
     Game::getInstance()->getManager()->popState();
     Game::getInstance()->getPlayState()->clear();
     Game::getInstance()->unsetPlayState();
-    Game::getInstance()->restartGame(currentLife, collectedCoins);
+    Game::getInstance()->restartGame(currentLife, collectedCoins, score);
 }
 
 void VoidState::render() {
@@ -44,6 +48,7 @@ void VoidState::render() {
                                              24, 24, 0, 1, 2);
     label->draw();
     coinsLabel->draw();
+    scoreLabel->draw();
 
     TextureManager::getInstance()->draw("coins", (int) (420.f + Camera::getInstance()->getPosition().x), 5, 32, 32,
                                         SDL_FLIP_NONE, 0.6f);

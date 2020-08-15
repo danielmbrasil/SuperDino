@@ -44,10 +44,16 @@ public:
 
     inline bool getDinoHitFirst() { return dinoHitFirst; }
 
-    inline Uint32 getCoinsCollected() { return collectedCoins; }
+    inline int getCoinsCollected() { return collectedCoins; }
 
     inline void setCoins(int x) {
         collectedCoins = x;
+    }
+
+    inline int getScore() { return score; }
+
+    inline void setScore(int sc) {
+        score = sc;
     }
 
 private:
@@ -67,6 +73,7 @@ private:
     bool dinoHitFirst;
 
     int collectedCoins;
+    int score;
 };
 
 

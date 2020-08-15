@@ -8,7 +8,7 @@
 #include <sstream>
 #include <algorithm>
 
-PlayState::PlayState(float x, float y, int l, int c) {
+PlayState::PlayState(float x, float y, int l, int c, int score) {
     // get renderer context
     m_Context = Game::getInstance()->getRenderer();
 
@@ -20,6 +20,7 @@ PlayState::PlayState(float x, float y, int l, int c) {
     dino = new Dino(new Properties("dino", x, y, 24, 24));
     dino->setLife(l);
     dino->setCoins(c);
+    dino->setScore(score);
 
     // create camera
     Camera::getInstance()->setTarget(dino->getOrigin());
@@ -60,6 +61,8 @@ PlayState::PlayState(float x, float y, int l, int c) {
     lifeLabel = new UILabel(10, 10, "Dino", "minecraft", yellow);
 
     pointsLabel = new UILabel(450, 10, "X0", "minecraft", yellow);
+
+    scoreLabel = new UILabel(780, 10, "SCORE: 0" , "minecraft", yellow);
 }
 
 PlayState::~PlayState() {
@@ -71,6 +74,7 @@ PlayState::~PlayState() {
 
     delete lifeLabel;
     delete pointsLabel;
+    delete scoreLabel;
     delete dino;
 }
 
@@ -87,6 +91,7 @@ void PlayState::render() {
     dino->draw();
     lifeLabel->draw();
     pointsLabel->draw();
+    scoreLabel->draw();
 
     for (auto &c : coins)
         c->draw();
@@ -107,8 +112,13 @@ void PlayState::update(float dt) {
     pointsStream << "X" << dino->getCoinsCollected();
     pointsLabel->clean();
     pointsLabel->setLabelText(pointsStream.str(), "minecraft");
-    Camera::getInstance()->update();
 
+    std::stringstream scoreStream;
+    scoreStream << "SCORE: " << dino->getScore();
+    scoreLabel->clean();
+    scoreLabel->setLabelText(scoreStream.str(), "minecraft");
+
+    Camera::getInstance()->update();
     levelMap_1->update();
     dino->update(dt);
 
@@ -142,6 +152,7 @@ void PlayState::clear() {
 
     lifeLabel->clean();
     pointsLabel->clean();
+    scoreLabel->clean();
 
     for (auto &c : coins)
         c->clean();
@@ -165,4 +176,8 @@ void PlayState::eraseCoin(int index) {
 
 int PlayState::getCollectedCoins() {
     return dino->getCoinsCollected();
+}
+
+int PlayState::getScore() {
+    return dino->getScore();
 }
