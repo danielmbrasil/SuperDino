@@ -25,7 +25,7 @@ class Coins;
 
 class PlayState : public GameState {
 public:
-    PlayState(float x, float y, int l, int c);
+    PlayState(float x, float y, int l, int c, int score);
 
     ~PlayState();
 
@@ -53,9 +53,12 @@ public:
 
     int getCollectedCoins();
 
+    int getScore();
+
 private:
     UILabel *lifeLabel;
     UILabel *pointsLabel;
+    UILabel *scoreLabel;
 
     Dino *dino;
     GameMap *levelMap_1;

@@ -25,6 +25,7 @@ Dino::Dino(Properties *properties) : Character(properties) {
     dinoHitFirst = false;
 
     collectedCoins = 0;
+    score = 0;
 }
 
 Dino::~Dino() {
@@ -129,6 +130,7 @@ void Dino::update(float delta) {
 
         if (Collision::getInstance()->checkCollision(dinoRect, enemyRect)) {
             dinoHitFirst = true;
+            score += 100;
             Game::getInstance()->getPlayState()->enemyDeath(i);
         }
     }

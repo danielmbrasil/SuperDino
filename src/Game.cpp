@@ -93,12 +93,12 @@ void Game::quit() {
 }
 
 void Game::startGame() {
-    playState = new PlayState(100.0f, 300.0f, 3, 0);
+    playState = new PlayState(100.0f, 300.0f, 3, 0, 0);
     manager.addState(playState);
 }
 
-void Game::restartGame(int life, int coins) {
-    playState = new PlayState(100.f, 300.f, life, coins);
+void Game::restartGame(int life, int coins, int score) {
+    playState = new PlayState(100.f, 300.f, life, coins, score);
     manager.addState(playState);
 }
 
@@ -108,7 +108,8 @@ void Game::newMenu() {
 }
 
 void Game::newVoidState(int life) {
-    voidState = new VoidState(life, Game::getInstance()->getPlayState()->getCollectedCoins());
+    voidState = new VoidState(life, Game::getInstance()->getPlayState()->getCollectedCoins(),
+                              Game::getInstance()->getPlayState()->getScore());
     manager.addState(voidState);
 }
 

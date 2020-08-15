@@ -58,7 +58,7 @@ public:
 
     void startGame();
 
-    void restartGame(int life, int coins);
+    void restartGame(int life, int coins, int score);
 
     void newMenu();
 
