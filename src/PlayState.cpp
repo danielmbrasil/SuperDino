@@ -41,9 +41,19 @@ PlayState::PlayState(float x, float y, int l, int c) {
     enemies.push_back(new DinoEnemy(new Properties("dino_enemy", 5600.f, 340.f, 24, 24)));
 
     // create coins
-    coins.push_back(new Coins(new Properties("coins", 200.f, 250.f, 32, 32)));
-    coins.push_back(new Coins(new Properties("coins", 232.f, 250.f, 32, 32)));
-    coins.push_back(new Coins(new Properties("coins", 320.f, 250.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 320.f, 160.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 352.f, 160.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 1024.f, 164.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 1056.f, 164.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 1088.f, 164.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 1120.f, 164.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 1152.f, 164.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 1184.f, 164.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 1216.f, 164.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 2272.f, 128.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 3776.f, 96.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 4800.f, 96.f, 32, 32)));
+    coins.push_back(new Coins(new Properties("coins", 5632.f, 256.f, 32, 32)));
 
     //create lifeLabel
     SDL_Color yellow = {248, 160, 0};
