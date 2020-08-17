@@ -7,4 +7,5 @@
     <texture id="dino_enemy" source="../assets/images/dino_enemy.png"/>
     <texture id="dino_enemy_blue" source="../assets/images/dino_enemy_blue.png"/>
     <texture id="coins" source="../assets/images/coin32.png"/>
+    <texture id="cactus" source="../assets/images/cactus.png"/>
 </textures>

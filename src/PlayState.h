@@ -14,6 +14,7 @@
 #include "Dino.h"
 #include <vector>
 #include "Coins.h"
+#include "Cactus.h"
 
 class Dino;
 
@@ -22,6 +23,8 @@ class UILabel;
 class DinoEnemy;
 
 class Coins;
+
+class Cactus;
 
 class PlayState : public GameState {
 public:
@@ -65,6 +68,7 @@ private:
 
     std::vector<DinoEnemy *> enemies;
     std::vector<Coins *> coins;
+    std::vector<Cactus *> cactus;
 };
 
 

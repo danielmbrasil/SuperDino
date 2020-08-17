@@ -65,6 +65,6 @@ add_executable(2D_SuperDino
         src/Coins.cpp
         src/Coins.h
         src/GameOverState.cpp
-        src/GameOverState.h)
+        src/GameOverState.h src/Cactus.cpp src/Cactus.h)
 
 target_link_libraries(2D_SuperDino -lSDL2 -lSDL2_image -lSDL2_ttf)
