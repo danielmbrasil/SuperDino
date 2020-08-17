@@ -93,8 +93,11 @@ void PlayState::render() {
     SDL_RenderClear(m_Context);
 
     levelMap_1->render();
+
     TextureManager::getInstance()->draw("coins", (int) (420.f + Camera::getInstance()->getPosition().x), 5, 32, 32,
                                         SDL_FLIP_NONE, 0.6f);
+
+    TextureManager::getInstance()->draw("sign", 6176, 310, 128, 128, SDL_FLIP_NONE, 0.6f);
 
     for (auto &e : enemies)
         e->draw();
@@ -169,7 +172,7 @@ void PlayState::update(float dt) {
         }
     }
 
-    if (dino->getLife() == 0 || dino->getCollider().x > 6176) {
+    if (dino->getLife() == 0 || dino->getCollider().x > 6250) {
         Game::getInstance()->getManager()->popState();
         clear();
         Game::getInstance()->unsetPlayState();

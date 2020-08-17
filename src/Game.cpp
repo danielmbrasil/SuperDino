@@ -54,7 +54,8 @@ bool Game::init() {
 void Game::handleEvents() {
     KeyboardController::getInstance()->listen();
 
-    if (KeyboardController::getInstance()->getKeyDown(SDL_SCANCODE_ESCAPE)) {
+    if (KeyboardController::getInstance()->getKeyDown(SDL_SCANCODE_ESCAPE) && Game::getInstance()->playState &&
+        !Game::getInstance()->pauseState) {
         Game::getInstance()->pauseState = new PauseState();
         Game::getInstance()->manager.addState(Game::getInstance()->pauseState);
         SDL_Delay(300);
