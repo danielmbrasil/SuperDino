@@ -56,6 +56,13 @@ PlayState::PlayState(float x, float y, int l, int c, int score) {
     coins.push_back(new Coins(new Properties("coins", 4800.f, 96.f, 32, 32)));
     coins.push_back(new Coins(new Properties("coins", 5632.f, 256.f, 32, 32)));
 
+    // create cactus
+    cactus.push_back(new Cactus(new Properties("cactus", 608.f, 312.f, 48, 48)));
+    cactus.push_back(new Cactus(new Properties("cactus", 1600.f, 312.f, 48, 48)));
+    cactus.push_back(new Cactus(new Properties("cactus", 3168.f, 248.f, 48, 48)));
+    cactus.push_back(new Cactus(new Properties("cactus", 4448.f, 312.f, 48, 48)));
+    cactus.push_back(new Cactus(new Properties("cactus", 5888.f, 312.f, 48, 48)));
+
     //create lifeLabel
     SDL_Color yellow = {248, 160, 0};
     lifeLabel = new UILabel(10, 10, "Dino", "minecraft", yellow);
@@ -72,6 +79,9 @@ PlayState::~PlayState() {
     for (auto &c : coins)
         delete c;
 
+    for (auto &c : cactus)
+        delete c;
+
     delete lifeLabel;
     delete pointsLabel;
     delete scoreLabel;
@@ -85,8 +95,12 @@ void PlayState::render() {
     levelMap_1->render();
     TextureManager::getInstance()->draw("coins", (int) (420.f + Camera::getInstance()->getPosition().x), 5, 32, 32,
                                         SDL_FLIP_NONE, 0.6f);
+
     for (auto &e : enemies)
         e->draw();
+
+    for (auto &c : cactus)
+        c->draw();
 
     dino->draw();
     lifeLabel->draw();
@@ -124,6 +138,21 @@ void PlayState::update(float dt) {
 
     for (auto &c : coins)
         c->update(dt);
+
+    for (auto &c : cactus) {
+        c->update(dt);
+
+        SDL_Rect dinoRect, cactusRect;
+
+        dinoRect = dino->getCollider();
+        cactusRect = c->getCollider();
+
+        if (Collision::getInstance()->checkCollision(dinoRect, cactusRect)) {
+            dino->loseLife();
+            SDL_Delay(500);
+            Game::getInstance()->newVoidState(dino->getLife());
+        }
+    }
 
     for (auto &e : enemies) {
         e->update(dt);

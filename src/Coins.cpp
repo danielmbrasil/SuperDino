@@ -16,7 +16,6 @@ Coins::Coins(Properties *properties) : Character(properties) {
 
 Coins::~Coins() {
     delete collider;
-    //delete rigidBody;
     delete animation;
 }
 
@@ -31,7 +30,6 @@ void Coins::draw() {
 }
 
 void Coins::update(float delta) {
-    //rigidBody->update(delta);
     animation->update();
 }
 
