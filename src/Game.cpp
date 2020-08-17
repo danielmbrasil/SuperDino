@@ -71,6 +71,9 @@ void Game::update() {
     if (Game::getInstance()->pauseState)
         Game::getInstance()->pauseState->events();
 
+    if (Game::getInstance()->gameOverState)
+        Game::getInstance()->gameOverState->events();
+
     if (!manager.isEmpty())
         Game::getInstance()->manager.update(deltaTime);
 }
@@ -84,7 +87,8 @@ void Game::clean() {
     delete playState;
     delete menu;
     delete pauseState;
-    
+    delete gameOverState;
+
     TextureManager::getInstance()->clean();
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
@@ -117,6 +121,11 @@ void Game::newVoidState(int life) {
     manager.addState(voidState);
 }
 
+void Game::newGameOverState(int life, int coins, int sc) {
+    gameOverState = new GameOverState(life, coins, sc);
+    manager.addState(gameOverState);
+}
+
 void Game::unsetPlayState() {
     playState = nullptr;
 }
@@ -131,4 +140,8 @@ void Game::unsetPause() {
 
 void Game::unsetVoidState() {
     delete voidState;
+}
+
+void Game::unsetGameOverState() {
+    gameOverState = nullptr;
 }

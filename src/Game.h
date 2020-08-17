@@ -9,6 +9,7 @@
 #include "PlayState.h"
 #include "PauseState.h"
 #include "VoidState.h"
+#include "GameOverState.h"
 
 class PlayState;
 
@@ -17,6 +18,8 @@ class MenuState;
 class PauseState;
 
 class VoidState;
+
+class GameOverState;
 
 class Game {
 public:
@@ -64,6 +67,10 @@ public:
 
     void newVoidState(int life);
 
+    void newGameOverState(int life, int coins, int sc);
+
+    void unsetGameOverState();
+
 private:
     Game() = default;
 
@@ -77,7 +84,7 @@ private:
     PlayState *playState{};
     PauseState *pauseState{};
     VoidState *voidState{};
-
+    GameOverState *gameOverState{};
 };
 
 #endif //GAME_H

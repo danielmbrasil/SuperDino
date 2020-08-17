@@ -139,6 +139,13 @@ void PlayState::update(float dt) {
             Game::getInstance()->newVoidState(dino->getLife());
         }
     }
+
+    if (dino->getLife() == 0 || dino->getCollider().x > 6176) {
+        Game::getInstance()->getManager()->popState();
+        clear();
+        Game::getInstance()->unsetPlayState();
+        Game::getInstance()->newGameOverState(dino->getLife(), dino->getCoinsCollected(), dino->getScore());
+    }
 }
 
 int PlayState::getDinoLife() {
