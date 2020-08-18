@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sounds>
+    <effect id="jump" source="../assets/sound_effects/187024__lloydevans09__jump2.wav"/>
+    <effect id="hit" source="../assets/sound_effects/273583__n-audioman__hit3.wav"/>
+    <effect id="getCoin" source="../assets/sound_effects/336933__free-rush__coin4.wav"/>
+    <effect id="win" source="../assets/sound_effects/342218__littlerainyseasons__good-end.mp3"/>
+    <effect id="click" source="../assets/sound_effects/342898__kickhat__menu-click-hat.wav"/>
+    <effect id="void" source="../assets/sound_effects/382310__myfox14__game-over-arcade.wav"/>
+    <effect id="gameOver" source="../assets/sound_effects/412168__screamstudio__arcade-game-over.wav"/>
+    <effect id="ouch" source="../assets/sound_effects/209731__yummie__minion-hit-2.wav"/>
+    <music id="theme" source="../assets/sound_effects/517524__mrthenoronha__8-bit-game-theme-2.wav"/>
+</sounds>

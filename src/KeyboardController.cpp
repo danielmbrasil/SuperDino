@@ -4,6 +4,7 @@
 
 #include "KeyboardController.h"
 #include "Game.h"
+#include "SoundsManager.h"
 
 KeyboardController *KeyboardController::s_Instance = nullptr;
 
@@ -26,6 +27,7 @@ void KeyboardController::listen() {
                 break;
             case SDL_MOUSEBUTTONDOWN:
                 mouseButtonDown = true;
+                SoundsManager::getInstance()->playSoundEffect("click");
                 break;
             default:
                 mouseButtonDown = false;

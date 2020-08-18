@@ -6,6 +6,7 @@
 #include "Game.h"
 #include <string>
 #include "TextureManager.h"
+#include "SoundsManager.h"
 
 VoidState::VoidState(int life, int coins, int sc) {
     m_Context = Game::getInstance()->getRenderer();
@@ -16,6 +17,9 @@ VoidState::VoidState(int life, int coins, int sc) {
     label = new UILabel(450, 200, "X" + std::to_string(currentLife), "minecraftBigger", white);
     coinsLabel = new UILabel(450, 10, "X" + std::to_string(collectedCoins), "minecraft", white);
     scoreLabel = new UILabel(780, 10, "SCORE: " + std::to_string(score), "minecraft", white);
+
+    SoundsManager::getInstance()->stopMusic();
+    SoundsManager::getInstance()->playSoundEffect("void");
 }
 
 VoidState::~VoidState() {

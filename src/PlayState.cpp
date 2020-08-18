@@ -5,6 +5,7 @@
 #include "PlayState.h"
 #include "MapParser.h"
 #include "Collision.h"
+#include "SoundsManager.h"
 #include <sstream>
 #include <algorithm>
 
@@ -70,6 +71,8 @@ PlayState::PlayState(float x, float y, int l, int c, int score) {
     pointsLabel = new UILabel(450, 10, "X0", "minecraft", yellow);
 
     scoreLabel = new UILabel(780, 10, "SCORE: 0" , "minecraft", yellow);
+
+    SoundsManager::getInstance()->playMusic("theme");
 }
 
 PlayState::~PlayState() {
@@ -151,6 +154,7 @@ void PlayState::update(float dt) {
         cactusRect = c->getCollider();
 
         if (Collision::getInstance()->checkCollision(dinoRect, cactusRect)) {
+            SoundsManager::getInstance()->playSoundEffect("ouch");
             dino->loseLife();
             SDL_Delay(500);
             Game::getInstance()->newVoidState(dino->getLife());
@@ -166,6 +170,7 @@ void PlayState::update(float dt) {
         enemyRect = e->getCollider();
 
         if (Collision::getInstance()->checkCollision(dinoRect, enemyRect) && !dino->getDinoHitFirst()) {
+            SoundsManager::getInstance()->playSoundEffect("ouch");
             dino->loseLife();
             SDL_Delay(500);
             Game::getInstance()->newVoidState(dino->getLife());
