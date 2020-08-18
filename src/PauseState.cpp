@@ -6,6 +6,7 @@
 #include "Game.h"
 #include "KeyboardController.h"
 #include "TextureManager.h"
+#include "SoundsManager.h"
 
 PauseState::PauseState() {
     // get context
@@ -48,6 +49,7 @@ void PauseState::events() {
                     label->clean();
                 Game::getInstance()->getManager()->popState();
                 Game::getInstance()->unsetPause();
+                SoundsManager::getInstance()->playMusic("theme");
                 SDL_Delay(300);
             } else if (KeyboardController::getInstance()->getMouseButtonDown() && i == 1) {
                 for (auto &label : labels)

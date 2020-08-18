@@ -5,6 +5,7 @@
 #include "GameOverState.h"
 #include "KeyboardController.h"
 #include "TextureManager.h"
+#include "SoundsManager.h"
 
 GameOverState::GameOverState(int life, int coins, int sc) {
     m_Context = Game::getInstance()->getRenderer();
@@ -13,9 +14,13 @@ GameOverState::GameOverState(int life, int coins, int sc) {
     collectedCoins = coins;
     score = sc;
 
+    SoundsManager::getInstance()->stopMusic();
+
     if (finalLife == 0) {
+        SoundsManager::getInstance()->playSoundEffect("gameOver");
         v_labels.push_back(new UILabel(400, 10, "GAME OVER", "minecraft", yellow));
     } else {
+        SoundsManager::getInstance()->playSoundEffect("win");
         v_labels.push_back(new UILabel(400, 10, "YOU WON", "minecraft", yellow));
     }
 

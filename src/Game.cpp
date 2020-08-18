@@ -3,6 +3,8 @@
 #include "KeyboardController.h"
 #include "Clock.h"
 #include "MapParser.h"
+#include <SDL2/SDL_mixer.h>
+#include "SoundsManager.h"
 
 Game *Game::s_Instance = nullptr;
 
@@ -32,6 +34,11 @@ bool Game::init() {
         Game::getInstance()->quit();
     }
 
+    if (Mix_Init(MIX_INIT_MP3) == 0) {
+        SDL_Log("Failed to initialize mixer %s\n", Mix_GetError());
+        return false;
+    }
+
     if (!MapParser::getInstance()->load()) {
         SDL_Log("Failed to load map.");
         Game::getInstance()->quit();
@@ -40,6 +47,10 @@ bool Game::init() {
     // add fonts
     FontManager::getInstance()->addFont("minecraft", "../assets/fonts/Minecraft.ttf", 16);
     FontManager::getInstance()->addFont("minecraftBigger", "../assets/fonts/Minecraft.ttf", 32);
+
+
+    // load sound effects
+    SoundsManager::getInstance()->parseSounds("../assets/sounds.xml");
 
     playState = nullptr;
     pauseState = nullptr;
@@ -56,6 +67,7 @@ void Game::handleEvents() {
 
     if (KeyboardController::getInstance()->getKeyDown(SDL_SCANCODE_ESCAPE) && Game::getInstance()->playState &&
         !Game::getInstance()->pauseState) {
+        SoundsManager::getInstance()->pauseMusic();
         Game::getInstance()->pauseState = new PauseState();
         Game::getInstance()->manager.addState(Game::getInstance()->pauseState);
         SDL_Delay(300);
@@ -91,6 +103,7 @@ void Game::clean() {
     delete gameOverState;
 
     TextureManager::getInstance()->clean();
+    SoundsManager::getInstance()->clear();
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     IMG_Quit();

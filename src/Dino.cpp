@@ -6,6 +6,7 @@
 #include "TextureManager.h"
 #include "KeyboardController.h"
 #include "Collision.h"
+#include "SoundsManager.h"
 #include <vector>
 
 Dino::Dino(Properties *properties) : Character(properties) {
@@ -79,6 +80,7 @@ void Dino::update(float delta) {
     if (KeyboardController::getInstance()->getKeyDown((SDL_SCANCODE_SPACE)) && isOnGround) {
         isJumping = true;
         isOnGround = false;
+        SoundsManager::getInstance()->playSoundEffect("jump");
         rigidBody->applyForceY(jumpForce * (-1));
     }
     if (KeyboardController::getInstance()->getKeyDown((SDL_SCANCODE_SPACE)) && isJumping && jumpTime > 0) {
@@ -129,6 +131,7 @@ void Dino::update(float delta) {
         dinoRect = collider->getBox();
 
         if (Collision::getInstance()->checkCollision(dinoRect, enemyRect)) {
+            SoundsManager::getInstance()->playSoundEffect("hit");
             dinoHitFirst = true;
             score += 100;
             Game::getInstance()->getPlayState()->enemyDeath(i);
@@ -143,6 +146,7 @@ void Dino::update(float delta) {
         dinoRect = collider->getBox();
 
         if (Collision::getInstance()->checkCollision(coinRect, dinoRect)) {
+            SoundsManager::getInstance()->playSoundEffect("getCoin");
             collectedCoins++;
             Game::getInstance()->getPlayState()->eraseCoin(i);
         }
