@@ -22,6 +22,11 @@ bool Game::init() {
         return false;
     }
 
+    // add window icon
+    SDL_Surface *surface = IMG_Load("../assets/images/icon.png");
+    SDL_SetWindowIcon(window, surface);
+    SDL_FreeSurface(surface);
+
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
     if (!renderer) {
