@@ -21,7 +21,7 @@ MenuState::MenuState() {
     for (int i = 0; i < 2; i++)
         labels[i] = new UILabel(position[i].x, position[i].y, options[i], "minecraftBigger", white);
 
-    TextureManager::getInstance()->loadTexture("menu_background", "../assets/images/menu_background.png");
+    TextureManager::getInstance()->loadTexture("background", "../assets/images/background.png");
 }
 
 MenuState::~MenuState() = default;
@@ -67,7 +67,7 @@ void MenuState::render() {
     SDL_SetRenderDrawColor(m_Context, 0, 0, 0, 0);
     SDL_RenderClear(m_Context);
 
-    TextureManager::getInstance()->draw("menu_background", (int)(Camera::getInstance()->getPosition().x), 0, 900, 480);
+    TextureManager::getInstance()->draw("background", (int)(Camera::getInstance()->getPosition().x), 0, 900, 480);
 
     for (auto &label : labels)
         label->draw();
