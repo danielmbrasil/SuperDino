@@ -78,7 +78,7 @@ void PauseState::render() {
     SDL_SetRenderDrawColor(m_Context, 0, 0, 0, 0);
     SDL_RenderClear(m_Context);
 
-    TextureManager::getInstance()->draw("menu_background", (int)(Camera::getInstance()->getPosition().x), 0, 900, 480);
+    TextureManager::getInstance()->draw("background", (int)(Camera::getInstance()->getPosition().x), 0, 900, 480);
 
     for (auto &label : labels)
         label->draw();
