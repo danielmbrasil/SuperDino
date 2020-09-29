@@ -38,7 +38,7 @@ None of the assets used on this game were made by the author.
 
 - truezipp: coins. You can find it at https://opengameart.org/content/coins-asset;
 
-All sound effects were taken from freensound.org. Below you'll find the list of the authors' usernames:
+All sound effects were taken from freensound.org. Below you'll find a list with the authors' usernames:
 
 - lloydevans09: jump sound effect;
 
