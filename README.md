@@ -3,13 +3,6 @@ Super Dino is a platform game written in C++17 using the SDL2 libraries.
 
 Author: Daniel Machado Brasil.
 
-EXE and DLLs for Windows: https://drive.google.com/file/d/1OoM_sM3psEuB_iAeNDzTjLb-TKYW97pk/view?usp=sharing
-
-
-
-
-
-
 # Build Prerequisites 
 
 sdl2, sdl2_image, sdl2_ttf, sdl2_mixer and cmake.
