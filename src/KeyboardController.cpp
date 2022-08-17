@@ -29,7 +29,7 @@ void KeyboardController::listen() {
                 mouseButtonDown = true;
                 SoundsManager::getInstance()->playSoundEffect("click");
                 break;
-            default:
+            case SDL_MOUSEBUTTONUP:
                 mouseButtonDown = false;
                 break;
         }
