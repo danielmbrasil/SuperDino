@@ -7,6 +7,10 @@ Author: Daniel Machado Brasil.
 
 sdl2, sdl2_image, sdl2_ttf, sdl2_mixer and cmake.
 
+# Build for Ubuntu-based distros
+
+```$ sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev cmake```
+
 # Build and Run
 
 $ mkdir build\
@@ -14,7 +18,6 @@ $ cd build\
 $ cmake ..\
 $ make\
 $ ./2D_SuperDino
-
 
 # Credits:
 None of the assets used on this game were made by the author.
